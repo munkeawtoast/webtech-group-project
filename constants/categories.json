@@ -1,0 +1,58 @@
+[
+   {
+    "id": 0,
+    "showOnCategory": true,
+    "name": "shooting",
+    "link": "/shooting",
+    "displayTag": "Shooting",
+    "image": "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg"
+  },
+  {
+    "id": 1,
+    "showOnCategory": true,
+    "name": "fighting",
+    "link": "/fighting",
+    "displayTag": "Fighting",
+    "image": "https://i.imgur.com/BIuXwVW.png"
+  },
+  {
+    "id": 2,
+    "showOnCategory": true,
+    "name": "driving",
+    "link": "/driving",
+    "displayTag": "Driving & Racing",
+    "image": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg"
+  },
+  {
+    "id": 3,
+    "showOnCategory": true,
+    "name": "sports",
+    "link": "/sports",
+    "displayTag": "Sports",
+    "image": "https://cdn.akamai.steamstatic.com/steam/apps/1811260/header.jpg"
+  },
+  {
+    "id": 4,
+    "showOnCategory": true,
+    "name": "thinking",
+    "link": "/thinking",
+    "displayTag": "Thinking",
+    "image": "https://cdn.akamai.steamstatic.com/steam/apps/1426210/header.jpg"
+  },
+  {
+    "id": 5,
+    "showOnCategory": true,
+    "name": "strategy",
+    "link": "/strategy",
+    "displayTag": "Strategy",
+    "image": "https://i.imgur.com/1i0NTDY.jpeg"
+  },
+  {
+    "id": 6,
+    "showOnCategory": true,
+    "name": "rpg",
+    "link": "/rpg",
+    "displayTag": "RPG",
+    "image": "https://cdn.akamai.steamstatic.com/steam/apps/413150/header.jpg"
+  }
+]

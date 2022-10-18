@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react'
-import NavBar from '../components/common/NavBar'
+import NavBar from 'components/common/NavBar'
 
 
 function About() {

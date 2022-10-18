@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react'
-
-import * as color from '../../constants/color'
+import colors from 'constants/colors.json'
 
 function TemplateComponent() {
   return (

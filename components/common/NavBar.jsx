@@ -1,47 +1,70 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import * as color from '../../constants/color'
+import colors from 'constants/colors.json'
+import fonts from 'constants/fonts.json'
 
-import styled from '@emotion/styled'
-import { jsx, css } from '@emotion/react'
+import { css } from '@emotion/react'
+
+import Logo from 'components/common/Logo'
 
 function NavBar() {
   return (
     <nav css={css`
       display: flex;
-      background-color: ${color.primaryBg2};
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      padding: 0 25px;
+      background-color: ${colors.greenPrimary};
+      color: ${colors.white};
     `}>
-      <LinkByWearer href='/'>Home</LinkByWearer>
-      <LinkByWearer href='/about'>About</LinkByWearer>
-      <LinkByWearer href=''></LinkByWearer>
+      <Logo fillColor="white" size="40" withText={true} />
+      <div
+        css={css`
+          display: flex;
+          gap: 10px;
+        `}
+      >
+        <CartButton />
+        <AccountButton />
+      </div>
     </nav>
   )
 }
 
-function LinkByWearer({ href, children }) {
-  const router = useRouter()
-  const afterURL = router.asPath
-
+function AccountButton() {
   return (
-    <Link href={href} passHref>
-      <a
+    <Link href="/account">
+      <span
         css={css`
-          background-color: ${afterURL === href && 'white'};
-          padding: 1ex 1rem;
-          color: ${ color.primaryText2 };
-          &:hover {
-            color: ${ color.primaryText1 };
-          }
+          padding: 4px 2rem;
+          border-radius: 100000px;
+          background-color: ${colors.white};
+          color: ${colors.black};
+          font-size: ${fonts.uiFontSize};
+          font-family: ${fonts.normalFontFamily};
+          font-weight: bold;
+          
         `}
-      >
-        {children}
-      </a>
+      >Account</span>
     </Link>
+  )
+}
 
+function CartButton() {
+  return (
+    <Link href="/library">
+      <span
+        css={css`
+          width: 34px;
+          height: 34px;
+          border-radius: 100000px;
+          background-color: ${colors.white};
+        `}
+      ></span>
+    </Link>
   )
 }
 
