@@ -37,7 +37,7 @@ function NavBar() {
 function AccountButton() {
   return (
     <Link href="/account">
-      <span
+      <a
         css={css`
           padding: 4px 2rem;
           border-radius: 100000px;
@@ -48,22 +48,22 @@ function AccountButton() {
           font-weight: bold;
           
         `}
-      >Account</span>
+      >Account</a>
     </Link>
   )
 }
 
 function CartButton() {
   return (
-    <Link href="/library">
-      <span
+    <Link href="/about">
+      <a
         css={css`
           width: 34px;
           height: 34px;
           border-radius: 100000px;
           background-color: ${colors.white};
         `}
-      ></span>
+      ></a>
     </Link>
   )
 }

@@ -11,6 +11,7 @@
     "gray700": "#3F3F46",
     "gray800": "#27272A",
     "gray900": "#18181B",
-    "greenPrimary": "#01847A",
-    "yellowPrimary": "#C5E370"
+    "greenPrimary": "#2f7952",
+    "greenPrimary2": "#01847A",
+    "yellowPrimary2": "#C5E370"
 }
