@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-import colors from 'constants/colors.json'
-import fonts from 'constants/fonts.json'
+import colors from 'constants/colors.js'
+import fonts from 'constants/fonts.js'
 
 import { css } from '@emotion/react'
 

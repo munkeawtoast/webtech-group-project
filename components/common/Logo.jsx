@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { css } from '@emotion/react'
 
-import fonts from 'constants/fonts.json'
+import fonts from 'constants/fonts.js'
 
 function Logo({ fillColor, size, withText, hidden }) {
   return (
