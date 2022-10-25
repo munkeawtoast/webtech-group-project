@@ -8,6 +8,7 @@ import fonts from 'constants/fonts.js'
 
 import { css } from '@emotion/react'
 
+import { TextButton, RoundButton } from 'components/common/Buttons'
 import Logo from 'components/common/Logo'
 
 
@@ -34,45 +35,23 @@ function NavBar({ hasLogo }) {
           margin-left: auto;
         `}
       >
-        <CartButton />
-        <AccountButton />
+        <RoundButton href="/cart"> 
+          <i
+            class="fa-solid fa-cart-shopping"
+            style={{
+              color: colors.black,
+              transform: "translatey(1px))"
+            }}
+          ></i>
+        </RoundButton>
+        <TextButton href="/account">
+          { 'Account' }
+        </TextButton>
       </div>
     </nav>
   )
 }
 
-function AccountButton() {
-  return (
-    <Link href="/account">
-      <a
-        css={css`
-          padding: 4px 2rem;
-          border-radius: 100000px;
-          background-color: ${colors.white};
-          color: ${colors.black};
-          font-size: ${fonts.uiFontSize};
-          font-family: ${fonts.normalFontFamily};
-          font-weight: bold;
-          
-        `}
-      >Account</a>
-    </Link>
-  )
-}
 
-function CartButton() {
-  return (
-    <Link href="/about">
-      <a
-        css={css`
-          width: 34px;
-          height: 34px;
-          border-radius: 100000px;
-          background-color: ${colors.white};
-        `}
-      ></a>
-    </Link>
-  )
-}
 
 export default NavBar

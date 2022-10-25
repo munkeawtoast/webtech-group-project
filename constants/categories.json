@@ -4,8 +4,8 @@
     "showOnCategory": true,
     "name": "shooting",
     "link": "/shooting",
-    "en-displayTag": "Shooting",
-    "th-displayTag": "ยิงปืน",
+    "en_displayTag": "Shooting",
+    "th_displayTag": "ยิงปืน",
     "image": "shooter.jpg"
   },
   {
@@ -13,8 +13,8 @@
     "showOnCategory": true,
     "name": "fighting",
     "link": "/fighting",
-    "en-displayTag": "Fighting",
-    "th-displayTag": "ต่อสู้",
+    "en_displayTag": "Fighting",
+    "th_displayTag": "ต่อสู้",
     "image": "fighting.jpg"
   },
   {
@@ -22,8 +22,8 @@
     "showOnCategory": true,
     "name": "driving",
     "link": "/driving",
-    "en-displayTag": "Driving & Racing",
-    "th-displayTag": "ขับรถ & แข่งรถ",
+    "en_displayTag": "Driving & Racing",
+    "th_displayTag": "ขับรถ & แข่งรถ",
     "image": "driving.jpg"
   },
   {
@@ -31,8 +31,8 @@
     "showOnCategory": true,
     "name": "sports",
     "link": "/sports",
-    "en-displayTag": "Sports",
-    "th-displayTag": "กีฬา",
+    "en_displayTag": "Sports",
+    "th_displayTag": "กีฬา",
     "image": "sports.jpg"
   },
   {
@@ -40,8 +40,8 @@
     "showOnCategory": true,
     "name": "puzzle",
     "link": "/puzzle",
-    "en-displayTag": "Puzzle",
-    "th-displayTag": "ปริศนา",
+    "en_displayTag": "Puzzle",
+    "th_displayTag": "ปริศนา",
     "image": "puzzle.png"
   },
   {
@@ -49,8 +49,8 @@
     "showOnCategory": true,
     "name": "strategy",
     "link": "/strategy",
-    "en-displayTag": "Strategy",
-    "th-displayTag": "กลยุทธ์",
+    "en_displayTag": "Strategy",
+    "th_displayTag": "กลยุทธ์",
     "image": "strategy.jpg"
   },
   {
@@ -58,8 +58,8 @@
     "showOnCategory": true,
     "name": "rpg",
     "link": "/rpg",
-    "en-displayTag": "RPG",
-    "th-displayTag": "สวมบทบาท",
+    "en_displayTag": "RPG",
+    "th_displayTag": "สวมบทบาท",
     "image": "rpg.jpg"
   },
   {
@@ -67,8 +67,8 @@
     "showOnCategory": false,
     "name": "survival",
     "link": "",
-    "en-displayTag": "Survival",
-    "th-displayTag": "ผจญภัย",
+    "en_displayTag": "Survival",
+    "th_displayTag": "ผจญภัย",
     "image": ""
   }
 ]

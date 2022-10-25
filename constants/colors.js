@@ -1,18 +1,3 @@
-export default {
-  white,
-  black,
-  gray50,
-  gray100,
-  gray200,
-  gray300,
-  gray400,
-  gray500,
-  gray600,
-  gray700,
-  gray800,
-  gray900,
-  greenPrimary
-}
 const white = "#FFF"
 const black = "#000"
 const gray50 = "#FAFAFA"
@@ -28,3 +13,19 @@ const gray900 = "#18181B"
 const greenPrimary = "#2f7952"
 const greenPrimary2 = "#01847A"
 const yellowPrimary2 =  "#C5E370"
+
+export default {
+  white,
+  black,
+  gray50,
+  gray100,
+  gray200,
+  gray300,
+  gray400,
+  gray500,
+  gray600,
+  gray700,
+  gray800,
+  gray900,
+  greenPrimary
+}
