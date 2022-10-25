@@ -1,58 +1,74 @@
 [
-   {
+  {
     "id": 0,
     "showOnCategory": true,
     "name": "shooting",
     "link": "/shooting",
-    "displayTag": "Shooting",
-    "image": "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg"
+    "en-displayTag": "Shooting",
+    "th-displayTag": "ยิงปืน",
+    "image": "shooter.jpg"
   },
   {
     "id": 1,
     "showOnCategory": true,
     "name": "fighting",
     "link": "/fighting",
-    "displayTag": "Fighting",
-    "image": "https://i.imgur.com/BIuXwVW.png"
+    "en-displayTag": "Fighting",
+    "th-displayTag": "ต่อสู้",
+    "image": "fighting.jpg"
   },
   {
     "id": 2,
     "showOnCategory": true,
     "name": "driving",
     "link": "/driving",
-    "displayTag": "Driving & Racing",
-    "image": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg"
+    "en-displayTag": "Driving & Racing",
+    "th-displayTag": "ขับรถ & แข่งรถ",
+    "image": "driving.jpg"
   },
   {
     "id": 3,
     "showOnCategory": true,
     "name": "sports",
     "link": "/sports",
-    "displayTag": "Sports",
-    "image": "https://cdn.akamai.steamstatic.com/steam/apps/1811260/header.jpg"
+    "en-displayTag": "Sports",
+    "th-displayTag": "กีฬา",
+    "image": "sports.jpg"
   },
   {
     "id": 4,
     "showOnCategory": true,
-    "name": "thinking",
-    "link": "/thinking",
-    "displayTag": "Thinking",
-    "image": "https://cdn.akamai.steamstatic.com/steam/apps/1426210/header.jpg"
+    "name": "puzzle",
+    "link": "/puzzle",
+    "en-displayTag": "Puzzle",
+    "th-displayTag": "ปริศนา",
+    "image": "puzzle.png"
   },
   {
     "id": 5,
     "showOnCategory": true,
     "name": "strategy",
     "link": "/strategy",
-    "displayTag": "Strategy",
-    "image": "https://i.imgur.com/1i0NTDY.jpeg"
+    "en-displayTag": "Strategy",
+    "th-displayTag": "กลยุทธ์",
+    "image": "strategy.jpg"
   },
   {
     "id": 6,
     "showOnCategory": true,
     "name": "rpg",
     "link": "/rpg",
-    "displayTag": "RPG",
-    "image": "https://cdn.akamai.steamstatic.com/steam/apps/413150/header.jpg"
+    "en-displayTag": "RPG",
+    "th-displayTag": "สวมบทบาท",
+    "image": "rpg.jpg"
+  },
+  {
+    "id": 7,
+    "showOnCategory": false,
+    "name": "sandbox",
+    "link": "",
+    "en-displayTag": "Sandbox",
+    "th-displayTag": "Sandbox",
+    "image": ""
   }
 ]
