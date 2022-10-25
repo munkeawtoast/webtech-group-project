@@ -68,7 +68,7 @@ function CategoryButton(props) {
         font-family: ${fonts.normalFontFamily};
         font-size: 16px;
         ${
-          '/' + catQuery.cat == props.link ?
+          catQuery.cat == props.link ?
             `
             color: ${colors.white};
             box-shadow: 0px 0px 4px ${colors.white};
