@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import Link from 'next/link'
+import { useState } from 'react'
 
 import colors from 'constants/colors.json'
 import fonts from 'constants/fonts.json'
@@ -9,7 +10,12 @@ import { css } from '@emotion/react'
 
 import Logo from 'components/common/Logo'
 
-function NavBar() {
+
+NavBar.defaultProps = {
+  hasLogo: true
+}
+
+function NavBar({ hasLogo }) {
   return (
     <nav css={css`
       display: flex;
@@ -20,11 +26,12 @@ function NavBar() {
       background-color: ${colors.greenPrimary};
       color: ${colors.white};
     `}>
-      <Logo fillColor="white" size="40" withText={true} />
+      <Logo fillColor="white" size="40" withText={true} hidden={!hasLogo} />
       <div
         css={css`
           display: flex;
           gap: 10px;
+          margin-left: auto;
         `}
       >
         <CartButton />
