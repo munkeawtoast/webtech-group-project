@@ -1,3 +1,5 @@
+import { css } from "@emotion/react"
+
 const white = "#FFF"
 const black = "#000"
 const gray50 = "#FAFAFA"
@@ -13,6 +15,7 @@ const gray900 = "#18181B"
 const greenPrimary = "#2f7952"
 const greenPrimary2 = "#01847A"
 const yellowPrimary2 =  "#C5E370"
+const rounded = css`border-radius: 10000px`
 
 export default {
   white,
