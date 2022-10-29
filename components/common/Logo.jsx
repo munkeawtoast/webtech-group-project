@@ -13,7 +13,7 @@ function Logo({ fillColor, size, withText, hidden }) {
       display: flex;
       align-items: center;
       gap: 8px;
-      cursor: ${ hidden ? 'default' : 'initial'}
+      cursor: ${ hidden ? 'default' : 'initial'};
     `}>
       <Image
         src={'/logo/logo-' + fillColor + '.png'} 

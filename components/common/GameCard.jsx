@@ -8,7 +8,7 @@ import { useContext, useEffect } from 'react'
 
 import colors from 'constants/colors'
 import fonts from 'constants/fonts'
-import currencies from 'constants/currencies.json'
+import currencies from 'constants/currencies'
 
 import { SiteConfigContext } from 'context/SiteConfigContext'
 

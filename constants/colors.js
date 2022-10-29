@@ -17,7 +17,7 @@ const greenPrimary2 = "#01847A"
 const yellowPrimary2 =  "#C5E370"
 const rounded = css`border-radius: 10000px`
 
-export default {
+module.exports = {
   white,
   black,
   gray50,

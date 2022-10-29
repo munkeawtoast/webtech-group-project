@@ -6,9 +6,8 @@ import Link from 'next/link'
 
 import colors from 'constants/colors.js'
 import fonts from 'constants/fonts.js'
-import categories from 'constants/categories.json'
-import games from 'constants/games.json'
-
+import categories from 'constants/categories.js'
+import games from 'constants/games.js'
 import NavBar from 'components/common/NavBar'
 import GameCard from 'components/common/GameCard'
 
