@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext, createContext } from 'react'
 import { css } from '@emotion/react'
 import Link from 'next/link'
 
@@ -13,10 +13,13 @@ import games from 'constants/games.json'
 import NavBar from 'components/common/NavBar'
 import GameCard from 'components/common/GameCard'
 
+const CategoryContext = createContext(null)
 
-function Category({ }) {
+
+// prop category มาจาก getServerSideProps ข้างล่าง
+function Category({ category }) {
   return (
-    <>
+    <CategoryContext.Provider value={category}>
       <NavBar hasLogo={false} />
       <div css={css`
         display: flex;
@@ -25,7 +28,7 @@ function Category({ }) {
         <CategoryOptions />
         <ResultList />
       </div>
-    </>
+    </CategoryContext.Provider>
   )
 }
 
@@ -82,25 +85,7 @@ function CategoryButton(props) {
 }
 
 function ResultList() {
-  const router = useRouter()
-  const [category, setCat] = useState({})
-  const [gameCards, setGamesCards] = useState(<div />)
-
-  useEffect(function () {
-    if (!router.isReady) return
-    setCat(() =>
-      categories.find(i =>
-        i.link == router.query.cat
-      )
-    )
-  }, [router.isReady, router.query.cat])
-  useEffect(function() {
-    setGamesCards(() =>
-      games
-        .filter(game => game.tags.includes(category.id))
-        .map(gameInfo => <GameCard{...gameInfo} />)
-    )
-  }, [category])
+  const category = useContext(CategoryContext)
 
   return (
     <main css={css`
@@ -116,16 +101,42 @@ function ResultList() {
         {category.en_displayTag}
       </span>
       <div css={css`
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto auto;
+        display: flex;
         gap: 15px 10px;
       `}>
-        { gameCards }
+        {
+          games
+            .filter(game => game.tags.includes(category.id))
+            .map(game => <GameCard
+              game={game}
+              showArgs={{
+                showImage: true,
+                showName: true,
+                showButton: true,
+                isLink: true,
+              }}
+            />)
+        }
       </div>
     </main>
   )
 }
 
+/* detail getServersideProps
+DOCUMENT: https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props
+function getServersideProps จะรันใน server และส่ง props ให้ตัวที่ใส่ export default ไปให้ส่วน client
+*/
+export async function getServerSideProps(context) {
+  const category = categories.find(i =>
+    i.link == context.params.cat
+  )
+  if (!category) return { notFound: true }
+  return {
+    props: {
+      category
+    }
+  }
+}
 
 
 export default Category
