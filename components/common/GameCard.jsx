@@ -62,6 +62,9 @@ function GameCard({showArgs, game, onClick}) {
         <div>
           {game.displayName}
         </div>
+        <div>
+          {game.price['usd']}
+        </div>
       </div>
     </Outer>
   )
