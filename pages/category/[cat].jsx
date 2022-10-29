@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { useRouter } from 'next/router'
-import { useEffect, useState, useContext, createContext } from 'react'
+import { useContext, createContext } from 'react'
 import { css } from '@emotion/react'
 import Link from 'next/link'
 

@@ -4,9 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { css } from '@emotion/react'
+import { useContext, useEffect } from 'react'
 
 import colors from 'constants/colors'
 import fonts from 'constants/fonts'
+import currencies from 'constants/currencies.json'
+
+import { SiteConfigContext } from 'context/SiteConfigContext'
 
 GameCard.defaultProps = {
   showArgs: {
@@ -19,14 +23,16 @@ GameCard.defaultProps = {
 }
 
 
-function GameCard({showArgs, game, onClick}) {
-  
-  const Outer = ({children}) => (
-    showArgs.isLink ? 
+function GameCard({ showArgs, game, onClick }) {
+  const siteConfig = useContext(SiteConfigContext)
+  const currency = siteConfig.siteConfig.currency
+
+  const Outer = ({ children }) => (
+    showArgs.isLink ?
       <Link href={`/game/${game.name}`}>
         {children}
       </Link>
-    :
+      :
       children
   )
 
@@ -45,7 +51,7 @@ function GameCard({showArgs, game, onClick}) {
           display: flex;
           flex-wrap: wrap;
           flex-direction: column;
-          ${ onClick || showArgs.isLink ? css`cursor: pointer;` : '' }
+          ${onClick || showArgs.isLink ? css`cursor: pointer;` : ''}
         `}
         onClick={onClick}
       >
@@ -63,7 +69,9 @@ function GameCard({showArgs, game, onClick}) {
           {game.displayName}
         </div>
         <div>
-          {game.price['usd']}
+          {currencies[currency].currencyTag}
+          {' '}
+          {game.price[currency]}
         </div>
       </div>
     </Outer>
