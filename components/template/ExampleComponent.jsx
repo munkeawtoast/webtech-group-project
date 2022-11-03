@@ -1,6 +1,11 @@
 /** @jsxImportSource @emotion/react */
 // ข้างบนต้องไว้บรรทัดแรกเท่านั้น เป็นตัว import แบบพิเศษเพิ่อใช้ emotion
 
+/**
+ * อ่าน beta doc!!!!! https://beta.reactjs.org/learn
+ * อธิบาย 90%!!
+ */
+
 import { css } from "@emotion/react"
 
 /**
@@ -35,6 +40,10 @@ function ExampleComponent(props) {
 
   return (
     /**
+     * ส่วนใน return เขียนแบบเดียวกับ html ปกติเลย
+     */
+
+    /**
      * ส่วน css={css``} ถ้างง syntax:
      * css={} คือส่วนยัดค่าcssให้ component เป็นตัวที่ react จะไปประมวณผลเพิ่มข้างหลัง
      * css`` คือส่วนที่เรา import มาจาก emotion ข้างในเขียนเหมือน css ปกติเลย
@@ -53,11 +62,7 @@ function ExampleComponent(props) {
      *   }
      * `
      * 
-     * 
-     */
-
-    /**
-     * ส่วนใน return เขียนแบบเดียวกับ html ปกติเลย
+     * เวลาใส่ค่าให้ attribute: ถ้าเป็น string: name='pinepine' อย่างอื่น: name={props.userName} 
      */
     <div>
       <h1 css={css`
