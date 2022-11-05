@@ -117,6 +117,99 @@ module.exports = [
       "usd": 29.99,
       "thb": 1059
     },
+    "thumbnail": "7.jpg",
     "gameDetail": ""
-  }
+  },
+  {
+    "id": 8,
+    "name": "game-of-thrones:the-board-game",
+    "displayName": "A Game Of Thrones: The Board Game Digital Edition",
+    "tags": [
+      8
+    ],
+    "key": "_",
+    "price": {
+      "usd": 9.9999,
+      "thb": 599
+    },
+    "thumbnail": "8.jpg",
+    "gameDetail": ""
+  },
+  {
+    "id": 9,
+    "name": "for-honor",
+    "displayName": "For Honor",
+    "tags": [
+      9
+    ],
+    "key": "_",
+    "price": {
+      "usd": 9.9999,
+      "thb": 400
+    },
+    "thumbnail": "9.jpg",
+    "gameDetail": ""
+  },
+  {
+    "id": 10,
+    "name": "wrp-geberations",
+    "displayName": "WRC Generations - The FIA WRC Official Game",
+    "tags": [
+      10
+    ],
+    "key": "_",
+    "price": {
+      "usd": 9.9999,
+      "thb": 579
+    },
+    "thumbnail": "10.jpg",
+    "gameDetail": ""
+  },
+  {
+    "id": 11,
+    "name": "f1r-22",
+    "displayName": "F1® 22",
+    "tags": [
+      11
+    ],
+    "key": "_",
+    "price": {
+      "usd": 9.9999,
+      "thb": 1599
+    },
+    "thumbnail": "11.jpg",
+    "gameDetail": ""
+  },
+  {
+    "id": 12,
+    "name": "madden-nfl-23",
+    "displayName": "Madden NFL 23",
+    "tags": [
+      12
+    ],
+    "key": "_",
+    "price": {
+      "usd": 9.9999,
+      "thb": 1599
+    },
+    "thumbnail": "12.jpg",
+    "gameDetail": ""
+  },
+
+
+  {
+    "id": 0,
+    "name": "_",
+    "displayName": "_",
+    "tags": [
+      0
+    ],
+    "key": "_",
+    "price": {
+      "usd": 9.9999,
+      "thb": 9999
+    },
+    "thumbnail": "0.jpg",
+    "gameDetail": ""
+  },
 ]
