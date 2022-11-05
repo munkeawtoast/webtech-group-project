@@ -122,10 +122,10 @@ module.exports = [
   },
   {
     "id": 8,
-    "name": "game-of-thrones:the-board-game",
+    "name": "game-of-thrones-the-board-game",
     "displayName": "A Game Of Thrones: The Board Game Digital Edition",
     "tags": [
-      8
+      5, 6
     ],
     "key": "_",
     "price": {
@@ -140,7 +140,7 @@ module.exports = [
     "name": "for-honor",
     "displayName": "For Honor",
     "tags": [
-      9
+      1, 6
     ],
     "key": "_",
     "price": {
@@ -152,10 +152,10 @@ module.exports = [
   },
   {
     "id": 10,
-    "name": "wrp-geberations",
+    "name": "wrp-generations",
     "displayName": "WRC Generations - The FIA WRC Official Game",
     "tags": [
-      10
+      2
     ],
     "key": "_",
     "price": {
@@ -170,7 +170,7 @@ module.exports = [
     "name": "f1r-22",
     "displayName": "F1® 22",
     "tags": [
-      11
+      2
     ],
     "key": "_",
     "price": {
@@ -185,7 +185,7 @@ module.exports = [
     "name": "madden-nfl-23",
     "displayName": "Madden NFL 23",
     "tags": [
-      12
+      3
     ],
     "key": "_",
     "price": {
