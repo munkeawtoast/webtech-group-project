@@ -9,7 +9,7 @@ const nextConfig = {
       }
     ]
   },
-  reactStrictMode: true,
+  reactStrictMode: false, // เราสูญเสียไปแคไหนเพราะบรรทัดนี้ยรรทัดเดียว
   swcMinify: true,
 }
 
