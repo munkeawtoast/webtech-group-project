@@ -36,7 +36,14 @@ function NavBar({ hasLogo, logoIsCenter }) {
         
         {
           logoIsCenter
-           ? <Logo fillColor="white" size="40" withText={false} hidden={!hasLogo} withLink={true} />
+           ? <div css={css`
+              position: absolute;
+              left: 50%;
+              transform: translate(-50%);
+              top: 5px;
+            `}>
+              <Logo fillColor="white" size="45" withText={false} hidden={!hasLogo} withLink={true} />
+            </div>
            : null
         }
       </div>

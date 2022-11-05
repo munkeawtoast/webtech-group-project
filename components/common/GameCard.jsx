@@ -62,12 +62,12 @@ function GameCard({ showArgs, game, onClick }) {
             layout='fill'
           />
         </div>
-        <div css={css`
-          width: 100%;
-          word-wrap: break-word;
+        <span css={css`
+          max-width: 150px;
+          /* word-wrap: break-word; */
         `}>
           {game.displayName}
-        </div>
+        </span>
         <div>
           {currency ? currencies[currency].currencyTag : null}
           {currency ? game.price[currency] : null}

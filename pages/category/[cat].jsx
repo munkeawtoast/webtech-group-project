@@ -54,11 +54,11 @@ function CategoryOptions({ setUserPriceRange }) {
         gap: 8px 4px;
       `}>
         {
-          categories.filter(cat => cat.showOnCategory).map((cat) => (
-            <CategoryButton key={cat.name + cat.id} {...cat} >
+          categories.filter(cat => cat.showOnCategory).map((cat) => 
+            <CategoryButton key={cat.name + cat.id} {...cat}>
               {cat.displayTag['en']}
             </CategoryButton>
-          )) // {...cat } = unpack keys and values into CategoryButton
+          ) // {...cat } = unpack keys and values into CategoryButton
         }
       </div>
       
