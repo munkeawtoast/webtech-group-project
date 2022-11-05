@@ -4,8 +4,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "shooting",
     "link": "shooting",
-    "en_displayTag": "Shooting",
-    "th_displayTag": "ยิงปืน",
+    "displayTag": {
+      "en": "Shooting",
+      "th": "ยิงปืน"
+    },
     "image": "shooter.jpg"
   },
   {
@@ -13,8 +15,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "fighting",
     "link": "fighting",
-    "en_displayTag": "Fighting",
-    "th_displayTag": "ต่อสู้",
+    "displayTag": {
+      "en": "Fighting",
+      "th": "ต่อสู้",
+    },
     "image": "fighting.jpg"
   },
   {
@@ -22,8 +26,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "driving",
     "link": "driving",
-    "en_displayTag": "Driving & Racing",
-    "th_displayTag": "ขับรถ & แข่งรถ",
+    "displayTag": {
+      "en": "Driving & Racing",
+      "th": "ขับรถ & แข่งรถ",
+    },
     "image": "driving.jpg"
   },
   {
@@ -31,8 +37,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "sports",
     "link": "sports",
-    "en_displayTag": "Sports",
-    "th_displayTag": "กีฬา",
+    "displayTag": {
+      "en": "Sports",
+      "th": "กีฬา",
+    },
     "image": "sports.jpg"
   },
   {
@@ -40,8 +48,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "puzzle",
     "link": "puzzle",
-    "en_displayTag": "Puzzle",
-    "th_displayTag": "ปริศนา",
+    "displayTag": {
+      "en": "Puzzle",
+      "th": "ปริศนา",
+    },
     "image": "puzzle.png"
   },
   {
@@ -49,8 +59,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "strategy",
     "link": "strategy",
-    "en_displayTag": "Strategy",
-    "th_displayTag": "กลยุทธ์",
+    "displayTag": {
+      "en": "Strategy",
+      "th": "กลยุทธ์",
+    },
     "image": "strategy.jpg"
   },
   {
@@ -58,8 +70,10 @@ module.exports = [
     "showOnCategory": true,
     "name": "rpg",
     "link": "rpg",
-    "en_displayTag": "RPG",
-    "th_displayTag": "สวมบทบาท",
+    "displayTag": {
+      "en": "RPG",
+      "th": "สวมบทบาท",
+    },
     "image": "rpg.jpg"
   },
   {
@@ -67,8 +81,10 @@ module.exports = [
     "showOnCategory": false,
     "name": "survival",
     "link": "",
-    "en_displayTag": "Survival",
-    "th_displayTag": "ผจญภัย",
+    "displayTag": {
+      "en": "Survival",
+      "th": "ผจญภัย",
+    },
     "image": ""
   }
 ]
