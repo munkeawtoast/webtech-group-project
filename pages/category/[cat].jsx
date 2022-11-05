@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { useContext, createContext } from 'react'
+import { useContext, createContext, useState } from 'react'
 import { css } from '@emotion/react'
 import Link from 'next/link'
 
@@ -16,21 +16,22 @@ const CategoryContext = createContext(null)
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
+  const [userpriceRange, setUserPriceRange] = useState([0, Infinity])
   return (
     <CategoryContext.Provider value={category}>
-      <NavBar hasLogo={false} />
+      <NavBar hasLogo={true} logoIsCenter={true} />
       <div css={css`
         display: flex;
         min-height: 1000px;
       `}>
-        <CategoryOptions />
-        <ResultList />
+        <CategoryOptions setUserPriceRange={setUserPriceRange} />
+        <ResultList userPriceRange={userpriceRange} />
       </div>
     </CategoryContext.Provider>
   )
 }
 
-function CategoryOptions() {
+function CategoryOptions({ setUserPriceRange }) {
   return (
     <div css={css`
       background-color: ${colors.greenPrimary};
@@ -55,11 +56,12 @@ function CategoryOptions() {
         {
           categories.filter(cat => cat.showOnCategory).map((cat) => (
             <CategoryButton key={cat.name + cat.id} {...cat} >
-              {cat.en_displayTag}
+              {cat.displayTag['en']}
             </CategoryButton>
           )) // {...cat } = unpack keys and values into CategoryButton
         }
       </div>
+      
     </div>
   )
 }
@@ -82,7 +84,7 @@ function CategoryButton(props) {
   )
 }
 
-function ResultList() {
+function ResultList({ userPriceRange }) {
   const category = useContext(CategoryContext)
 
   return (
@@ -96,7 +98,7 @@ function ResultList() {
         font-family: ${fonts.normalFontFamily};
         font-weight: 800;
       `}>
-        {category.en_displayTag}
+        {category.displayTag['en']}
       </span>
       <div css={css`
         display: flex;

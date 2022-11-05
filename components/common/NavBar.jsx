@@ -16,7 +16,7 @@ NavBar.defaultProps = {
   hasLogo: true
 }
 
-function NavBar({ hasLogo }) {
+function NavBar({ hasLogo, logoIsCenter }) {
   return (
     <nav css={css`
       display: flex;
@@ -27,7 +27,19 @@ function NavBar({ hasLogo }) {
       background-color: ${colors.greenPrimary};
       color: ${colors.white};
     `}>
-      <Logo fillColor="white" size="40" withText={true} hidden={!hasLogo} />
+      {
+        !logoIsCenter
+        ? <Logo fillColor="white" size="40" withText={true} hidden={!hasLogo} withLink={true} />
+        : null
+      }
+      <div>
+        
+        {
+          logoIsCenter
+           ? <Logo fillColor="white" size="40" withText={false} hidden={!hasLogo} withLink={true} />
+           : null
+        }
+      </div>
       <div
         css={css`
           display: flex;
