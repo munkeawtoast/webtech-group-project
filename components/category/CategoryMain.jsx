@@ -27,7 +27,7 @@ export default function CategoryMain() {
                     gap: 2vw;
                 `}
             >
-                {categories.filter(cate => cate.showOnCategory).map(cate => <CategoryLink key={cate.id} name={cate.en_displayTag} link={'/category/'+cate.link} pic={'/category/'+cate.image}/>)}
+                {categories.filter(cate => cate.showOnCategory).map(cate => <CategoryLink key={cate.id} name={cate.displayTag['en']} link={'/category/'+cate.link} pic={'/category/'+cate.image}/>)}
             </div>
 
             <Center><h1>Recommend</h1></Center>

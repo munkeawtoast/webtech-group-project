@@ -4,13 +4,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { css } from '@emotion/react'
-import { useContext, useEffect } from 'react'
 
-import colors from 'constants/colors'
-import fonts from 'constants/fonts'
-import currencies from 'constants/currencies'
+import colors from 'constants/colors.js'
+import fonts from 'constants/fonts.js'
+import currencies from 'constants/currencies.js'
 
-import { SiteConfigContext } from 'context/SiteConfigContext'
+import { useSiteConfig } from 'context/SiteConfigContext'
 
 GameCard.defaultProps = {
   showArgs: {
@@ -22,10 +21,9 @@ GameCard.defaultProps = {
   onClick: null,
 }
 
-
 function GameCard({ showArgs, game, onClick }) {
-  const siteConfig = useContext(SiteConfigContext)
-  const currency = siteConfig.siteConfig.currency
+  const siteConfig = useSiteConfig()
+  const { currency } = siteConfig
 
   const Outer = ({ children }) => (
     showArgs.isLink ?
@@ -35,7 +33,6 @@ function GameCard({ showArgs, game, onClick }) {
       :
       children
   )
-
   return (
     <Outer>
       <div css={
@@ -65,13 +62,15 @@ function GameCard({ showArgs, game, onClick }) {
             layout='fill'
           />
         </div>
-        <div>
+        <div css={css`
+          width: 100%;
+          word-wrap: break-word;
+        `}>
           {game.displayName}
         </div>
         <div>
-          {currencies[currency].currencyTag}
-          {' '}
-          {game.price[currency]}
+          {currency ? currencies[currency].currencyTag : null}
+          {currency ? game.price[currency] : null}
         </div>
       </div>
     </Outer>

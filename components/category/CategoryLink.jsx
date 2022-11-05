@@ -7,8 +7,8 @@ import fonts from 'constants/fonts.js'
 
 export default function CategoryLink({name, link, pic}) {
     return (
-        <Link href={link}>
-            <div
+        <Link href={link} passHref={true} legacyBehavior={true}>
+            <a
             css=
                 {css`
                     background: linear-gradient(${colors.greenPrimary+"00"} 40%, ${colors.greenPrimary+"FF"}), url(${pic});
@@ -28,7 +28,7 @@ export default function CategoryLink({name, link, pic}) {
                 `}
             >
                 {name}
-            </div>
+            </a>
         </Link>
     )
 }
