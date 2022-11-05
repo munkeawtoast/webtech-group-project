@@ -1,37 +1,51 @@
 /** @jsxImportSource @emotion/react */
 
-import { useContext, createContext, useState } from 'react'
+import { useContext, createContext, useState, useRef, useEffect } from 'react'
 import { css } from '@emotion/react'
 import Link from 'next/link'
 
+import { useSiteConfig } from 'context/SiteConfigContext'
 import colors from 'constants/colors.js'
 import fonts from 'constants/fonts.js'
 import categories from 'constants/categories.js'
 import games from 'constants/games.js'
 import NavBar from 'components/common/NavBar'
 import GameCard from 'components/common/GameCard'
+import RangeInput from 'components/common/RangeInput'
 
 const CategoryContext = createContext(null)
+const GamesInCatContext = createContext(null)
 
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
   const [userpriceRange, setUserPriceRange] = useState([0, Infinity])
+  const {currency} = useSiteConfig()
+  const [minMax, setMinMax] = useState([0, 99999999])
+  const [numRange, setNumRange] = useState([0, 99999999])
+  const [gamesInCat, setGamesInCat] = useState([])
+
+  useEffect(() => {
+    setGamesInCat(games.filter(game => game.tags.includes(category['id'])))
+  }, [category])
+
   return (
     <CategoryContext.Provider value={category}>
-      <NavBar hasLogo={true} logoIsCenter={true} />
-      <div css={css`
-        display: flex;
-        min-height: 1000px;
-      `}>
-        <CategoryOptions setUserPriceRange={setUserPriceRange} />
-        <ResultList userPriceRange={userpriceRange} />
-      </div>
-    </CategoryContext.Provider>
+      <GamesInCatContext.Provider value={gamesInCat}>
+        <NavBar hasLogo={true} logoIsCenter={true} />
+        <div css={css`
+          display: flex;
+          min-height: 1000px;
+        `}>
+          <CategoryOptions setUserPriceRange={setUserPriceRange} minMax={minMax} />
+          <ResultList userPriceRange={userpriceRange} />
+        </div>
+      </GamesInCatContext.Provider>
+      </CategoryContext.Provider>
   )
 }
 
-function CategoryOptions({ setUserPriceRange }) {
+function CategoryOptions({ setUserPriceRange, minMax }) {
   return (
     <div css={css`
       background-color: ${colors.greenPrimary};
@@ -52,6 +66,7 @@ function CategoryOptions({ setUserPriceRange }) {
         display: flex;
         flex-wrap: wrap;
         gap: 8px 4px;
+        padding: 0 0 30px;
       `}>
         {
           categories.filter(cat => cat.showOnCategory).map((cat) => 
@@ -61,7 +76,14 @@ function CategoryOptions({ setUserPriceRange }) {
           ) // {...cat } = unpack keys and values into CategoryButton
         }
       </div>
-      
+      <span css={css`
+        margin: 0 0 8px 0;
+        font-family: ${fonts.normalFontFamily};
+        color: ${colors.black};
+        font-size: ${fonts.uiFontSize};
+        font-weight: bold;
+      `}>Price range</span>
+      <RangeInput minMax={minMax} />
     </div>
   )
 }
@@ -86,7 +108,7 @@ function CategoryButton(props) {
 
 function ResultList({ userPriceRange }) {
   const category = useContext(CategoryContext)
-
+  const gamesInCat = useContext(GamesInCatContext)
   return (
     <main css={css`
       background-color: ${colors.white};
@@ -105,8 +127,7 @@ function ResultList({ userPriceRange }) {
         gap: 15px 10px;
       `}>
         {
-          games
-            .filter(game => game.tags.includes(category.id))
+          gamesInCat
             .map(game => <GameCard
               game={game}
               showArgs={{
@@ -121,6 +142,8 @@ function ResultList({ userPriceRange }) {
     </main>
   )
 }
+
+
 
 /* detail getServersideProps
 DOCUMENT: https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props
