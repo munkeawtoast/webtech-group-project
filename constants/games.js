@@ -1,19 +1,16 @@
 module.exports = [
   {
     "id": 0,
-    "name": "cs-go",
-    "displayName": "Counter-Strike: Global Offensive",
+    "name": "defaultgame",
+    "displayName": "defaultgame",
     "tags": [
-      0,
-      5
     ],
-    "key": "4ead32603bb381696244c742f1f444ce",
+    "key": "_",
     "price": {
-      "usd": 9.99,
-      "thb": 239
+      "usd": 0,
+      "thb": 0
     },
-    "thumbnail": "0.jpg",
-    "gameDetail": ""
+    "gameDetail": "default description",
   },
   {
     "id": 1,
@@ -27,8 +24,7 @@ module.exports = [
       "usd": 59.90,
       "thb": 1990
     },
-    "thumbnail": "1.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 2,
@@ -42,8 +38,7 @@ module.exports = [
       "usd": 59.99,
       "thb": 1899
     },
-    "thumbnail": "2.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 3,
@@ -57,8 +52,7 @@ module.exports = [
       "usd": 69.99,
       "thb": 1899
     },
-    "thumbnail": "3.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 4,
@@ -72,8 +66,7 @@ module.exports = [
       "usd": 9.99,
       "thb": 220
     },
-    "thumbnail": "4.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 5,
@@ -87,8 +80,7 @@ module.exports = [
       "usd": 49.99,
       "thb": 749
     },
-    "thumbnail": "5.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 6,
@@ -102,8 +94,7 @@ module.exports = [
       "usd": 14.99,
       "thb": 315
     },
-    "thumbnail": "6.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 7,
@@ -117,8 +108,7 @@ module.exports = [
       "usd": 29.99,
       "thb": 1059
     },
-    "thumbnail": "7.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 8,
@@ -132,8 +122,7 @@ module.exports = [
       "usd": 9.9999,
       "thb": 599
     },
-    "thumbnail": "8.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 9,
@@ -147,8 +136,7 @@ module.exports = [
       "usd": 9.9999,
       "thb": 400
     },
-    "thumbnail": "9.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 10,
@@ -162,8 +150,7 @@ module.exports = [
       "usd": 9.9999,
       "thb": 579
     },
-    "thumbnail": "10.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 11,
@@ -177,8 +164,7 @@ module.exports = [
       "usd": 9.9999,
       "thb": 1599
     },
-    "thumbnail": "11.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
   {
     "id": 12,
@@ -192,24 +178,21 @@ module.exports = [
       "usd": 9.9999,
       "thb": 1599
     },
-    "thumbnail": "12.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
-
-
   {
-    "id": 0,
-    "name": "_",
-    "displayName": "_",
+    "id": 13,
+    "name": "cs-go",
+    "displayName": "Counter-Strike: Global Offensive",
     "tags": [
-      0
+      0,
+      5
     ],
-    "key": "_",
+    "key": "4ead32603bb381696244c742f1f444ce",
     "price": {
-      "usd": 9.9999,
-      "thb": 9999
+      "usd": 9.99,
+      "thb": 239
     },
-    "thumbnail": "0.jpg",
-    "gameDetail": ""
+    "gameDetail": "",
   },
 ]

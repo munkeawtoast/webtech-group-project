@@ -145,6 +145,7 @@ function ResultList({ userPriceRange }) {
           font-size: 32px;
           font-family: ${fonts.normalFontFamily};
           font-weight: 800;
+          margin:0 0 10px 0;
         `}
       >
         {category.displayTag["en"]}

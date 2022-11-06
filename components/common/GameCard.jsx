@@ -58,7 +58,7 @@ function GameCard({ showArgs, game, onClick }) {
           height: 200px;
         `}>
           <Image
-            src={'/game/' + game.thumbnail}
+            src={`/game/${game.id}/thumbnail.jpg`}
             layout='fill'
           />
         </div>
