@@ -3,19 +3,20 @@ import useLocalStorage from 'util/useLocalStorage'
 import { siteConfig as siteConfigDefault } from 'constants/config.js';
 
 
-const SiteConfigContext = createContext({siteConfigDefault});
+const SiteConfigContext = createContext();
 
-export function useSiteConfig() {
-  return useContext(SiteConfigContext).siteConfig
+export function getAuth() {
+  return useContext(SiteConfigContext)
 }
-export function setSiteConfig() {
-  return useContext(SiteConfigContext).setSiteConfig
+
+export function setAuth(data) {
+  useContext(SiteConfigContext).mySetAuth(data)
 }
 
 function SiteConfigContextProvider({children}) {
-  const [siteConfig, setSiteConfig] = useLocalStorage(siteConfigDefault)
+  const [mySiteConfig, mySetSiteConfig] = useLocalStorage('site_config', siteConfigDefault)
   return (
-    <SiteConfigContext.Provider value={{siteConfig, setSiteConfig}}>
+    <SiteConfigContext.Provider value={{...mySiteConfig, mySetSiteConfig}}>
       {children}
     </SiteConfigContext.Provider>
   )
