@@ -15,9 +15,8 @@ const gray900 = "#18181B"
 const greenPrimary = "#2f7952"
 const greenPrimary2 = "#01847A"
 const yellowPrimary2 =  "#C5E370"
-const rounded = css`border-radius: 10000px`
 
-module.exports = {
+const colors = {
   white,
   black,
   gray50,
@@ -32,3 +31,5 @@ module.exports = {
   gray900,
   greenPrimary
 }
+
+export default colors

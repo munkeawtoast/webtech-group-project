@@ -9,7 +9,7 @@ import fonts from 'constants/fonts'
 
 function TextButton({ href, children }) {
   return (
-    <Link href={href}>
+    <Link href={href} passHref={true} legacyBehavior={true}>
       <a
         css={css`
           padding: 4px 1em;
@@ -20,7 +20,6 @@ function TextButton({ href, children }) {
           font-size: ${fonts.uiFontSize};
           font-family: ${fonts.normalFontFamily};
           font-weight: bold;
-          cursor: pointer;
         `}
       >{ children }</a>
     </Link>
@@ -29,7 +28,7 @@ function TextButton({ href, children }) {
 
 function RoundButton({ children, href }) {
   return (
-    <Link href={href}>
+    <Link href={href} passHref={true} legacyBehavior={true}>
       <a
         css={css`
           width: 34px;

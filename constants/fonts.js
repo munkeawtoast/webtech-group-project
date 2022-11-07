@@ -4,10 +4,12 @@ const normalFontSize =  "16px"
 const uiFontSize =  "20px"
 const titleFontSize =  "48px"
 
-module.exports = {
+const fonts = {
   titleFontFamily,
   normalFontFamily,
   normalFontSize,
   uiFontSize,
   titleFontSize
 }
+
+export default fonts
