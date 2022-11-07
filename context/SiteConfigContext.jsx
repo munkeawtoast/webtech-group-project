@@ -5,12 +5,23 @@ import { siteConfig as siteConfigDefault } from 'constants/config.js';
 
 const SiteConfigContext = createContext();
 
-export function getAuth() {
+export function getSiteConfig() {
   return useContext(SiteConfigContext)
 }
 
-export function setAuth(data) {
-  useContext(SiteConfigContext).mySetAuth(data)
+export function setSiteConfig(data) {
+  useContext(SiteConfigContext).mySetSiteConfig(data)
+}
+
+export function setAuthKey(key, val) {
+  setAuth({
+    ...getAuth(),
+    [key]: val
+  })
+}
+
+export function getAuthKey(key) {
+  return getAuth()[key]
 }
 
 function SiteConfigContextProvider({children}) {

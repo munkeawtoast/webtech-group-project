@@ -13,12 +13,12 @@ function useLocalStorage(name, initialState) {
   
   useEffect(function() {
     if (localStorage.getItem(name) !== null) {
-      setState(parseLocalStorage(name))
+      setLocalStorageViaEffect(parseLocalStorage(name))
     }
   }, [])
-
+  
   useEffect(function () {
-    localStorage.setItem(name, JSON.stringify(state))
+    localStorage.setItem(name, JSON.stringify(state[name]))
   }, [state])
   
   return [state, setLocalStorageViaEffect]

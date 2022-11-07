@@ -4,11 +4,11 @@ import { auth as authDefault } from 'constants/config.js'
 
 const AuthContext = createContext();
 
-function getAuth() {
+export function getAuth() {
   return useContext(AuthContext)
 }
 
-function setAuth(data) {
+export function setAuth(data) {
   useContext(AuthContext).mySetAuth(data)
 }
 

@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
 
-import { useContext, createContext, useState, useRef, useEffect } from "react";
+import Head from "next/head";
+import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
-import Link from "next/link";
 
-import { useSiteConfig } from "context/SiteConfigContext";
-import colors from "constants/colors.js";
-import fonts from "constants/fonts";
+
+import { getSiteConfig } from "context/SiteConfigContext";
 import categories from "constants/categories.js";
 import games from "constants/games.js";
 import NavBar from "components/common/NavBar";
@@ -16,17 +15,21 @@ import ResultList from "components/category/[cat]/ResultList";
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
   const [userpriceRange, setUserPriceRange] = useState([0, Infinity]);
-  const { currency } = useSiteConfig();
+  const { currency } = getSiteConfig();
   const [minMax, setMinMax] = useState([0, 99999999]);
   const [numRange, setNumRange] = useState([0, 99999999]);
   const [gamesInCat, setGamesInCat] = useState([]);
 
   useEffect(() => {
+    
     setGamesInCat(games.filter((game) => game.tags.includes(category["id"])));
   }, [category]);
 
   return (
     <>
+      <Head>
+        
+      </Head>
       <NavBar hasLogo={true} logoIsCenter={true} />
       <div
         css={css`
