@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+// /** @jsxImportSource @emotion/react */
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,7 +9,7 @@ import colors from 'constants/colors.js'
 import fonts from 'constants/fonts.js'
 import currencies from 'constants/currencies.js'
 
-import { useSiteConfig } from 'context/SiteConfigContext'
+import { getSiteConfig } from 'context/SiteConfigContext'
 
 GameCard.defaultProps = {
   showArgs: {
@@ -22,7 +22,7 @@ GameCard.defaultProps = {
 }
 
 function GameCard({ showArgs, game, onClick }) {
-  const siteConfig = useSiteConfig()
+  const siteConfig = getSiteConfig()
   const { currency } = siteConfig
 
   const Outer = ({ children }) => (
