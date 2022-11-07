@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
@@ -28,7 +26,7 @@ function Category({ category }) {
   return (
     <>
       <Head>
-        
+        <title>{`${category.displayTag['en']} | Hi5`}</title>
       </Head>
       <NavBar hasLogo={true} logoIsCenter={true} />
       <div

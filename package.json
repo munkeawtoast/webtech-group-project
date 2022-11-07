@@ -16,6 +16,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.5",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
   }
