@@ -18,10 +18,11 @@ export default function ResultList({ userPriceRange, category, games }) {
     >
       <span
         css={css`
-          font-size: 32px;
+          font-size: ${fonts.largeFontSize};
           font-family: ${fonts.normalFontFamily};
           font-weight: 800;
-          margin:0 0 10px 0;
+          padding:0 0 10px 0;
+          display: inline-block;
         `}
       >
         {category.displayTag["en"]}

@@ -11,6 +11,8 @@ import Footer from "components/common/Footer";
 import CategoryOptions from "components/category/[cat]/CategoryOptions";
 import ResultList from "components/category/[cat]/ResultList";
 import colors from "constants/colors";
+import fonts from "constants/fonts";
+import { mediaQueries as mq } from "constants/mediaqueries";
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
@@ -31,20 +33,27 @@ function Category({ category }) {
         <title>{`${category.displayTag['en']} | Hi5`}</title>
       </Head>
       <NavBar hasLogo={true} logoIsCenter={true} />
-      <div
-        css={css`
-          display: flex;
-          min-height: 1000px;
-          background-color: ${colors.white};
-        `}
-      >
-        <CategoryOptions
-          setUserPriceRange={setUserPriceRange}
-          minMax={minMax}
-        />
-        <ResultList userPriceRange={userpriceRange} category={category} games={gamesInCat} />
+      <div css={css`background-color: ${colors.white};`}>
+        <div
+          css={css`
+            display: flex;
+            min-height: 1000px;
+            ${mq[1]} {
+              background-color: white;
+              flex-direction: column;
+              width: 100vw;
+            } 
+          `}
+        >
+          <CategoryOptions
+            setUserPriceRange={setUserPriceRange}
+            minMax={minMax}
+            category={category}
+          />
+          <ResultList userPriceRange={userpriceRange} category={category} games={gamesInCat} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

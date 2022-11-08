@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import React from "react";
 import Link from "next/link";
 import { css } from "@emotion/react";
 import colors from "constants/colors.js";

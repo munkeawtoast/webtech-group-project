@@ -7,9 +7,10 @@ import CategoryButton from 'components/category/[cat]/CategoryButton';
 import categories from 'constants/categories';
 import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
+import { mediaQueries as mq } from 'constants/mediaqueries';
 
 
-export default function CategoryOptions({ setUserPriceRange, minMax }) {
+export default function CategoryOptions({ setUserPriceRange, minMax, category }) {
   return (
     <div
       css={css`
@@ -18,8 +19,24 @@ export default function CategoryOptions({ setUserPriceRange, minMax }) {
         padding: 20px 15px;
         display: flex;
         flex-direction: column;
+        ${mq[1]} {
+          background-color: ${colors.white};
+          flex-direction: column;
+          width: 100vw;
+        } 
       `}
     >
+      <div css={css`
+        display: none;
+        ${mq[1]} {
+          display: block;
+          font-size: ${fonts.largeFontSize};
+          font-family: ${fonts.normalFontFamily};
+          font-weight: 800;
+          padding: 10px 0;
+          text-align: center;
+        }
+      `}>{category.displayTag['en']}</div>
       <span
         css={css`
           margin: 0 0 8px 0;
