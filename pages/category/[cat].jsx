@@ -9,6 +9,7 @@ import games from "constants/games.js";
 import NavBar from "components/common/NavBar";
 import CategoryOptions from "components/category/[cat]/CategoryOptions";
 import ResultList from "components/category/[cat]/ResultList";
+import colors from "constants/colors";
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
@@ -19,7 +20,7 @@ function Category({ category }) {
   const [gamesInCat, setGamesInCat] = useState([]);
 
   useEffect(() => {
-    
+
     setGamesInCat(games.filter((game) => game.tags.includes(category["id"])));
   }, [category]);
 
@@ -33,6 +34,7 @@ function Category({ category }) {
         css={css`
           display: flex;
           min-height: 1000px;
+          background-color: ${colors.white};
         `}
       >
         <CategoryOptions

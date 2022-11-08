@@ -6,18 +6,17 @@ import fonts from 'constants/fonts.js'
 
 function Logo({ fillColor, size, withText, hidden, withLink }) {
   const WithLink = withLink
-    ? ({children}) => <Link
-                        href='/'
-                        passHref={true}
-                        legacyBehavior={true}
-                      >
-                        <a
-                          css={css`
-                            cursor: pointer;
-                          `}
-                        >{children}</a>
-                      </Link>
-    : ({children}) => children
+    ? ({ children }) => <Link
+      href='/'
+      passHref={true}
+      legacyBehavior={true}
+    >
+      <a
+        css={css`
+          cursor: pointer;
+      `}>{children}</a>
+    </Link>
+    : ({ children }) => children
   return (
     <WithLink>
       <div css={css`
@@ -27,7 +26,7 @@ function Logo({ fillColor, size, withText, hidden, withLink }) {
         gap: 8px;
       `}>
         <Image
-          src={'/logo/logo-' + fillColor + '.png'} 
+          src={'/logo/logo-' + fillColor + '.png'}
           width={size + 'px'}
           height={size + 'px'}
         />

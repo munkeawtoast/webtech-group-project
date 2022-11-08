@@ -35,7 +35,7 @@ function GameCard({ showArgs, game, onClick }) {
     <Outer>
       <div css={
         css`
-          background-color: white;
+          background-color: ${colors.white};
           border-radius: 8px;
           border: 1px solid ${colors.gray300};
           padding: 4px;

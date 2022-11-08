@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/react'
 import NavBar from "components/common/NavBar"
 import CategoryMain from "components/category/CategoryMain"
+import colors from 'constants/colors'
 
 export default function MyCategoryPage() {
     return (
@@ -10,6 +11,7 @@ export default function MyCategoryPage() {
             <div 
             css=
                 {css`
+                    background-color: ${colors.white};
                     width: 100%;
                     margin: auto 0;
                     padding: 5px;
