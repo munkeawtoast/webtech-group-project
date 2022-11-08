@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
 import { css } from "@emotion/react"
 import Center from "components/common/Center"
 import CategoryLink from "./CategoryLink"
