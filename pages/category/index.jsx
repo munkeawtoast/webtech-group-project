@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import NavBar from "components/common/NavBar"
 import CategoryMain from "components/category/CategoryMain"
 import colors from 'constants/colors'
+import Footer from 'components/common/Footer'
 
 export default function MyCategoryPage() {
     return (
@@ -19,6 +20,7 @@ export default function MyCategoryPage() {
             >
                 <CategoryMain/>
             </div>
+            <Footer />
         </>
     )
 }

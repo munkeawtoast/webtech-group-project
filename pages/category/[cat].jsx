@@ -7,6 +7,7 @@ import { getSiteConfig } from "context/SiteConfigContext";
 import categories from "constants/categories.js";
 import games from "constants/games.js";
 import NavBar from "components/common/NavBar";
+import Footer from "components/common/Footer";
 import CategoryOptions from "components/category/[cat]/CategoryOptions";
 import ResultList from "components/category/[cat]/ResultList";
 import colors from "constants/colors";
@@ -43,6 +44,7 @@ function Category({ category }) {
         />
         <ResultList userPriceRange={userpriceRange} category={category} games={gamesInCat} />
       </div>
+      <Footer />
     </>
   );
 }
