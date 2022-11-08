@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+import { useRouter } from "next/router"
 import { css } from "@emotion/react"
 
 import Footer from "components/common/Footer"
@@ -9,15 +11,28 @@ import Link from "next/link"
 
 
 function ErrorPage() {
+  const [timeLeft, setTimeLeft] = useState(5)
+  const router = useRouter()
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prevTime => prevTime-1)
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+
+    if (timeLeft == 0) {
+      router.push('/')
+    }
+  }, [timeLeft])
   return (
-    <div css={css`
-      display: flex;
-      flex-direction: column;
-      height: 900px;
-      font-family: ${fonts.normalFontFamily};
-    `}>
+    <>
       <NavBar logoIsCenter={false} hasLogo={true} />
       <div css={css`
+        height: 900px;
+        font-family: ${fonts.normalFontFamily};
+        background-color: ${colors.white};
         flex: 1;
         padding: 30px 0 0 0;
         display: flex;
@@ -33,12 +48,12 @@ function ErrorPage() {
             color: ${colors.white};
             padding: 15px 30px;
           `}>
-            Return to homepage.
+            Returning to homepage in { timeLeft } second{ timeLeft === 1 || timeLeft === 0 ? '' : 's' }.
           </a>
         </Link>
       </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
