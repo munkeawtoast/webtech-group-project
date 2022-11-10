@@ -35,6 +35,9 @@ function GameCard({ showArgs, game, onClick }) {
     <Outer>
       <div css={
         css`
+          width: 200px;
+          box-sizing: content-box;
+          padding: 0 10px;
           background-color: ${colors.white};
           /* border-radius: 8px;
           border: 1px solid ${colors.gray300};
@@ -43,17 +46,14 @@ function GameCard({ showArgs, game, onClick }) {
           font-family: ${fonts.normalFontFamily};
           font-weight: 500;
           font-size: 18;
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: column;
+          width: 150px;
           ${onClick || showArgs.isLink ? css`cursor: pointer;` : ''}
         `}
         onClick={onClick}
       >
         <div css={css`
           position: relative;
-          width: 150px;
-          height: 200px;
+          aspect-ratio: 3/4;
         `}>
           <Image
             src={`/game/${game.id}/thumbnail.jpg`}

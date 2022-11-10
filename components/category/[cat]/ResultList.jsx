@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import GameCard from "components/common/GameCard";
 import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
+import { mediaQueries as mq} from "constants/mediaqueries";
 
 export default function ResultList({ userPriceRange, category, games }) {
   return (
@@ -11,6 +12,9 @@ export default function ResultList({ userPriceRange, category, games }) {
         background-color: ${colors.white};
         flex: 1;
         padding: 10px 40px;
+        ${mq[1]} {
+          padding: 0;
+        }
       `}
     >
       <span
@@ -20,6 +24,9 @@ export default function ResultList({ userPriceRange, category, games }) {
           font-weight: 800;
           padding:0 0 10px 0;
           display: inline-block;
+          ${mq[1]} {
+            display: none;
+          }
         `}
       >
         {category.displayTag["en"]}
@@ -27,7 +34,11 @@ export default function ResultList({ userPriceRange, category, games }) {
       <div
         css={css`
           display: flex;
-          gap: 15px 10px;
+          flex-wrap: wrap;
+          gap: 20px;
+          ${mq[2]} {
+            justify-content: center;
+          }
         `}
       >
         {games.map((game) => (

@@ -22,9 +22,9 @@ function Category({ category }) {
   const [numRange, setNumRange] = useState([0, 99999999]);
   const [gamesInCat, setGamesInCat] = useState([]);
 
-  useEffect(() => {
 
-    setGamesInCat(games.filter((game) => game.tags.includes(category["id"])));
+  useEffect(() => {
+    
   }, [category]);
 
   return (
@@ -64,6 +64,7 @@ function getServersideProps จะรันใน server และส่ง prop
 */
 export async function getServerSideProps(context) {
   const category = categories.find((i) => i.link == context.params.cat);
+  category.games = games.filter(g => g.tags.includes(category.id))
   if (!category) return { notFound: true };
   return {
     props: {
