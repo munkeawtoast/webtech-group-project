@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { css } from "@emotion/react";
 
-const TopImage = () => {
+const TopImage = ({ imageID }) => {
   return (
     <div
     //   css={css`
@@ -17,7 +17,7 @@ const TopImage = () => {
           aspect-ratio: 16/9;
         `}
       >
-        <Image src={`/game/0/images/0.jpg`} layout="fill" />
+        <Image src={`/game/0/images/${imageID}.jpg`} layout="fill" />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Image from "next/image";
 import fonts from "constants/fonts.js";
 import { fill } from "constants/games";
 
-const GameInfo = ({ gameName }) => {
+const GameInfo = ({ gameID, gameTag, gamePrice }) => {
   return (
     <div
       css={css`
@@ -33,17 +33,15 @@ const GameInfo = ({ gameName }) => {
             aspect-ratio: 16/9;
           `}
         >
-          <Image src={`/game/0/images/0.jpg`} layout="fill" />
+          <Image src={`/game/${gameID}/images/0.jpg`} layout="fill" />
         </div>
-        <div>
-          <p>Price</p>
-        </div>
+        <div></div>
         <div
         // css={css`
         //   margin-left: 6px;
         // `}
         >
-          <p>tag tag tag</p>
+          <p>${gamePrice.usd}</p>
         </div>
 
         <button
