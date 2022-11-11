@@ -5,7 +5,7 @@ import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
 import { mediaQueries as mq } from "constants/mediaqueries";
 
-export default function ResultList({ userPriceRange, category, games }) {
+export default function ResultList({ sortFunc, userPriceRange, category, games }) {
   return (
     <main
       css={css`
@@ -42,13 +42,14 @@ export default function ResultList({ userPriceRange, category, games }) {
         `}
       >
         {games
-          .sort(sortFunc)
           .filter(game => {
             console.log(userPriceRange[0], game.price['thb'], userPriceRange[1])
             return (game.price['thb'] <= userPriceRange[1] && game.price['thb'] >= userPriceRange[0])
           })
+          .sort(sortFunc.func('thb'))
           .map((game) => (
             <GameCard
+              key={game.name}
               game={game}
               showArgs={{
                 showImage: true,

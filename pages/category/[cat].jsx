@@ -11,18 +11,17 @@ import Footer from "components/common/Footer";
 import CategoryOptions from "components/category/[cat]/CategoryOptions";
 import ResultList from "components/category/[cat]/ResultList";
 import colors from "constants/colors";
-import fonts from "constants/fonts";
+import sortfunctions from "constants/sortfunctions";
 import { mediaQueries as mq } from "constants/mediaqueries";
 
 
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
-  // TODO: sort
   const { currency } = getSiteConfig();
   const [minMax, setMinMax] = useState([0, 99999999]);
   const [userPriceRange, setUserPriceRange] = useState([0, 99999999]);
-  const [gamesInCat, setGamesInCat] = useState([]);
+  const [sortFunc, setSortFunc] = useState(sortfunctions.find(i => i.id === 0))
 
   function changePriceRange(key, val) {
     if (!['min', 'max'].includes(key)) {
@@ -46,6 +45,9 @@ function Category({ category }) {
     setUserPriceRange([temp['min'], temp['max']])
   }
 
+  function changeSortFunc(funcId) {
+    setSortFunc(sortfunctions.find(i => i.id === funcId))
+  }
 
   useEffect(() => {
     let minVal = 99999999
@@ -81,10 +83,11 @@ function Category({ category }) {
         >
           <CategoryOptions
             onPriceRangeChange={changePriceRange}
+            onSortFuncChange={changeSortFunc}
             minMax={minMax}
             category={category}
           />
-          <ResultList userPriceRange={userPriceRange} category={category} games={category.games} />
+          <ResultList userPriceRange={userPriceRange} category={category} games={category.games} sortFunc={sortFunc} />
         </div>
         <Footer />
       </div>

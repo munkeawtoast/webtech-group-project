@@ -8,7 +8,7 @@ import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
 import { mediaQueries as mq } from 'constants/mediaqueries';
 
-export default function CategoryOptions({ onPriceRangeChange, minMax, category }) {
+export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, minMax, category }) {
   return (
     <div
       css={css`

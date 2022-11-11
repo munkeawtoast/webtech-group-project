@@ -1,22 +1,26 @@
 const sortfunctions = [
   {
     id: 0,
-    name: 'priceLowToHigh',
-    func: (oldEl, newEl) => {
-      return oldEl - newEl
+    type: 'priceLowToHigh',
+    func: (currency) => {
+      return (oldEl, newEl) => {
+        console.log(currency)
+        console.log(oldEl.price[currency], newEl.price[currency], oldEl.price[currency] - newEl.price[currency])
+        return oldEl.price[currency] - newEl.price[currency]
+      }
     }
   },
   {
     id: 1,
-    name: 'priceHighToLow',
-    func: (oldEl, newEl) => {
-      return newEl - oldEl
+    type: 'priceHighToLow',
+    func: (currency) => {
+      return (oldEl, newEl) => oldEl.price[currency] - newEl.price[currency]
     }
   },
   {
     id: 2,
-    name: 'aToZ',
-    func: (oldEl, newEl) => {
+    type: 'aToZ',
+    func: () => (oldEl, newEl) => {
       const oldName = oldEl.displayName.toLowerCase()
       const newName = newEl.displayName.toLowerCase()
       if (oldName < newName) {
@@ -29,9 +33,9 @@ const sortfunctions = [
     }
   },
   {
-    id: 2,
-    name: 'aToZ',
-    func: (oldEl, newEl) => {
+    id: 3,
+    type: 'aToZ',
+    func: () => (oldEl, newEl) => {
       const oldName = oldEl.displayName.toLowerCase()
       const newName = newEl.displayName.toLowerCase()
       if (oldName < newName) {
