@@ -7,6 +7,7 @@ import NavBar from "components/common/NavBar"
 import colors from "constants/colors"
 import fonts from "constants/fonts"
 import Link from "next/link"
+import { mediaQueries as mq } from "constants/mediaqueries"
 
 
 
@@ -39,7 +40,18 @@ function ErrorPage() {
         flex-direction: column;
         align-items: center;
       `}>
-        <div css={css`font-size: 300px; font-weight: 1000; color: ${colors.gray400};`}>404...</div>
+        <div css={
+          css`
+          font-size: 300px;
+          font-weight: 1000;
+          color: ${colors.gray400};
+          ${mq[1]} {
+            font-size: 200px;
+          }
+          ${mq[2]} {
+            font-size: 135px;
+          }
+        `}>404...</div>
         <div css={css`font-size: 30px; color: ${colors.gray700}; margin-bottom: 50px;`}>Page not found. 😢</div>
         <Link href='/' passHref legacyBehavior>
           <a css={css`

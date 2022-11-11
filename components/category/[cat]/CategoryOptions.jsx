@@ -10,7 +10,7 @@ import { mediaQueries as mq } from 'constants/mediaqueries';
 
 export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, minMax, category }) {
   return (
-    <div
+    <aside
       css={css`
         background-color: ${colors.greenPrimary};
         font-family: ${fonts.normalFontFamily};
@@ -137,6 +137,6 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
           border-top: 0.5px solid ${colors.gray200};
         }
       `} />
-    </div>
+    </aside>
   );
 }
