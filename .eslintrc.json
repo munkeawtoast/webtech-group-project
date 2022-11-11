@@ -4,7 +4,7 @@
     "next/core-web-vitals"
   ],
   "rules": {
-    "camelcase": ["error", "always"],
+    "camelcase": ["error", {"properties": "always"}],
     "indent": ["warn", 2],
     "semi": ["warn", "never"],
     "eol-last": ["warn", "always"]
