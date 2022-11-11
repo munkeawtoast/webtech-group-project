@@ -18,6 +18,7 @@ import { mediaQueries as mq } from "constants/mediaqueries";
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
+  // TODO: sort
   const { currency } = getSiteConfig();
   const [minMax, setMinMax] = useState([0, 99999999]);
   const [userPriceRange, setUserPriceRange] = useState([0, 99999999]);
