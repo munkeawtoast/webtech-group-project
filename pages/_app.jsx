@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        
         <meta
           name="viewport"
           content="width=device-width, viewport-fit=cover"
@@ -21,9 +20,9 @@ function MyApp({ Component, pageProps }) {
         }
       `} />
       <SiteConfigContextProvider>
-        <AuthContextProvider> 
+        <AuthContextProvider>
           <Component {...pageProps} />
-        </AuthContextProvider> 
+        </AuthContextProvider>
       </SiteConfigContextProvider>
     </>
   )

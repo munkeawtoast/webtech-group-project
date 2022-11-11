@@ -16,17 +16,17 @@ function ErrorPage() {
   const router = useRouter()
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prevTime => prevTime-1)
+      setTimeLeft(prevTime => prevTime - 1)
     }, 1000)
     return () => clearInterval(timer)
   }, [])
 
   useEffect(() => {
 
-    if (timeLeft == 0) {
+    if (timeLeft == 1) {
       router.push('/')
     }
-  }, [timeLeft])
+  }, [timeLeft, router])
   return (
     <>
       <NavBar logoIsCenter={false} hasLogo={true} />
@@ -60,7 +60,7 @@ function ErrorPage() {
             color: ${colors.white};
             padding: 15px 30px;
           `}>
-            Returning to homepage in { timeLeft } second{ timeLeft === 1 || timeLeft === 0 ? '' : 's' }.
+            Returning to homepage in {timeLeft} second{timeLeft === 1 || timeLeft === 0 ? '' : 's'}.
           </a>
         </Link>
       </div>
