@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import GameCard from "components/common/GameCard";
 import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
-import { mediaQueries as mq} from "constants/mediaqueries";
+import { mediaQueries as mq } from "constants/mediaqueries";
 
 export default function ResultList({ userPriceRange, category, games }) {
   return (
@@ -41,17 +41,24 @@ export default function ResultList({ userPriceRange, category, games }) {
           }
         `}
       >
-        {games.map((game) => (
-          <GameCard
-            game={game}
-            showArgs={{
-              showImage: true,
-              showName: true,
-              showButton: true,
-              isLink: true,
-            }}
-          />
-        ))}
+        {games
+          .sort(sortFunc)
+          .filter(game => {
+            console.log(userPriceRange[0], game.price['thb'], userPriceRange[1])
+            return (game.price['thb'] <= userPriceRange[1] && game.price['thb'] >= userPriceRange[0])
+          })
+          .map((game) => (
+            <GameCard
+              game={game}
+              showArgs={{
+                showImage: true,
+                showName: true,
+                showButton: true,
+                isLink: true,
+              }}
+            />
+          ))
+        }
       </div>
     </main>
   );

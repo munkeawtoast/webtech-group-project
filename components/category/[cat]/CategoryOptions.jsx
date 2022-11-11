@@ -8,7 +8,7 @@ import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
 import { mediaQueries as mq } from 'constants/mediaqueries';
 
-export default function CategoryOptions({ setUserPriceRange, minMax, category }) {
+export default function CategoryOptions({ onPriceRangeChange, minMax, category }) {
   return (
     <div
       css={css`
@@ -38,63 +38,94 @@ export default function CategoryOptions({ setUserPriceRange, minMax, category })
         }
         `}>{category.displayTag['en']}
       </div>
-      <div>
-        <span
-          css={css`
-            display: inline-block;
-            margin: 0 0 8px 0;
-            color: ${colors.black};
-            font-size: ${fonts.uiFontSize};
-            font-weight: bold;
-            ${mq[1]} {
-              color: ${colors.greenPrimary};
-            }
-          `}
-        >
-          Tags
-        </span>
-        <div
-          css={css`
-            width: 100%;
+      <div css={
+        css`
+          ${mq[1]} {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px 4px;
-            ${mq[1]} {
-              flex: 1;
-              padding: 0 0 8px 0;
-              display: block;
-              white-space: nowrap;
-              overflow:auto;
+            gap: 15px;
+            justify-content: flex-start;
+            & > :nth-child(1) {
+              width: calc(100% - 200px - 15px);
             }
+            & > :nth-child(2) {
+              width: 200px;
+            }
+          }
+          ${mq[2]} {
+            display: block;
+            & > div {
+              width: 100% !important;
+            }
+          }
+        `
+      }>
+        <div css={css`
+          /* ${mq[1]} {
+            width: calc(100% - 200px - 15px);
+          }
+          ${mq[2]} {
+            width: ;
+          } */
+        `}>
+          <span
+            css={css`
+              display: inline-block;
+              margin: 0 0 8px 0;
+              color: ${colors.black};
+              font-size: ${fonts.uiFontSize};
+              font-weight: bold;
+              ${mq[1]} {
+                color: ${colors.greenPrimary};
+              }
             `}
-        >
-          {
-            categories
-              .filter((cat) => cat.showOnCategory)
-              .map((cat) => (
-                <CategoryButton key={cat.name + cat.id} {...cat}>
-                  {cat.displayTag["en"]}
-                </CategoryButton>
-              )) // {...cat } = unpack keys and values into CategoryButton
-            }
+          >
+            Tags
+          </span>
+          <div>
+            <div
+              css={css`
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px 4px;
+                ${mq[1]} {
+                  flex: 1;
+                  padding: 0 0 8px 0;
+                  display: block;
+                  white-space: nowrap;
+                  overflow: auto;
+                }
+              `}
+            >
+              {
+                categories
+                  .filter((cat) => cat.showOnCategory)
+                  .map((cat) => (
+                    <CategoryButton key={cat.name + cat.id} {...cat}>
+                      {cat.displayTag["en"]}
+                    </CategoryButton>
+                  )) // {...cat } = unpack keys and values into CategoryButton
+                }
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <span
-          css={css`
-            display: inline-block;
-            margin: 0 0 8px 0;
-            color: ${colors.black};
-            font-size: ${fonts.uiFontSize};
-            font-weight: bold;
-            ${mq[1]} {
-              color: ${colors.greenPrimary};
-            }
-            `}
-        >
-          Price range
-        </span>
-        <RangeInput minMax={minMax} />
+        <div>
+          <span
+            css={css`
+              display: inline-block;
+              margin: 0 0 8px 0;
+              color: ${colors.black};
+              font-size: ${fonts.uiFontSize};
+              font-weight: bold;
+              ${mq[1]} {
+                color: ${colors.greenPrimary};
+              }
+              `}
+          >
+            Price range
+          </span>
+          <RangeInput minMax={minMax} onChange={onPriceRangeChange} />
+        </div>
       </div>
       <hr css={css`
         display: none;

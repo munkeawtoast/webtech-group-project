@@ -34,7 +34,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
       <div>
         {
           logoIsCenter
-           ? <div css={css`
+          ? <div css={css`
               position: absolute;
               left: 50%;
               transform: translate(-50%);
@@ -49,7 +49,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             `}>
               <Logo fillColor="white" size="45" withText={false} hidden={!hasLogo} withLink={true} />
             </div>
-           : null
+          : null
         }
       </div>
       <div
@@ -64,7 +64,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
       >
         <RoundButton href="/cart"> 
           <i
-            class="fa-solid fa-cart-shopping"
+            className="fa-solid fa-cart-shopping"
             style={{color: colors.black}}
           ></i>
         </RoundButton>
@@ -85,7 +85,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             `}
           >
             <i
-              class="fa-solid fa-bars fa-xl"
+              className="fa-solid fa-bars fa-xl"
               style={{
                 
               }}

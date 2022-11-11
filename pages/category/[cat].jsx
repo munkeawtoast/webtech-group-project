@@ -14,17 +14,50 @@ import colors from "constants/colors";
 import fonts from "constants/fonts";
 import { mediaQueries as mq } from "constants/mediaqueries";
 
+
+
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
-  const [userpriceRange, setUserPriceRange] = useState([0, Infinity]);
   const { currency } = getSiteConfig();
   const [minMax, setMinMax] = useState([0, 99999999]);
-  const [numRange, setNumRange] = useState([0, 99999999]);
+  const [userPriceRange, setUserPriceRange] = useState([0, 99999999]);
   const [gamesInCat, setGamesInCat] = useState([]);
+
+  function changePriceRange(key, val) {
+    if (!['min', 'max'].includes(key)) {
+      throw 'Price Range null key Exception'
+    }
+    console.log(val)
+    let tempVal = val;
+    const temp = {
+      min: userPriceRange[0],
+      max: userPriceRange[1]
+    }
+    if (val === '') {
+      if (key == 'min') {
+        tempVal = 0
+      }
+      else if (key == 'max') {
+        tempVal = 99999999
+      }
+    }
+    temp[key] = tempVal
+    setUserPriceRange([temp['min'], temp['max']])
+  }
 
 
   useEffect(() => {
-    
+    let minVal = 99999999
+    let maxVal = 0
+    category.games.forEach((game) => {
+      if (game.price['thb'] < minVal) {
+        minVal = game.price['thb']
+      }
+      if (game.price['thb'] > maxVal) {
+        maxVal = game.price['thb']
+      }
+    })
+    setMinMax([minVal, maxVal])
   }, [category]);
 
   return (
@@ -46,11 +79,11 @@ function Category({ category }) {
           `}
         >
           <CategoryOptions
-            setUserPriceRange={setUserPriceRange}
+            onPriceRangeChange={changePriceRange}
             minMax={minMax}
             category={category}
           />
-          <ResultList userPriceRange={userpriceRange} category={category} games={gamesInCat} />
+          <ResultList userPriceRange={userPriceRange} category={category} games={category.games} />
         </div>
         <Footer />
       </div>
