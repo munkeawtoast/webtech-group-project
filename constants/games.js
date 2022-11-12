@@ -117,7 +117,7 @@ const games = [
     "tags": [
       5, 6
     ],
-    "key": "_",
+    "key": "d42d6d8d201f8db55d083dd1a8b31150",
     "price": {
       "usd": 9.9999,
       "thb": 599
@@ -131,7 +131,7 @@ const games = [
     "tags": [
       1, 6
     ],
-    "key": "_",
+    "key": "40021c2df331dcfc40e5d085d00a1a44",
     "price": {
       "usd": 9.9999,
       "thb": 400
@@ -140,12 +140,12 @@ const games = [
   },
   {
     "id": 10,
-    "name": "wrp-generations",
+    "name": "wrc-generations",
     "displayName": "WRC Generations - The FIA WRC Official Game",
     "tags": [
       2
     ],
-    "key": "_",
+    "key": "ef55a12431c06ee6d6937853ddb0a04c",
     "price": {
       "usd": 9.9999,
       "thb": 579
@@ -159,7 +159,7 @@ const games = [
     "tags": [
       2
     ],
-    "key": "_",
+    "key": "13381ccd823e7fc0bf4e9fe59cca1487",
     "price": {
       "usd": 9.9999,
       "thb": 1599
@@ -173,7 +173,7 @@ const games = [
     "tags": [
       3
     ],
-    "key": "_",
+    "key": "7b37ff7b76609013b5008c6b4ee543ef",
     "price": {
       "usd": 9.9999,
       "thb": 1599
@@ -195,6 +195,46 @@ const games = [
     },
     "gameDetail": "",
   },
+  {
+    "id": 14,
+    "name": "phasmophobia",
+    "displayName": "Phasmophobia",
+    "tags": [
+      8
+    ],
+    "key": "d2cabfa6ec33b078bce3a38127199520",
+    "price": {
+      "usd": 9.99,
+      "thb": 239
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 15,
+    "name": "slender-fortress-2",
+    "displayName": "Slender Fortress 2",
+    "tags": [
+      8
+    ],
+    "price": {
+      "usd": 2.99,
+      "thb": 100
+    },
+    "gameDetail": ""
+  },
+  {
+    "id": 16,
+    "name": "rust",
+    "displayName": "Rust",
+    "tags": [
+      7
+    ],
+    "price": {
+      "usd": 4.59,
+      "thb": 147
+    },
+    "gameDetail": ""
+  }
 ]
 
 export default games

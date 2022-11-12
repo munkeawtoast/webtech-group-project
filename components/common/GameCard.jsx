@@ -7,7 +7,7 @@ import colors from 'constants/colors.js'
 import fonts from 'constants/fonts.js'
 import currencies from 'constants/currencies.js'
 
-import { getSiteConfig } from 'context/SiteConfigContext'
+import { useSiteConfig } from 'context/SiteConfigContext'
 
 GameCard.defaultProps = {
   showArgs: {
@@ -20,7 +20,7 @@ GameCard.defaultProps = {
 }
 
 function GameCard({ showArgs, game, onClick }) {
-  const siteConfig = getSiteConfig()
+  const siteConfig = useSiteConfig()
   const { currency } = siteConfig
 
   const Outer = ({ children }) => (
@@ -33,22 +33,24 @@ function GameCard({ showArgs, game, onClick }) {
   )
   return (
     <Outer>
-      <div css={
-        css`
-          width: 200px;
-          box-sizing: content-box;
-          padding: 0 10px;
-          background-color: ${colors.white};
-          /* border-radius: 8px;
-          border: 1px solid ${colors.gray300};
-          padding: 4px; */
-          color: ${colors.black};
-          font-family: ${fonts.normalFontFamily};
-          font-weight: 500;
-          font-size: 18;
-          width: 150px;
-          ${onClick || showArgs.isLink ? css`cursor: pointer;` : ''}
-        `}
+      <div
+        css={
+          css`
+            width: 200px;
+            box-sizing: content-box;
+            margin: 0px;
+            background-color: ${colors.white};
+            /* border-radius: 8px;
+            border: 1px solid ${colors.gray300};
+            padding: 4px; */
+            color: ${colors.black};
+            font-family: ${fonts.normalFontFamily};
+            font-weight: 500;
+            font-size: 18;
+            width: 150px;
+            ${onClick || showArgs.isLink ? css`cursor: pointer;` : ''}
+          `
+        }
         onClick={onClick}
       >
         <div css={css`
