@@ -13,8 +13,6 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
 
         font-family: ${fonts.normalFontFamily};
         font-size: ${fonts.uiFontSize};
-
-        background-color: wheat;
       `}
     >
       <div
@@ -22,7 +20,7 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
           display: flex;
           flex-direction: column;
 
-          padding: 32px;
+          /* gap: 20px; */
         `}
       >
         <div
@@ -33,9 +31,17 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
             aspect-ratio: 16/9;
           `}
         >
-          <Image src={`/game/${gameID}/images/0.jpg`} layout="fill" />
+          <Image
+            css={css`
+              border-radius: 15px;
+            `}
+            src={`/game/${gameID}/thumbnail-wide.jpg`}
+            layout="fill"
+          />
         </div>
-        <div></div>
+        <div>
+          <p>{gameTag.map((tag) => tag.displayTag.en + " ")}</p>
+        </div>
         <div
         // css={css`
         //   margin-left: 6px;
@@ -46,12 +52,13 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
 
         <button
           css={css`
-            font-family: ${fonts.normalFontFamily};
-            font-size: ${fonts.uiFontSize};
             border: none;
-            border-radius: 12px;
+            border-radius: 8px;
 
             padding: 6px;
+
+            font-family: ${fonts.normalFontFamily};
+            font-size: ${fonts.uiFontSize};
           `}
         >
           Add to cart
