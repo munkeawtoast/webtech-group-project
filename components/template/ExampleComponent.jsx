@@ -72,3 +72,5 @@ function ExampleComponent(props) {
     </div>
   )
 }
+
+export default ExampleComponent

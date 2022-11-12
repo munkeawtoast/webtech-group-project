@@ -1,8 +1,4 @@
-import Link from 'next/link'
-import { useState } from 'react'
-
 import colors from 'constants/colors.js'
-import fonts from 'constants/fonts.js'
 
 import { css } from '@emotion/react'
 
@@ -80,7 +76,8 @@ function NavBar({ hasLogo, logoIsCenter }) {
             z-index: 100;
             bottom: 0;
             display: flex;
-            padding-bottom: env(safe-area-inset-bottom);
+            padding-top: 3px;
+            padding-bottom: 6px;
             border-top: 1px solid ${colors.gray300};
           }
         `
@@ -122,9 +119,7 @@ const Divider = styled.div`
   width: 1px;
   transform: translateY(-3px);
   margin: 10px 1px;
-  
 `
-Divider.children = <>test</>
 
 
 export default NavBar

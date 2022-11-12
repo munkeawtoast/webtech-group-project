@@ -1,4 +1,4 @@
-module.exports = {
+const languages = {
   "en": {
     "account": "Account",
     "buy": "Put in Cart"
@@ -8,3 +8,5 @@ module.exports = {
     "buy": "หยิบใส่ตะกร้า"
   }
 }
+
+export default languages

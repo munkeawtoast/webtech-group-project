@@ -1,4 +1,4 @@
-export default [
+const categories = [
   {
     "id": 0,
     "showOnCategory": true,
@@ -88,3 +88,4 @@ export default [
     "image": ""
   }
 ]
+export default categories

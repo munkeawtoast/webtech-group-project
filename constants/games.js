@@ -1,4 +1,4 @@
-module.exports = [
+const games = [
   {
     "id": 0,
     "name": "defaultgame",
@@ -196,3 +196,5 @@ module.exports = [
     "gameDetail": "",
   },
 ]
+
+export default games

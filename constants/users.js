@@ -1,4 +1,4 @@
-module.exports = [
+const users = [
   {
     "id": 0,
     "username": "test-admin-1",
@@ -37,3 +37,5 @@ module.exports = [
   },
 
 ]
+
+export default users

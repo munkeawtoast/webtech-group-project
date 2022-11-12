@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta
           name="viewport"
-          content="width=device-width, viewport-fit=cover"
+          content="width=device-width"
         />
       </Head>
       <Global styles={css`

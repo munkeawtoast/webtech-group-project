@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef, forwardRef } from 'react'
 import { css } from '@emotion/react'
 import colors from 'constants/colors'
 
