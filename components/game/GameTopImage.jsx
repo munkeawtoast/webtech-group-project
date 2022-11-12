@@ -1,24 +1,23 @@
 import Image from "next/image";
 import { css } from "@emotion/react";
 
-const TopImage = ({ imageID }) => {
+const TopImage = ({ imageID, gameID }) => {
   return (
     <div
-    //   css={css`
-    //     display: flex;
-    //     align-items: center;
-    //   `}
+      css={css`
+        margin: auto;
+        position: relative;
+        flex-basis: 100%;
+        aspect-ratio: 16/9;
+      `}
     >
-      <div
+      <Image
         css={css`
-          margin: auto;
-          position: relative;
-          width: 400px;
-          aspect-ratio: 16/9;
+          border-radius: 8px;
         `}
-      >
-        <Image src={`/game/0/images/${imageID}.jpg`} layout="fill" />
-      </div>
+        src={`/game/${gameID}/images/${imageID}.jpg`}
+        layout="fill"
+      />
     </div>
   );
 };

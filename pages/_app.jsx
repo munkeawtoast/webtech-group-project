@@ -1,24 +1,29 @@
-import '../styles/globals.css'
-import SiteConfigContextProvider from 'context/SiteConfigContext'
-import AuthContextProvider from 'context/AuthContext'
-import { css, Global } from '@emotion/react'
-import colors from 'constants/colors'
+import "../styles/globals.css";
+import SiteConfigContextProvider from "context/SiteConfigContext";
+import AuthContextProvider from "context/AuthContext";
+import { css, Global } from "@emotion/react";
+import colors from "constants/colors";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Global styles={css`
-        body {
-          background-color: ${colors.greenPrimary};
-        }
-      `} />
+      <Global
+        styles={css`
+          body {
+            background-color: ${colors.greenPrimary};
+          }
+          /* p {
+            margin: 0;
+          } */
+        `}
+      />
       <SiteConfigContextProvider>
         <AuthContextProvider>
           <Component {...pageProps} />
         </AuthContextProvider>
       </SiteConfigContextProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
