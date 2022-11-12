@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 
-import { getSiteConfig } from "context/SiteConfigContext";
+import { useSiteConfig } from "context/SiteConfigContext";
 import categories from "constants/categories.js";
 import games from "constants/games.js";
 import NavBar from "components/common/NavBar";
@@ -18,9 +18,9 @@ import { mediaQueries as mq } from "constants/mediaqueries";
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
 
-  const { currency } = getSiteConfig();
-  const [minMax, setMinMax] = useState([0, 99999999]);
-  const [userPriceRange, setUserPriceRange] = useState([0, 99999999]);
+  const { currency } = useSiteConfig()
+  const [minMax, setMinMax] = useState([0, 99999999])
+  const [userPriceRange, setUserPriceRange] = useState([0, 99999999])
   const [sortFunc, setSortFunc] = useState(sortfunctions.find(i => i.id === 0))
 
   function changePriceRange(key, val) {
@@ -69,10 +69,6 @@ function Category({ category }) {
         <title>{`${category.displayTag['en']} | Hi5`}</title>
       </Head>
       <NavBar hasLogo={true} logoIsCenter={true} />
-      <div css={css`
-        background-color: red;
-        font-size: 4em;
-      `}>TODO: SORT, NAVBAR mq[2]</div>
       <div css={css`background-color: ${colors.white};`}>
         <div
           css={css`
