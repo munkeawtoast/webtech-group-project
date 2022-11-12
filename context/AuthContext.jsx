@@ -4,76 +4,76 @@ import { auth as authDefault } from 'constants/config.js'
 
 const AuthContext = createContext();
 
-export function getAuth() {
+export function useAuth() {
   return useContext(AuthContext)
 }
 
-export function setAuth(data) {
-  useContext(AuthContext).mySetAuth(data)
+export function useSetAuth(data) {
+  useContext(AuthContext).myuseSetAuth(data)
 }
 
-export function setAuthKey(key, val) {
-  setAuth({
-    ...getAuth(),
+export function useSetAuthKey(key, val) {
+  useSetAuth({
+    ...useAuth(),
     [key]: val
   })
 }
 
-export function getAuthKey(key) {
-  return getAuth()[key]
+export function useAuthKey(key) {
+  return useAuth()[key]
 }
 
-export function setUsername(username) {
-  setAuthKey('username', username)
+export function useSetUsername(username) {
+  useSetAuthKey('username', username)
 }
 
-export function setDisplayName(name) {
-  setAuthKey('displayname', name)
+export function useSetDisplayName(name) {
+  useSetAuthKey('displayname', name)
 }
 
-export function setCart(cart) {
-  setAuthKey('cart', cart)
+export function useSetCart(cart) {
+  useSetAuthKey('cart', cart)
 }
 
-export function setLibrary(library) {
-  setAuthKey('library', library)
+export function useSetLibrary(library) {
+  useSetAuthKey('library', library)
 }
 
-export function getUsername() {
-  return getAuthKey('username')
+export function useUsername() {
+  return useAuthKey('username')
 }
 
-export function getDisplayName() {
-  return getAuthKey('displayname')
+export function useDisplayName() {
+  return useAuthKey('displayname')
 }
 
-export function getCart() {
-  return getAuthKey('cart')
+export function useCart() {
+  return useAuthKey('cart')
 }
 
-export function getLibrary() {
-  return getAuthKey('library')
+export function useLibrary() {
+  return useAuthKey('library')
 }
 
-export function addToCart(id) {
-  setCart([...getCart(), id])
+export function useAddToCart(id) {
+  useSetCart([...useCart(), id])
 }
 
-export function removeFromCart(index) {
-  setCart([...getCart()].slice(0, index) + [...getCart()].slice(index + 1))
+export function useRemoveFromCart(index) {
+  useSetCart([...useCart()].slice(0, index) + [...useCart()].slice(index + 1))
 }
-export function addToLibrary(id) {
-  setLibrary([...getLibrary(), id])
+export function useAddToLibrary(id) {
+  useSetLibrary([...useLibrary(), id])
 }
 
-export function removeFromLibrary(index) {
-  setLibrary([...getLibrary()].slice(0, index) + [...getLibrary()].slice(index + 1))
+export function useRemoveFromLibrary(index) {
+  useSetLibrary([...useLibrary()].slice(0, index) + [...useLibrary()].slice(index + 1))
 }
 
 function AuthContextProvider({ children }) {
-  const [myAuth, mySetAuth] = useLocalStorage('auth', authDefault)
+  const [myAuth, myuseSetAuth] = useLocalStorage('auth', authDefault)
   return (
-    <AuthContext.Provider value={{ ...myAuth, mySetAuth }}>
+    <AuthContext.Provider value={{ ...myAuth, myuseSetAuth }}>
       {children}
     </AuthContext.Provider>
   )
