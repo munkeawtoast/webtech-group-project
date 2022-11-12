@@ -78,14 +78,25 @@ const categories = [
   },
   {
     "id": 7,
-    "showOnCategory": false,
+    "showOnCategory": true,
     "name": "survival",
-    "link": "",
+    "link": "survival",
     "displayTag": {
       "en": "Survival",
       "th": "ผจญภัย",
     },
-    "image": ""
+    "image": "survival.jpg"
+  },
+  {
+    "id": 8,
+    "showOnCategory": true,
+    "name": "horror",
+    "link": "horror",
+    "displayTag": {
+      "en": "Horror",
+      "th": "สยองขวัญ",
+    },
+    "image": "horror.jpg"
   }
 ]
 export default categories
