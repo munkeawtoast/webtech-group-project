@@ -5,9 +5,8 @@ const TopImage = ({ imageID, gameID }) => {
   return (
     <div
       css={css`
-        margin: auto;
         position: relative;
-        flex-basis: 100%;
+        height: 250px;
         aspect-ratio: 16/9;
       `}
     >

@@ -12,20 +12,23 @@ import { useState } from "react";
 const Game = ({ game, categoryArray }) => {
   const [imgID, setimgID] = useState(0);
   return (
-    <div
-      css={css`
-        background-color: ${colors.white};
-      `}
-    >
+    <>
       <NavBar />
-      <div>
+      <div
+        css={css`
+          background-color: ${colors.white};
+        `}
+      >
         <div>
-          <p>{game.name}</p>
+          <p css={css`
+            margin-top: 0;
+          `}>{game.name}</p>
         </div>
         <div
           css={css`
             display: flex;
             justify-content: center;
+            height: 400px;
             gap: 108px;
             margin-bottom: 60px;
           `}
@@ -40,7 +43,7 @@ const Game = ({ game, categoryArray }) => {
         <GameImages imageID={imgID} gameID={game.id} setimgID={setimgID} />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

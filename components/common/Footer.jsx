@@ -6,7 +6,7 @@ import fonts from "constants/fonts"
 
 function Footer() {
   return (
-    <div css={css`
+    <footer css={css`
       height: 250px;
       background-color: ${colors.gray500};
       font-family: ${fonts.normalFontFamily};
@@ -17,7 +17,7 @@ function Footer() {
     `}>
       <span>FOOTER</span>
       
-    </div>
+    </footer>
   )
 }
 
