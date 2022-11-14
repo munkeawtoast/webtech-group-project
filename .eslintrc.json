@@ -1,9 +1,6 @@
 {
   "extends": ["eslint:recommended", "next/core-web-vitals"],
   "rules": {
-    "camelcase": ["error", { "properties": "always" }],
-    "indent": ["warn", 2],
-    "semi": ["warn", "never"],
-    "eol-last": ["warn", "never"]
+    "camelcase": ["error", { "properties": "always" }]
   }
 }
