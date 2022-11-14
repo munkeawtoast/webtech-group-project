@@ -12,9 +12,9 @@ export default function CategoryLink({name, link, pic}) {
                     background: linear-gradient(${colors.greenPrimary+"00"} 40%, ${colors.greenPrimary+"FF"}), url(${pic});
                     background-size: cover;
                     background-position: center;
-                    width: 20vw;
-                    height: 12vw;
-                    border-radius: 35px;
+                    width: 280px;
+                    border-radius: 40px;
+                    aspect-ratio: 16/9;
 
                     font-size: ${fonts.uiFontSize};
                     color: white;
