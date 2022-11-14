@@ -1,52 +1,39 @@
 import Image from "next/image";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import ImgChild from "./GameImagesComponents/ImagesChild";
 const GameImages = ({ imageID, gameID, setimgID }) => {
-  const Container = styled.div`
-    position: relative;
-    width: 300px;
-    aspect-ratio: 16/9;
-  `;
   return (
-    <div>
-      <div
+    <div
+      css={css`
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      `}
+    >
+      <span
         css={css`
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
+          position: absolute;
+          left: -108px;
+          font-size: 108px;
         `}
       >
-        <button>&#60;</button>
-        <Container
-          onClick={function () {
-            setimgID(0);
-          }}
-        >
-          <Image src={`/game/${gameID}/images/0.jpg`} layout="fill" />
-        </Container>
-        <Container
-          onClick={function () {
-            setimgID(1);
-          }}
-        >
-          <Image src={`/game/${gameID}/images/1.jpg`} layout="fill" />
-        </Container>
-        <Container
-          onClick={function () {
-            setimgID(2);
-          }}
-        >
-          <Image src={`/game/${gameID}/images/2.jpg`} layout="fill" />
-        </Container>
-        <Container
-          onClick={function () {
-            setimgID(3);
-          }}
-        >
-          <Image src={`/game/${gameID}/images/3.jpg`} layout="fill" />
-        </Container>
-        <span>&#62;</span>
-      </div>
+        {"<"}
+      </span>
+      <ImgChild gameID={gameID} ImageID={0} setimgID={setimgID} />
+      <ImgChild gameID={gameID} ImageID={1} setimgID={setimgID} />
+      <ImgChild gameID={gameID} ImageID={2} setimgID={setimgID} />
+      <ImgChild gameID={gameID} ImageID={3} setimgID={setimgID} />
+      <span
+        css={css`
+          position: absolute;
+          right: -108px;
+          font-size: 108px;
+        `}
+      >
+        {">"}
+      </span>
     </div>
   );
 };

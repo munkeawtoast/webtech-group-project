@@ -19,28 +19,33 @@ const Game = ({ game, categoryArray }) => {
           background-color: ${colors.white};
         `}
       >
-        <div>
-          <p css={css`
-            margin-top: 0;
-          `}>{game.name}</p>
-        </div>
         <div
           css={css`
             display: flex;
             justify-content: center;
-            height: 400px;
-            gap: 108px;
-            margin-bottom: 60px;
+            flex-direction: column;
+            width: 1280px;
+            margin: 0 auto;
           `}
         >
-          <TopImage gameID={game.id} imageID={imgID} />
-          <GameInfo
-            gameID={game.id}
-            gameTag={categoryArray}
-            gamePrice={game.price}
-          />
+          <p css={css``}>{game.name}</p>
+          <div
+            css={css`
+              display: flex;
+              justify-content: space-between;
+              /* gap: 108px; */
+              margin-bottom: 60px;
+            `}
+          >
+            <TopImage gameID={game.id} imageID={imgID} />
+            <GameInfo
+              gameID={game.id}
+              gameTag={categoryArray}
+              gamePrice={game.price}
+            />
+          </div>
+          <GameImages imageID={imgID} gameID={game.id} setimgID={setimgID} />
         </div>
-        <GameImages imageID={imgID} gameID={game.id} setimgID={setimgID} />
       </div>
       <Footer />
     </>

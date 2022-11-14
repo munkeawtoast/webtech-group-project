@@ -1,24 +1,26 @@
-import Image from "next/image";
 import { css } from "@emotion/react";
-
-const TopImage = ({ imageID, gameID }) => {
+import Image from "next/image";
+const ImgChild = ({ gameID, ImageID, setimgID }) => {
   return (
     <div
       css={css`
         position: relative;
-        height: 400px;
+        height: 168.75px;
         aspect-ratio: 16/9;
       `}
+      onClick={function () {
+        setimgID(ImageID);
+      }}
     >
       <Image
         css={css`
           border-radius: 8px;
         `}
-        src={`/game/${gameID}/images/${imageID}.jpg`}
+        src={`/game/${gameID}/images/${ImageID}.jpg`}
         layout="fill"
       />
     </div>
   );
 };
 
-export default TopImage;
+export default ImgChild;

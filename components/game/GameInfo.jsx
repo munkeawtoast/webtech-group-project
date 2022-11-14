@@ -11,59 +11,57 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
         /* width: 600px;
         height: 500px; */
 
+        display: flex;
+        flex-direction: column;
+
         font-family: ${fonts.normalFontFamily};
-        font-size: ${fonts.uiFontSize};
+        font-size: ${fonts.normalFontSize};
       `}
     >
       <div
         css={css`
-          display: flex;
-          flex-direction: column;
-
-          /* gap: 20px; */
+          margin: auto;
+          position: relative;
+          width: 400px;
+          aspect-ratio: 16/9;
         `}
       >
-        <div
+        <Image
           css={css`
-            margin: auto;
-            position: relative;
-            width: 400px;
-            aspect-ratio: 16/9;
+            border-radius: 15px;
           `}
-        >
-          <Image
-            css={css`
-              border-radius: 15px;
-            `}
-            src={`/game/${gameID}/thumbnail-wide.jpg`}
-            layout="fill"
-          />
-        </div>
-        <div>
-          <p>{gameTag.map((tag) => tag.displayTag.en + " ")}</p>
-        </div>
-        <div
-        // css={css`
-        //   margin-left: 6px;
-        // `}
-        >
-          <p>${gamePrice.usd}</p>
-        </div>
-
-        <button
-          css={css`
-            border: none;
-            border-radius: 8px;
-
-            padding: 6px;
-
-            font-family: ${fonts.normalFontFamily};
-            font-size: ${fonts.uiFontSize};
-          `}
-        >
-          Add to cart
-        </button>
+          src={`/game/${gameID}/thumbnail-wide.jpg`}
+          layout="fill"
+        />
       </div>
+      <div
+        css={css`
+          font-size: ${fonts.uiFontSize};
+        `}
+      >
+        <p>${gamePrice.usd}</p>
+      </div>
+      <div
+      // css={css`
+      //   margin-left: 6px;
+      // `}
+      >
+        <p>{gameTag.map((tag) => tag.displayTag.en + " ")}</p>
+      </div>
+
+      <button
+        css={css`
+          border: none;
+          border-radius: 8px;
+
+          padding: 6px;
+
+          font-family: ${fonts.normalFontFamily};
+          font-size: ${fonts.uiFontSize};
+        `}
+      >
+        Add to cart
+      </button>
     </div>
   );
 };
