@@ -12,28 +12,44 @@ const GameImages = ({ imageID, gameID, setimgID }) => {
         position: relative;
       `}
     >
-      <span
+      <button
         css={css`
           position: absolute;
           left: -108px;
           font-size: 108px;
+
+          background-color: Transparent;
+          border: none;
+
+          cursor: pointer;
         `}
+        onClick={function () {
+          setimgID(imageID - 1);
+        }}
       >
         {"<"}
-      </span>
+      </button>
       <ImgChild gameID={gameID} ImageID={0} setimgID={setimgID} />
       <ImgChild gameID={gameID} ImageID={1} setimgID={setimgID} />
       <ImgChild gameID={gameID} ImageID={2} setimgID={setimgID} />
       <ImgChild gameID={gameID} ImageID={3} setimgID={setimgID} />
-      <span
+      <button
         css={css`
           position: absolute;
           right: -108px;
           font-size: 108px;
+
+          background-color: Transparent;
+          border: none;
+
+          cursor: pointer;
         `}
+        onClick={function () {
+          setimgID(imageID + 1);
+        }}
       >
         {">"}
-      </span>
+      </button>
     </div>
   );
 };
