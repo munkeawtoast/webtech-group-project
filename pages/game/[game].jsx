@@ -12,8 +12,7 @@ import GameName from "components/game/GameName";
 
 const Game = ({ game, categoryArray }) => {
   const [imgID, setimgID] = useState(0);
-  const min = 0;
-  const max = 3;
+  
   return (
     <div
       css={css`
@@ -46,7 +45,7 @@ const Game = ({ game, categoryArray }) => {
             gamePrice={game.price}
           />
         </div>
-        <GameImages imageID={imgID} gameID={game.id} setimgID={setimgID} />
+        <GameImages imageID={imgID} gameID={game.id} setimgId={setimgID} />
       </div>
       <Footer />
     </div>

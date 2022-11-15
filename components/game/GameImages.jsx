@@ -2,7 +2,13 @@ import Image from "next/image";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import ImgChild from "./GameImagesComponents/ImagesChild";
-const GameImages = ({ imageID, gameID, setimgID }) => {
+const GameImages = ({ imageID, gameID, setimgId }) => {
+  function incrementImgId() {
+    setimgId(imgId => (imgId + 1) % 4);
+  }
+  function decrementImgId() {
+    setimgId(imgId => (imgId + 3) % 4);
+  }
   return (
     <div
       css={css`
@@ -23,16 +29,14 @@ const GameImages = ({ imageID, gameID, setimgID }) => {
 
           cursor: pointer;
         `}
-        onClick={function () {
-          setimgID(imageID - 1);
-        }}
+        onClick={decrementImgId}
       >
         {"<"}
       </button>
-      <ImgChild gameID={gameID} ImageID={0} setimgID={setimgID} />
-      <ImgChild gameID={gameID} ImageID={1} setimgID={setimgID} />
-      <ImgChild gameID={gameID} ImageID={2} setimgID={setimgID} />
-      <ImgChild gameID={gameID} ImageID={3} setimgID={setimgID} />
+      <ImgChild gameID={gameID} ImageID={0} setimgID={setimgId} />
+      <ImgChild gameID={gameID} ImageID={1} setimgID={setimgId} />
+      <ImgChild gameID={gameID} ImageID={2} setimgID={setimgId} />
+      <ImgChild gameID={gameID} ImageID={3} setimgID={setimgId} />
       <button
         css={css`
           position: absolute;
@@ -44,9 +48,7 @@ const GameImages = ({ imageID, gameID, setimgID }) => {
 
           cursor: pointer;
         `}
-        onClick={function () {
-          setimgID(imageID + 1);
-        }}
+        onClick={incrementImgId}
       >
         {">"}
       </button>
