@@ -46,7 +46,7 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
       //   margin-left: 6px;
       // `}
       >
-        <p>{gameTag.map((tag) => tag.displayTag.en + " ")}</p>
+        <p>Tags: {gameTag.map((tag) => tag.displayTag.en + " ")}</p>
       </div>
 
       <button
@@ -58,6 +58,8 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
 
           font-family: ${fonts.normalFontFamily};
           font-size: ${fonts.uiFontSize};
+
+          cursor: pointer;
         `}
       >
         Add to cart

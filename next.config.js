@@ -11,6 +11,9 @@ const nextConfig = {
   },
   reactStrictMode: false, // เราสูญเสียไปแคไหนเพราะบรรทัดนี้ยรรทัดเดียว
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true
+  }
 }
 
 module.exports = nextConfig

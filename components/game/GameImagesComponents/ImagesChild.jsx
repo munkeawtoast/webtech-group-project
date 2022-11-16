@@ -15,6 +15,7 @@ const ImgChild = ({ gameID, ImageID, setimgID }) => {
       <Image
         css={css`
           border-radius: 8px;
+          cursor: pointer;
         `}
         src={`/game/${gameID}/images/${ImageID}.jpg`}
         layout="fill"
