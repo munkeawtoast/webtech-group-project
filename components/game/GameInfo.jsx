@@ -4,6 +4,9 @@ import Image from "next/image";
 import fonts from "constants/fonts.js";
 import { fill } from "constants/games";
 
+import { mediaQueries } from "constants/mediaqueries";
+import colors from "constants/colors";
+
 const GameInfo = ({ gameID, gameTag, gamePrice }) => {
   return (
     <div
@@ -16,6 +19,14 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
 
         font-family: ${fonts.normalFontFamily};
         font-size: ${fonts.normalFontSize};
+
+        ${mediaQueries[1]} {
+          flex-direction: row;
+          margin-top: 62px;
+        }
+        ${mediaQueries[1]} {
+          background-color: ${colors.gray200};
+        }
       `}
     >
       <div
@@ -24,6 +35,15 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
           position: relative;
           width: 400px;
           aspect-ratio: 16/9;
+          margin-top: 0;
+          ${mediaQueries[0]} {
+            width: 240px;
+            margin: 0;
+          }
+          ${mediaQueries[1]} {
+            width: 350px;
+            margin: 0;
+          }
         `}
       >
         <Image
@@ -36,34 +56,60 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
       </div>
       <div
         css={css`
-          font-size: ${fonts.uiFontSize};
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          ${mediaQueries[1]} {
+            flex-direction: column;
+            margin: 0 32px;
+          }
         `}
       >
-        <p>${gamePrice.usd}</p>
+        <div
+          css={css`
+            font-size: ${fonts.uiFontSize};
+          `}
+        >
+          <p
+            css={css`
+              ${mediaQueries[0]} {
+                margin-bottom: 0;
+              }
+            `}
+          >
+            ${gamePrice.usd}
+          </p>
+        </div>
+        <div>
+          <p
+            css={css`
+              ${mediaQueries[0]} {
+                margin-top: 0;
+              }
+            `}
+          >
+            Tags: {gameTag.map((tag) => tag.displayTag.en + " ")}
+          </p>
+        </div>
+        <button
+          css={css`
+            border: none;
+            border-radius: 8px;
+
+            padding: 6px;
+
+            font-family: ${fonts.normalFontFamily};
+            font-size: ${fonts.uiFontSize};
+
+            cursor: pointer;
+            :hover {
+              color: blue;
+            }
+          `}
+        >
+          Add to cart
+        </button>
       </div>
-      <div
-      // css={css`
-      //   margin-left: 6px;
-      // `}
-      >
-        <p>Tags: {gameTag.map((tag) => tag.displayTag.en + " ")}</p>
-      </div>
-
-      <button
-        css={css`
-          border: none;
-          border-radius: 8px;
-
-          padding: 6px;
-
-          font-family: ${fonts.normalFontFamily};
-          font-size: ${fonts.uiFontSize};
-
-          cursor: pointer;
-        `}
-      >
-        Add to cart
-      </button>
     </div>
   );
 };

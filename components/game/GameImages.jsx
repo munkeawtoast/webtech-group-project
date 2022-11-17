@@ -2,12 +2,13 @@ import Image from "next/image";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import ImgChild from "./GameImagesComponents/ImagesChild";
+import { mediaQueries } from "constants/mediaqueries";
 const GameImages = ({ imageID, gameID, setimgId }) => {
   function incrementImgId() {
-    setimgId(imgId => (imgId + 1) % 4);
+    setimgId((imgId) => (imgId + 1) % 4);
   }
   function decrementImgId() {
-    setimgId(imgId => (imgId + 3) % 4);
+    setimgId((imgId) => (imgId + 3) % 4);
   }
   return (
     <div
@@ -16,6 +17,11 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
         justify-content: space-between;
         align-items: center;
         position: relative;
+        width: 100%;
+        ${mediaQueries[1]} {
+          margin-top: 36px;
+          gap: 12px;
+        }
       `}
     >
       <button
@@ -28,10 +34,20 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
           border: none;
 
           cursor: pointer;
+          :hover {
+            color: blue;
+          }
+          ${mediaQueries[0]} {
+            left: -96px;
+            font-size: 96px;
+          }
+          ${mediaQueries[1]} {
+            display: none;
+          }
         `}
         onClick={decrementImgId}
       >
-        {"<"}
+        &lt;
       </button>
       <ImgChild gameID={gameID} ImageID={0} setimgID={setimgId} />
       <ImgChild gameID={gameID} ImageID={1} setimgID={setimgId} />
@@ -47,10 +63,20 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
           border: none;
 
           cursor: pointer;
+          :hover {
+            color: blue;
+          }
+          ${mediaQueries[0]} {
+            right: -96px;
+            font-size: 96px;
+          }
+          ${mediaQueries[1]} {
+            display: none;
+          }
         `}
         onClick={incrementImgId}
       >
-        {">"}
+        &gt;
       </button>
     </div>
   );
