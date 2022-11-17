@@ -6,7 +6,7 @@ const users = [
     "email": "admin1@testmail.com",
     "password": "1234",
     "cart": [],
-    "library": [],
+    "library": [0,1,2,3,4,5,6,7,8,9,10],
   },
   {
     "id": 1,

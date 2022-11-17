@@ -22,6 +22,7 @@ const languages = {
     "logout": "ออกจากระบบ",
     "register": "สมัครสมาชิก",
     "your-games": "เกมของคุณ",
+    "library": "คลังเกม",
     "purchase": "ซื้อ",
     "tags": "ประเภทเกม",
     "price-range": "ราคา",

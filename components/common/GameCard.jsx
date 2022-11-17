@@ -12,7 +12,8 @@ GameCard.defaultProps = {
   showArgs: {
     showImage: true,
     showName: true,
-    showButton: false,
+    showPrice: true,
+    forLibrary: false,
     isLink: false,
   },
   onClick: null,
@@ -53,9 +54,14 @@ function GameCard({ showArgs, game, onClick }) {
             font-weight: 500;
             font-size: 18;
             width: 150px;
+            position: relative;
             &:hover > span {
-              color: ${colors.greenPrimary};
-              font-weight: bold;
+              ${ 
+                showArgs.showPrice ? `
+                  color: ${colors.greenPrimary};
+                  font-weight: bold;
+                ` : ''
+              }
             }
           `
         }
@@ -78,11 +84,65 @@ function GameCard({ showArgs, game, onClick }) {
         `}>
           {game.displayName}
         </span>
-        <div>
+        <div css={css`
+          display: ${showArgs.showPrice ? 'block' : 'none'};
+        `}>
           { currencies[currency].currencyTag }
           {' '}
           { game.price[currency] }
         </div>
+        {
+          showArgs.forLibrary ? 
+          <>
+            <div
+              css={css`
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 1000;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in-out;
+                opacity: 0;
+                color: ${colors.white};
+                &:hover {
+                  ~ * {
+
+                    opacity: 1;
+                  }
+                  opacity: 1;
+                }
+              `}
+            >
+              {'Key:'}
+              <br />
+              {game.key}
+            </div>
+            <div
+              css={css`
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                transition: 0.25s ease-in-out;
+                opacity: 0;
+                filter: blur(10px);
+                background-color: #000000ba;
+                &:hover {
+                  transform: scale(1.1);
+                  opacity: 1;
+                }
+              `}
+            />
+            
+          </>
+            : null
+        }
       </div>
     </Outer>
   )
