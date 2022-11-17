@@ -11,7 +11,7 @@ function FormInput({ type }){
                 display: block;
                 padding: 1em 2em;
                 height: 3em;
-                width: 40%;
+                width: 50%;
                 border-radius: 4px;
                 font-size: 14px;
                 line-height: 22px;
