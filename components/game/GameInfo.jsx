@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 import Image from "next/image";
 
 import fonts from "constants/fonts.js";
-import { fill } from "constants/games";
 
 import { mediaQueries } from "constants/mediaqueries";
 import colors from "constants/colors";
