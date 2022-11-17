@@ -7,8 +7,12 @@ import categories from 'constants/categories';
 import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
 import { mediaQueries as mq } from 'constants/mediaqueries';
+import { useSiteConfig } from 'context/SiteConfigContext';
+import languages from 'constants/languages';
 
 export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, minMax, category }) {
+  const [siteConfig, ] = useSiteConfig()
+  const { language } = siteConfig
   return (
     <aside
       css={css`
@@ -36,7 +40,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
           padding: 10px 0;
           text-align: center;
         }
-        `}>{category.displayTag['en']}
+        `}>{category.displayTag[language]}
       </div>
       <div css={
         css`
@@ -71,7 +75,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
             css={css`
               display: inline-block;
               margin: 0 0 8px 0;
-              color: ${colors.black};
+              color: ${colors.white};
               font-size: ${fonts.uiFontSize};
               font-weight: bold;
               ${mq[1]} {
@@ -79,7 +83,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
               }
             `}
           >
-            Tags
+            { languages[language].tags}
           </span>
           <div>
             <div
@@ -102,7 +106,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
                   .filter((cat) => cat.showOnCategory)
                   .map((cat) => (
                     <CategoryButton key={cat.name + cat.id} {...cat}>
-                      {cat.displayTag["en"]}
+                      {cat.displayTag[language]}
                     </CategoryButton>
                   )) // {...cat } = unpack keys and values into CategoryButton
                 }
@@ -114,7 +118,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
             css={css`
               display: inline-block;
               margin: 0 0 8px 0;
-              color: ${colors.black};
+              color: ${colors.white};
               font-size: ${fonts.uiFontSize};
               font-weight: bold;
               ${mq[1]} {
@@ -122,7 +126,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
               }
               `}
           >
-            Price range
+            { languages[language]['price-range'] }
           </span>
           <RangeInput minMax={minMax} onChange={onPriceRangeChange} />
         </div>

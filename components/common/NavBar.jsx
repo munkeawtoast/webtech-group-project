@@ -1,12 +1,12 @@
 import colors from 'constants/colors.js'
 
 import { css } from '@emotion/react'
-
 import { TextButton, RoundButton } from 'components/common/Buttons'
 import Logo from 'components/common/Logo'
 import { mediaQueries as mq } from 'constants/mediaqueries'
 import MobileNavButton from './MobileNavButton'
 import styled from '@emotion/styled'
+import FlagButton from './FlagButton'
 
 
 NavBar.defaultProps = {
@@ -54,6 +54,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             }
           `}
         >
+          <FlagButton />
           <RoundButton href="/cart">
             <i
               className="fa-solid fa-cart-shopping"

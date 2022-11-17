@@ -1,24 +1,23 @@
-import Head from "next/head";
-import { useState, useEffect } from "react";
-import { css } from "@emotion/react";
-
-import { useSiteConfig } from "context/SiteConfigContext";
-import categories from "constants/categories.js";
-import games from "constants/games.js";
-import NavBar from "components/common/NavBar";
-import Footer from "components/common/Footer";
-import CategoryOptions from "components/category/[cat]/CategoryOptions";
-import ResultList from "components/category/[cat]/ResultList";
-import colors from "constants/colors";
-import sortfunctions from "constants/sortfunctions";
-import { mediaQueries as mq } from "constants/mediaqueries";
+import Head from "next/head"
+import { useState, useEffect } from "react"
+import { css } from "@emotion/react"
+import categories from "constants/categories.js"
+import games from "constants/games.js"
+import NavBar from "components/common/NavBar"
+import Footer from "components/common/Footer"
+import CategoryOptions from "components/category/[cat]/CategoryOptions"
+import ResultList from "components/category/[cat]/ResultList"
+import colors from "constants/colors"
+import sortfunctions from "constants/sortfunctions"
+import { mediaQueries as mq } from "constants/mediaqueries"
+import { useSiteConfig } from "context/SiteConfigContext"
 
 
 
 // prop category มาจาก getServerSideProps ข้างล่าง
 function Category({ category }) {
-
-  const { currency } = useSiteConfig()
+  const [siteConfig, ] = useSiteConfig()
+  const { language, currency } = siteConfig
   const [minMax, setMinMax] = useState([0, 99999999])
   const [userPriceRange, setUserPriceRange] = useState([0, 99999999])
   const [sortFunc, setSortFunc] = useState(sortfunctions.find(i => i.id === 0))
@@ -53,20 +52,20 @@ function Category({ category }) {
     let minVal = 99999999
     let maxVal = 0
     category.games.forEach((game) => {
-      if (game.price['thb'] < minVal) {
-        minVal = game.price['thb']
+      if (game.price[currency] < minVal) {
+        minVal = game.price[currency]
       }
-      if (game.price['thb'] > maxVal) {
-        maxVal = game.price['thb']
+      if (game.price[currency] > maxVal) {
+        maxVal = game.price[currency]
       }
     })
     setMinMax([minVal, maxVal])
-  }, [category]);
+  }, [category, currency]);
 
   return (
     <>
       <Head>
-        <title>{`${category.displayTag['en']} | Hi5`}</title>
+        <title>{`${category.displayTag[language]} | Hi5`}</title>
       </Head>
       <NavBar hasLogo={true} logoIsCenter={true} />
       <div css={css`background-color: ${colors.white};`}>
@@ -89,8 +88,8 @@ function Category({ category }) {
           />
           <ResultList userPriceRange={userPriceRange} category={category} games={category.games} sortFunc={sortFunc} />
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

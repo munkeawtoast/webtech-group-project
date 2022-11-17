@@ -12,6 +12,7 @@ const AuthorName = styled.span`
 function Footer() {
   return (
     <footer css={css`
+      z-index: 10;
       min-height: 250px;
       display: flex;
       justify-content: space-between;

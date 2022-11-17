@@ -1,22 +1,19 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import React, { createContext, useContext } from 'react'
 import useLocalStorage from 'util/useLocalStorage'
-import { siteConfig as siteConfigDefault } from 'constants/config.js';
+import { siteConfig as defaultSiteConfig } from 'constants/config'
 
-
-const SiteConfigContext = createContext();
+const SiteConfigContext = createContext()
 
 export function useSiteConfig() {
   return useContext(SiteConfigContext)
 }
 
-export function useSetSiteConfig(data) {
-  useContext(SiteConfigContext).mySetSiteConfig(data)
-}
-
-function SiteConfigContextProvider({children}) {
-  const [mySiteConfig, mySetSiteConfig] = useLocalStorage('site_config', siteConfigDefault)
+function SiteConfigContextProvider({ children }) {
+  const [siteConfig, setSiteConfig] = useLocalStorage('siteConfig', defaultSiteConfig)
   return (
-    <SiteConfigContext.Provider value={{...mySiteConfig, mySetSiteConfig}}>
+    <SiteConfigContext.Provider value={[siteConfig, setSiteConfig]}>
       {children}
     </SiteConfigContext.Provider>
   )
