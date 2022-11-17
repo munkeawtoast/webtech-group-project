@@ -26,6 +26,7 @@ function Logo({ fillColor, size, withText, hidden, withLink }) {
         gap: 8px;
       `}>
         <Image
+          alt='logo'
           src={'/logo/logo-' + fillColor + '.png'}
           width={size + 'px'}
           height={size + 'px'}
@@ -34,7 +35,7 @@ function Logo({ fillColor, size, withText, hidden, withLink }) {
           <span
             css={css`
               font-family: ${fonts.titleFontFamily};
-              font-size: 30px;
+              font-size: ${size}px;
             `}
           >
             Hi Five

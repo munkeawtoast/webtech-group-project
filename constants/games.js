@@ -119,7 +119,7 @@ const games = [
     ],
     "key": "d42d6d8d201f8db55d083dd1a8b31150",
     "price": {
-      "usd": 9.9999,
+      "usd": 16.99,
       "thb": 599
     },
     "gameDetail": "",
@@ -133,7 +133,7 @@ const games = [
     ],
     "key": "40021c2df331dcfc40e5d085d00a1a44",
     "price": {
-      "usd": 9.9999,
+      "usd": 11.50,
       "thb": 400
     },
     "gameDetail": "",
@@ -147,7 +147,7 @@ const games = [
     ],
     "key": "ef55a12431c06ee6d6937853ddb0a04c",
     "price": {
-      "usd": 9.9999,
+      "usd": 16.50,
       "thb": 579
     },
     "gameDetail": "",
@@ -161,7 +161,7 @@ const games = [
     ],
     "key": "13381ccd823e7fc0bf4e9fe59cca1487",
     "price": {
-      "usd": 9.9999,
+      "usd": 44.49,
       "thb": 1599
     },
     "gameDetail": "",
@@ -175,7 +175,7 @@ const games = [
     ],
     "key": "7b37ff7b76609013b5008c6b4ee543ef",
     "price": {
-      "usd": 9.9999,
+      "usd": 44.49,
       "thb": 1599
     },
     "gameDetail": "",
@@ -190,7 +190,7 @@ const games = [
     ],
     "key": "4ead32603bb381696244c742f1f444ce",
     "price": {
-      "usd": 9.99,
+      "usd": 6.69,
       "thb": 239
     },
     "gameDetail": "",
@@ -204,7 +204,7 @@ const games = [
     ],
     "key": "d2cabfa6ec33b078bce3a38127199520",
     "price": {
-      "usd": 9.99,
+      "usd": 6.69,
       "thb": 239
     },
     "gameDetail": "",
@@ -234,6 +234,146 @@ const games = [
       "thb": 147
     },
     "gameDetail": ""
+  },
+  {
+    "id": 17,
+    "name": "nba-2k23",
+    "displayName": "NBA 2K23",
+    "tags": [
+      3
+    ],
+    "key": "_",
+    "price": {
+      "usd": 41.50,
+      "thb": 1490
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 18,
+    "name": "football-manager-2023",
+    "displayName": "Football Manager 2023",
+    "tags": [
+      3
+    ],
+    "key": "_",
+    "price": {
+      "usd": 40.69,
+      "thb": 1459
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 19,
+    "name": "pga-tour-2k23",
+    "displayName": "PGA TOUR 2K23",
+    "tags": [
+      3
+    ],
+    "key": "_",
+    "price": {
+      "usd": 41.99,
+      "thb": 1499
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 20,
+    "name": "wwe-2k22",
+    "displayName": "WWE 2K22",
+    "tags": [
+      1, 3
+    ],
+    "key": "_",
+    "price": {
+      "usd": 41.50,
+      "thb": 1490
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 21,
+    "name": "escape-simulator",
+    "displayName": "Escape Simulator",
+    "tags": [
+      4
+    ],
+    "key": "_",
+    "price": {
+      "usd": 6.69,
+      "thb": 239
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 22,
+    "name": "sid-meier's-civilization-vi",
+    "displayName": "Sid Meier’s Civilization® VI",
+    "tags": [
+      5, 6
+    ],
+    "key": "_",
+    "price": {
+      "usd": 44.59,
+      "thb": 1600
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 23,
+    "name": "ghost-watchers",
+    "displayName": "Ghost Watchers",
+    "tags": [
+      8
+    ],
+    "key": "_",
+    "price": {
+      "usd": 6.69,
+      "thb": 239
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 24,
+    "name": "dead-by-daylight",
+    "displayName": "Dead by Daylight",
+    "tags": [
+      8
+    ],
+    "key": "_",
+    "price": {
+      "usd": 10.99,
+      "thb": 369
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 25,
+    "name": "ark:-survival-evolved",
+    "displayName": "ARK: Survival Evolved",
+    "tags": [
+      7
+    ],
+    "key": "_",
+    "price": {
+      "usd": 8.99,
+      "thb": 289
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 26,
+    "name": "don't-starve-together",
+    "displayName": "Don't Starve Together",
+    "tags": [
+      7
+    ],
+    "key": "_",
+    "price": {
+      "usd": 6.69,
+      "thb": 239
+    },
+    "gameDetail": "",
   }
 ]
 

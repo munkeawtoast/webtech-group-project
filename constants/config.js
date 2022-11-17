@@ -2,6 +2,7 @@ const siteConfig = {
   currency: 'thb',
   language: 'th'
 }
+
 const auth = {
   username: '',
   displayname: '',
@@ -9,4 +10,5 @@ const auth = {
   cart: [],
   library: []
 }
-export {siteConfig, auth}
+
+export { siteConfig, auth }

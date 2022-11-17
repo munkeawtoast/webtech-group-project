@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-import { useSiteConfig } from 'context/SiteConfigContext'
+// import { useSiteConfig } from 'context/SiteConfigContext'
 import languages from 'constants/languages'
 import colors from 'constants/colors'
 import fonts from 'constants/fonts'

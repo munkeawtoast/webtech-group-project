@@ -5,8 +5,11 @@ import GameCard from "components/common/GameCard"
 import colors from "constants/colors.js"
 import fonts from "constants/fonts.js"
 import { mediaQueries as mq } from "constants/mediaqueries"
+import { useSiteConfig } from "context/SiteConfigContext"
 
 export default function ResultList({ sortFunc, userPriceRange, category, games }) {
+  const [siteConfig, ] = useSiteConfig()
+  const { language } = siteConfig
   const [gameComps, setGameComps] = useState([])
 
   useEffect(() => {
@@ -51,7 +54,7 @@ export default function ResultList({ sortFunc, userPriceRange, category, games }
           }
         `}
       >
-        {category.displayTag["en"]}
+        {category.displayTag[language]}
       </span>
       <div
         css={css`

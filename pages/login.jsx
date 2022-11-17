@@ -1,5 +1,5 @@
 // file namkhaeng
-import React, { Component } from 'react'
+import React from 'react'
 import { css } from "@emotion/react"
 import ButtonInput from 'components/loginfunc/ButtonInput'
 import FormInput from 'components/loginfunc/FormInput'

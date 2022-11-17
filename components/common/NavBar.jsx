@@ -1,12 +1,12 @@
 import colors from 'constants/colors.js'
 
 import { css } from '@emotion/react'
-
 import { TextButton, RoundButton } from 'components/common/Buttons'
 import Logo from 'components/common/Logo'
 import { mediaQueries as mq } from 'constants/mediaqueries'
 import MobileNavButton from './MobileNavButton'
 import styled from '@emotion/styled'
+import FlagButton from './FlagButton'
 
 
 NavBar.defaultProps = {
@@ -54,6 +54,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             }
           `}
         >
+          <FlagButton />
           <RoundButton href="/cart">
             <i
               className="fa-solid fa-cart-shopping"
@@ -78,7 +79,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             display: flex;
             padding-top: 3px;
             padding-bottom: 6px;
-            border-top: 1px solid ${colors.gray300};
+            box-shadow: 0px 0px 10px 0px ${colors.gray700 + 'aa'};
           }
         `
         }>
@@ -102,6 +103,12 @@ function NavBar({ hasLogo, logoIsCenter }) {
           icon={<i className="fa-solid fa-cart-shopping" />}
           href='/cart'
           text='Cart'
+        />
+        <Divider />
+        <MobileNavButton
+          icon={<i className="fa-solid fa-gear" />}
+          href='/login'
+          text='Login'
         />
         <Divider />
         <MobileNavButton

@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-
+import React from 'react'
 import { css } from '@emotion/react'
 
+import currencies from 'constants/currencies.js'
 import colors from 'constants/colors.js'
 import fonts from 'constants/fonts.js'
-import currencies from 'constants/currencies.js'
-
 import { useSiteConfig } from 'context/SiteConfigContext'
 
 GameCard.defaultProps = {
@@ -19,20 +18,29 @@ GameCard.defaultProps = {
   onClick: null,
 }
 
+const Outer = ({ children, game, showArgs }) => (
+  showArgs.isLink ?
+    <Link
+      href={`/game/${game.name}`}
+      passHref
+      legacyBehavior
+    >
+      <a
+        css={css`height: min-content;`}
+      >
+        {children}
+      </a>
+    </Link>
+    :
+    children
+)
+
 function GameCard({ showArgs, game, onClick }) {
-  const siteConfig = useSiteConfig()
+  const [siteConfig, ] = useSiteConfig()
   const { currency } = siteConfig
 
-  const Outer = ({ children }) => (
-    showArgs.isLink ?
-      <Link href={`/game/${game.name}`}>
-        {children}
-      </Link>
-      :
-      children
-  )
   return (
-    <Outer>
+    <Outer showArgs={showArgs} game={game}>
       <div
         css={
           css`
@@ -40,15 +48,15 @@ function GameCard({ showArgs, game, onClick }) {
             box-sizing: content-box;
             margin: 0px;
             background-color: ${colors.white};
-            /* border-radius: 8px;
-            border: 1px solid ${colors.gray300};
-            padding: 4px; */
             color: ${colors.black};
             font-family: ${fonts.normalFontFamily};
             font-weight: 500;
             font-size: 18;
             width: 150px;
-            ${onClick || showArgs.isLink ? css`cursor: pointer;` : ''}
+            &:hover > span {
+              color: ${colors.greenPrimary};
+              font-weight: bold;
+            }
           `
         }
         onClick={onClick}
@@ -58,19 +66,22 @@ function GameCard({ showArgs, game, onClick }) {
           aspect-ratio: 3/4;
         `}>
           <Image
+            alt='game image'
             src={`/game/${game.id}/thumbnail.jpg`}
             layout='fill'
+            
           />
         </div>
         <span css={css`
           max-width: 150px;
-          /* word-wrap: break-word; */
+          transition: all 0.1s;
         `}>
           {game.displayName}
         </span>
         <div>
-          {currency ? currencies[currency].currencyTag : null}
-          {currency ? game.price[currency] : null}
+          { currencies[currency].currencyTag }
+          {' '}
+          { game.price[currency] }
         </div>
       </div>
     </Outer>
