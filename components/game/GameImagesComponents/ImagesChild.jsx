@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import Image from "next/image";
+import { mediaQueries } from "constants/mediaqueries";
 const ImgChild = ({ gameID, ImageID, setimgID }) => {
   return (
     <div
@@ -7,6 +8,15 @@ const ImgChild = ({ gameID, ImageID, setimgID }) => {
         position: relative;
         height: 168.75px;
         aspect-ratio: 16/9;
+
+        ${mediaQueries[0]} {
+          height: 90px;
+          /* flex: 1; */
+        }
+        ${mediaQueries[1]} {
+          height: unset;
+          flex: 1;
+        }
       `}
       onClick={function () {
         setimgID(ImageID);
