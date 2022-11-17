@@ -78,7 +78,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             display: flex;
             padding-top: 3px;
             padding-bottom: 6px;
-            border-top: 1px solid ${colors.gray300};
+            box-shadow: 0px 0px 10px 0px ${colors.gray700 + 'aa'};
           }
         `
         }>
@@ -102,6 +102,12 @@ function NavBar({ hasLogo, logoIsCenter }) {
           icon={<i className="fa-solid fa-cart-shopping" />}
           href='/cart'
           text='Cart'
+        />
+        <Divider />
+        <MobileNavButton
+          icon={<i className="fa-solid fa-gear" />}
+          href='/login'
+          text='Login'
         />
         <Divider />
         <MobileNavButton
