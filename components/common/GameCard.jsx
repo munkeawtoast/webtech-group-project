@@ -37,6 +37,15 @@ const Outer = ({ children, game, showArgs }) => (
 )
 
 function GameCard({ showArgs, game, onClick }) {
+  const defaultKeyHoverText = 'Click to copy key!'
+  const [keyHoverText, setKeyHoverText] = React.useState(defaultKeyHoverText)
+  function changeText(text) {
+    const original = defaultKeyHoverText
+    setKeyHoverText(text)
+    setTimeout(() => {
+      setKeyHoverText(original)
+    }, 1000)
+  }
   const [siteConfig, ] = useSiteConfig()
   const { currency } = siteConfig
 
@@ -92,35 +101,8 @@ function GameCard({ showArgs, game, onClick }) {
           { game.price[currency] }
         </div>
         {
-          showArgs.forLibrary ? 
-          <>
-            <div
-              css={css`
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                z-index: 1000;
-                top: 0;
-                left: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: 0.25s ease-in-out;
-                opacity: 0;
-                color: ${colors.white};
-                &:hover {
-                  ~ * {
-
-                    opacity: 1;
-                  }
-                  opacity: 1;
-                }
-              `}
-            >
-              {'Key:'}
-              <br />
-              {game.key}
-            </div>
+          showArgs.forLibrary
+          ? 
             <div
               css={css`
                 position: absolute;
@@ -129,19 +111,26 @@ function GameCard({ showArgs, game, onClick }) {
                 z-index: 100;
                 top: 0;
                 left: 0;
-                transition: 0.25s ease-in-out;
+                transition: 0.25s ;
                 opacity: 0;
-                filter: blur(10px);
-                background-color: #000000ba;
+                background-color: ${colors.white};
+                color: ${colors.gray800};
+                display: grid;
+                place-items: center;
+                box-shadow: 0px 0px 10px 0px ${colors.gray400};
                 &:hover {
-                  transform: scale(1.1);
                   opacity: 1;
                 }
               `}
-            />
-            
-          </>
-            : null
+              onClick={() => {
+                navigator.clipboard.writeText(game.key)
+                changeText('Copied!')
+              }}
+            >
+              { keyHoverText }
+            </div>
+          :
+            null
         }
       </div>
     </Outer>

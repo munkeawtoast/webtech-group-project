@@ -64,10 +64,10 @@ function Category({ category }) {
 
   return (
     <>
-      <Head>
+      <Head> 
         <title>{`${category.displayTag[language]} | Hi5`}</title>
       </Head>
-      <NavBar hasLogo={true} logoIsCenter={true} />
+      <NavBar hasLogo={true} logoIsCenter={true} /> 
       <div css={css`background-color: ${colors.white};`}>
         <div
           css={css`
@@ -94,9 +94,10 @@ function Category({ category }) {
   );
 }
 
-/* detail getServersideProps
-DOCUMENT: https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props
-function getServersideProps จะรันใน server และส่ง props ให้ตัวที่ใส่ export default ไปให้ส่วน client
+/*
+ * detail getServersideProps
+ * DOCUMENT: https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props
+ * function getServersideProps จะรันใน server และส่ง props ให้ตัวที่ใส่ export default ไปให้ส่วน client
 */
 export async function getServerSideProps(context) {
   const category = categories.find((i) => i.link == context.params.cat);

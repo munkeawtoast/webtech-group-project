@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { isValidAccount } from 'util/isValidAccount'
 import { mediaQueries as mq} from 'constants/mediaqueries'
+import Footer from 'components/common/Footer'
 
 
 
@@ -95,7 +96,7 @@ function Library() {
             padding: 30px 50px;
           }
           ${mq[1]} {
-            padding: 30px 100px;
+            padding: 30px 30px;
           }
           ${mq[2]} {
             padding: 15px;
@@ -133,6 +134,7 @@ function Library() {
           }
         </div>
       </div>
+      <Footer />
     </>
   )
 }

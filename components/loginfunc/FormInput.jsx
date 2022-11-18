@@ -3,7 +3,7 @@ import React from "react";
 import fonts from "constants/fonts";
 import { mediaQueries as mq } from "constants/mediaqueries";
 
-function FormInput({ type }){
+function FormInput({ type, value, onInputChange }){
     return(
         <input
             type={type}
@@ -11,7 +11,7 @@ function FormInput({ type }){
                 display: block;
                 padding: 1em 2em;
                 height: 3em;
-                width: 40%;
+                width: min(400px, 40vw);
                 border-radius: 4px;
                 font-size: 14px;
                 line-height: 22px;
@@ -24,10 +24,14 @@ function FormInput({ type }){
                 transition: all 200ms linear;
                 box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
                 ${mq[1]}{
-                    width: 60%;
-                    height: 1em;
+                    width: 400px;
+                }
+                ${mq[2]}{
+                    width: 300px;
                 }
             `}
+            value={value}
+            onChange={e => onInputChange(e.target.value)}
         />
     )
 }
