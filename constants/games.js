@@ -374,6 +374,202 @@ const games = [
       "thb": 239
     },
     "gameDetail": "",
+  },
+  {
+    "id": 27,
+    "name": "unravel",
+    "displayName": "Unravel",
+    "tags": [
+      7
+    ],
+    "key": "286eec3ab2ec1d6bacb6361a74b4ae30",
+    "price": {
+      "usd": 15.05,
+      "thb": 540
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 28,
+    "name": "the-past-within",
+    "displayName": "The Past Within",
+    "tags": [
+      7
+    ],
+    "key": "2b7e5256d89b1e4b481bce53cac9c49c",
+    "price": {
+      "usd": 3.76,
+      "thb": 135
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 29,
+    "name": "human-fall-flat",
+    "displayName": "Human Fall Flat",
+    "tags": [
+      7
+    ],
+    "key": "2b7e5256d89b1e4b481bce53cac9c49c",
+    "price": {
+      "usd": 2.63,
+      "thb": 94.5
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 30,
+    "name": "hogwarts-legacy",
+    "displayName": "Hogwarts Legacy",
+    "tags": [
+      6, 7
+    ],
+    "key": "f241f4023df6233784c9ead350483e8a",
+    "price": {
+      "usd": 44.38,
+      "thb": 1590
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 31,
+    "name": "coral-island",
+    "displayName": "Coral Island",
+    "tags": [
+      5, 6, 7
+    ],
+    "key": "d2ebed4eaf58509dcc358e1782c38fea",
+    "price": {
+      "usd": 12.53,
+      "thb": 449
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 32,
+    "name": "project-zomboid",
+    "displayName": "Project Zomboid",
+    "tags": [
+      5
+    ],
+    "key": "a0aefe9779cc1c7141b59c2677ea37d9",
+    "price": {
+      "usd": 8.06,
+      "thb": 289
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 33,
+    "name": "assetto-corsa",
+    "displayName": "Assetto Corsa",
+    "tags": [
+      2
+    ],
+    "key": "55262cb5ae43f54cb2328f9b56003b31",
+    "price": {
+      "usd": 8.06,
+      "thb": 289
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 34,
+    "name": "grand-prix-story",
+    "displayName": "Grand Prix Story",
+    "tags": [
+      2
+    ],
+    "key": "e25915b3fec883526756d435264c2cff",
+    "price": {
+      "usd": 5.58,
+      "thb": 200
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 35,
+    "name": "cities-skylines",
+    "displayName": "Cities: Skylines",
+    "tags": [
+      5
+    ],
+    "key": "900bc885d7553375aec470198a9514f3",
+    "price": {
+      "usd": 19.50,
+      "thb": 699
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 36,
+    "name": "going-medieval",
+    "displayName": "Going Medieval",
+    "tags": [
+      5, 6
+    ],
+    "key": "de4667d1f44423b565b07a7bb14790fc",
+    "price": {
+      "usd": 8.89,
+      "thb": 319
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 37,
+    "name": "south-park-the-stick-of-truth",
+    "displayName": "South Park™: The Stick of Truth™",
+    "tags": [
+      6, 7
+    ],
+    "key": "fb45615cea1183af03479d88ad4da5cd",
+    "price": {
+      "usd": 22.31,
+      "thb": 800
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 38,
+    "name": "cat-quest",
+    "displayName": "Cat Quest",
+    "tags": [
+      6
+    ],
+    "key": "2b7e5256d89b1e4b481bce53cac9c49c",
+    "price": {
+      "usd": 8.06,
+      "thb": 289
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 39,
+    "name": "cardfight-vanguard-dear-days",
+    "displayName": "Cardfight!! Vanguard Dear Days",
+    "tags": [
+      5
+    ],
+    "key": "5dd2199ad68327cc76d583b057aee7d5",
+    "price": {
+      "usd": 35.15,
+      "thb": 1259.99
+    },
+    "gameDetail": "",
+  },
+  {
+    "id": 40,
+    "name": "the-forest-of-dizzling-rain",
+    "displayName": "The Forest of Drizzling Rain",
+    "tags": [
+      8
+    ],
+    "key": "23678db5efde9ab46bce8c23a6d91b50",
+    "price": {
+      "usd": 6.94,
+      "thb": 249
+    },
+    "gameDetail": "",
   }
 ]
 

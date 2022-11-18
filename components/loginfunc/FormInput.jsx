@@ -11,7 +11,7 @@ function FormInput({ type, value, onInputChange }){
                 display: block;
                 padding: 1em 2em;
                 height: 3em;
-                width: min(400px, 40vw);
+                width: 50%;
                 border-radius: 4px;
                 font-size: 14px;
                 line-height: 22px;
