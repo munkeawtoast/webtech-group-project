@@ -1,76 +1,87 @@
-import colors from 'constants/colors.js'
+import colors from "constants/colors.js";
 
-import { css } from '@emotion/react'
-import { TextButton, RoundButton } from 'components/common/Buttons'
-import Logo from 'components/common/Logo'
-import { mediaQueries as mq } from 'constants/mediaqueries'
-import MobileNavButton from 'components/common/NavBar/MobileNavButton'
-import MobileLinkNavButton from 'components/common/NavBar/MobileLinkNavButton'
-import styled from '@emotion/styled'
-import FlagButton from './FlagButton'
-import { useSiteConfig } from 'context/SiteConfigContext'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { isValidAccount } from 'util/isValidAccount'
-import languages from 'constants/languages'
-import { useAuth } from 'context/AuthContext'
-
+import { css } from "@emotion/react";
+import { TextButton, RoundButton } from "components/common/Buttons";
+import Logo from "components/common/Logo";
+import { mediaQueries as mq } from "constants/mediaqueries";
+import MobileNavButton from "components/common/NavBar/MobileNavButton";
+import MobileLinkNavButton from "components/common/NavBar/MobileLinkNavButton";
+import styled from "@emotion/styled";
+import FlagButton from "./FlagButton";
+import { useSiteConfig } from "context/SiteConfigContext";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { isValidAccount } from "util/isValidAccount";
+import languages from "constants/languages";
+import { useAuth } from "context/AuthContext";
 
 NavBar.defaultProps = {
-  hasLogo: true
-}
+  hasLogo: true,
+};
 
 function NavBar({ hasLogo, logoIsCenter }) {
-  const [auth, ] = useAuth()
-  const [count, setCount] = useState(0)
-  const [accountIsValid, setAccountIsValid] = useState(false)
-  useEffect(() => {
-    if (count === 0) {
-      setCount((count) => count + 1)
-    }
-    else if (isValidAccount(auth)) {
-      setAccountIsValid(true)
-    }
-  }, [count, auth])
+  const [auth] = useAuth();
 
-  const [siteConfig, setSiteConfig] = useSiteConfig()
+  // from here
+  const [accountIsValid, setAccountIsValid] = useState(false);
+
+  useEffect(() => {
+    if (isValidAccount(auth)) {
+      setAccountIsValid(true);
+    }
+  }, [auth]);
+  // til here
+
+  const [siteConfig, setSiteConfig] = useSiteConfig();
   function changeLanguage() {
-    if (siteConfig.language === 'th') {
-      setSiteConfig({ ...siteConfig, language: 'en' })
+    if (siteConfig.language === "th") {
+      setSiteConfig({ ...siteConfig, language: "en" });
     } else {
-      setSiteConfig({ ...siteConfig, language: 'th' })
+      setSiteConfig({ ...siteConfig, language: "th" });
     }
   }
-  const { language } = siteConfig
+  const { language } = siteConfig;
   return (
     <>
-      <nav css={css`
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 50px;
-        padding: 0 25px;
-        background-color: ${colors.greenPrimary};
-        color: ${colors.white};
-      `}>
-        {
-          !logoIsCenter
-            ? <Logo fillColor="white" size="40" withText={true} hidden={!hasLogo} withLink={true} />
-            : null
-        }
+      <nav
+        css={css`
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 50px;
+          padding: 0 25px;
+          background-color: ${colors.greenPrimary};
+          color: ${colors.white};
+        `}
+      >
+        {!logoIsCenter ? (
+          <Logo
+            fillColor="white"
+            size="40"
+            withText={true}
+            hidden={!hasLogo}
+            withLink={true}
+          />
+        ) : null}
         <div>
-          {
-            logoIsCenter
-              ? <div css={css`
+          {logoIsCenter ? (
+            <div
+              css={css`
                 position: absolute;
                 left: 50%;
                 transform: translate(-50%);
                 top: 5px;
-              `}>
-                <Logo fillColor="white" size="45" withText={false} hidden={!hasLogo} withLink={true} />
-              </div>
-              : null
-          }
+              `}
+            >
+              <Logo
+                fillColor="white"
+                size="45"
+                withText={false}
+                hidden={!hasLogo}
+                withLink={true}
+              />
+            </div>
+          ) : null}
         </div>
         <div
           css={css`
@@ -89,11 +100,12 @@ function NavBar({ hasLogo, logoIsCenter }) {
               style={{ color: colors.black }}
             ></i>
           </RoundButton>
-          <TextButton href={accountIsValid ? '/account/library' : '/login'}>
-            {accountIsValid ? languages[language].account : languages[language].login }
+          <TextButton href={accountIsValid ? "/account/library" : "/login"}>
+            {accountIsValid
+              ? languages[language].account
+              : languages[language].login}
           </TextButton>
         </div>
-
       </nav>
       <nav
         css={css`
@@ -107,53 +119,49 @@ function NavBar({ hasLogo, logoIsCenter }) {
             display: flex;
             padding-top: 3px;
             padding-bottom: 6px;
-            box-shadow: 0px 0px 10px 0px ${colors.gray700 + 'aa'};
+            box-shadow: 0px 0px 10px 0px ${colors.gray700 + "aa"};
           }
-        `
-        }>
+        `}
+      >
         <MobileLinkNavButton
-          icon={
-            <i
-              className="fa-solid fa-house"
-            />
-          }
-          href='/category'
-          text='Home'
+          icon={<i className="fa-solid fa-house" />}
+          href="/category"
+          text="Home"
         />
         <Divider />
         <MobileLinkNavButton
           icon={<i className="fa-solid fa-gamepad" />}
-          href='/library'
-          text='Library'
+          href="/library"
+          text="Library"
         />
         <Divider />
         <MobileLinkNavButton
           icon={<i className="fa-solid fa-cart-shopping" />}
-          href='/cart'
-          text='Cart'
+          href="/cart"
+          text="Cart"
         />
         <Divider />
         <MobileNavButton
           icon={
             <Image
-              src={language === 'th' ? '/flag/th.svg' : '/flag/en.svg'}
+              src={language === "th" ? "/flag/th.svg" : "/flag/en.svg"}
               alt="lang"
               width={20}
               height={16}
             />
           }
           onClick={changeLanguage}
-          text='Lang'
+          text="Lang"
         />
         <Divider />
         <MobileLinkNavButton
           icon={<i className="fa-solid fa-gear" />}
-          href='/login'
-          text='Login'
+          href="/login"
+          text="Login"
         />
       </nav>
     </>
-  )
+  );
 }
 
 const Divider = styled.div`
@@ -161,7 +169,6 @@ const Divider = styled.div`
   width: 1px;
   transform: translateY(-3px);
   margin: 10px 1px;
-`
+`;
 
-
-export default NavBar
+export default NavBar;
