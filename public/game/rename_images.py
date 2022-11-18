@@ -18,9 +18,10 @@ def rename_images():
         path = f"/{i}/"
         file_in_dir = os.listdir( cur_dir + path )
         for j in filter(filter_thumbnail, file_in_dir):
-            new_image = Image.open(cur_dir + path + j).convert('RGB')
-            os.remove(cur_dir + path + j)
-            new_image.save(cur_dir + path + j.rsplit('.')[0] + '.jpg', 'JPEG')
+            if not (j.endswith('.jpg')):
+                new_image = Image.open(cur_dir + path + j).convert('RGB')
+                os.remove(cur_dir + path + j)
+                new_image.save(cur_dir + path + j.rsplit('.')[0] + '.jpg', 'JPEG')
         
         
         path = f"/{i}/images/"
