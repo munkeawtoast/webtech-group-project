@@ -5,23 +5,22 @@
 import os
 from PIL import Image
 
-def filter_thumbnail(file):
-    if (file.startswith('thumbnail') or file.startswith('thumbnail-wide')):
-        return True
-    return False
-        
-
 def rename_images():
     cur_dir = os.getcwd()
     for i in range(90):
-        # รัน loop เปลี่ยนนามสกุลไฟล์ thumbnail และ thumbnail-wide ให้เป็น jpg
+        
+        # รันหาไฟล์ใน folder ที่ชื่อไม่ใช้ thumbnail หรือ thumbnail-wide และเปลี่ยนให้เป็น thumbnail และ thumbnail-wide ตาม aspect ratio ของรูป
         path = f"/{i}/"
-        file_in_dir = os.listdir( cur_dir + path )
-        for j in filter(filter_thumbnail, file_in_dir):
-            if not (j.endswith('.jpg')):
-                new_image = Image.open(cur_dir + path + j).convert('RGB')
-                os.remove(cur_dir + path + j)
-                new_image.save(cur_dir + path + j.rsplit('.')[0] + '.jpg', 'JPEG')
+        files_in_dir = [j for j in os.listdir(cur_dir + path) if os.path.isfile(cur_dir + path + j)]
+        for j in files_in_dir:
+            if not (j != "thumbnail.jpg" and j != "thumbnail-wide.jpg"):
+                continue
+            img = Image.open(cur_dir + path + j).convert('RGB')
+            os.remove(cur_dir + path + j)
+            if img.width > img.height:
+                img.save(cur_dir + path + 'thumbnail-wide.jpg')
+            else:
+                img.save(cur_dir + path + 'thumbnail.jpg')
         
         
         path = f"/{i}/images/"
@@ -32,6 +31,6 @@ def rename_images():
             if not (filename.endswith('.jpg')):
                 new_name = cur_dir + path + str(j) + ".jpg"
                 new_image = Image.open(filename).convert('RGB')
-                os.remove(filename)
+                os.remove(cur_dir+path+filename)
                 new_image.save(new_name, 'JPEG')
 rename_images()
