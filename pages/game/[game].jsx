@@ -10,12 +10,16 @@ import categories from "constants/categories";
 import { useState } from "react";
 import GameName from "components/game/GameName";
 import { mediaQueries } from "constants/mediaqueries";
+import Head from "next/head";
 
 const Game = ({ game, categoryArray }) => {
   const [imgID, setimgID] = useState(0);
 
   return (
     <>
+      <Head>
+        <title>{`${game.displayName} | Hi5`}</title>
+      </Head>
       <div
         css={css`
           background-color: ${colors.white};

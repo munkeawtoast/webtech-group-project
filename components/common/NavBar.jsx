@@ -83,7 +83,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
           `}
         >
           <FlagButton />
-          <RoundButton href="/cart">
+          <RoundButton href="/account/cart">
             <i
               className="fa-solid fa-cart-shopping"
               style={{ color: colors.black }}

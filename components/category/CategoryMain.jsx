@@ -5,8 +5,12 @@ import categories from "constants/categories"
 import fonts from 'constants/fonts.js'
 import { mediaQueries } from "constants/mediaqueries"
 import games from "constants/games"
+import { useSiteConfig } from "context/SiteConfigContext"
+import languages from "constants/languages"
 
 export default function CategoryMain() {
+    const [siteConfig, ] = useSiteConfig()
+    const { language } = siteConfig
     return (
         <div
         css=
@@ -32,7 +36,7 @@ export default function CategoryMain() {
                 }
             `}
         >
-            <Center><h1>Category</h1></Center>
+            <Center><h1>{languages[language].tags}</h1></Center>
             <div
             css=
                 {css`
@@ -42,10 +46,10 @@ export default function CategoryMain() {
                     gap: 15px;
                 `}
             >
-                {categories.filter(cate => cate.showOnCategory).map(cate => <CategoryLink key={cate.id} name={cate.displayTag['en']} link={'/category/'+cate.link} pic={'/category/'+cate.image}/>)}
+                {categories.filter(cate => cate.showOnCategory).map(cate => <CategoryLink key={cate.id} name={cate.displayTag[language]} link={'/category/'+cate.link} pic={'/category/'+cate.image}/>)}
             </div>
 
-            <Center><h1>Recommend</h1></Center>
+            <Center><h1>{languages[language].recommended}</h1></Center>
             <div
             css=
                 {css`

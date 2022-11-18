@@ -12,6 +12,7 @@ const languages = {
     "tags": "Tags",
     "price-range": "Price range",
     "project-member": "Project members",
+    "recommended": "Recommended",
 
   },
   "th": {
@@ -27,6 +28,7 @@ const languages = {
     "tags": "ประเภทเกม",
     "price-range": "ราคา",
     "project-member": "รายชื่อผู้จัดทำ",
+    "recommended": "เกมแนะนำ",
   }
 }
 

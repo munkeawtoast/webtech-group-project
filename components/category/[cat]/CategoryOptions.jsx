@@ -17,6 +17,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
     <aside
       css={css`
         background-color: ${colors.greenPrimary};
+        color: ${colors.white};
         font-family: ${fonts.normalFontFamily};
         width: 250px;
         padding: 20px 15px;

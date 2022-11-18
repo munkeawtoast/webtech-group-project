@@ -10,7 +10,7 @@ const games = [
       "usd": 0,
       "thb": 0
     },
-    "gameDetail": "default description",
+    "description": "default description",
   },
   {
     "id": 1,
@@ -24,7 +24,7 @@ const games = [
       "usd": 59.90,
       "thb": 1990
     },
-    "gameDetail": "",
+    "description": "Fighters!\nAll past Super Smash Bros. fighters join the battle. Every single one!\n74 fightersplus DLC\nPokémon Trainer counts as one; number includes Echo Fighters.\nStages\nMore than 100 stages! Returning stages have been powered up and every stage has Battlefield and Final Destination versions.",
   },
   {
     "id": 2,
@@ -38,7 +38,7 @@ const games = [
       "usd": 59.99,
       "thb": 1899
     },
-    "gameDetail": "",
+    "description": "Your Ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars.\nExplore a world of striking contrast and beauty. Discover living deserts, lush jungles, historic cities, hidden ruins, pristine beaches, vast canyons and a towering snow-capped volcano. The diverse landscapes of Mexico are waiting to be explored.\nImmerse yourself in a deep campaign with hundreds of challenges that reward you for engaging in the activities you love. Meet new characters and choose the outcomes of their Horizon Story missions. Complete challenges to earn rewards and unlock new cars, events, and activities.\nExperience the thrill of driving hundreds of the world’s greatest cars. Collect, customize, and upgrade your fleet of cars,",
   },
   {
     "id": 3,
@@ -52,7 +52,7 @@ const games = [
       "usd": 69.99,
       "thb": 1899
     },
-    "gameDetail": "",
+    "description": "EA SPORTS™ FIFA 23 innovates across the game, FOOTBALL INTELLIGENCE unlocks an unprecedented platform for gameplay realism, FIFA Ultimate Team™ offers more ways to build your dream squad, and EA SPORTS VOLTA returns the game to the street, with an authentic form of small-sided football.\nFIFA 23 innovates across the game, FOOTBALL INTELLIGENCE unlocks an unprecedented platform for gameplay realism, FIFA Ultimate Team™ offers more ways to build your dream squad, and EA SPORTS VOLTA returns the game to the street, with an authentic form of small-sided football.\nFIFA 23 innovates across the game, FOOTBALL INTELLIGENCE unlocks an unprecedented platform for gameplay realism, FIFA Ultimate Team™ offers more ways to build your dream squad, and EA SPORTS VOLTA returns the game to the street, with an authentic form of small-sided football.",
   },
   {
     "id": 4,
@@ -66,21 +66,21 @@ const games = [
       "usd": 9.99,
       "thb": 220
     },
-    "gameDetail": "",
+    "description":  "Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following.\nThe single-player portion of Portal 2 introduces a cast of dynamic new characters, a host of fresh puzzle elements, and a much larger set of devious test chambers. Players will explore never-before-seen areas of the Aperture Science Labs and be reunited with GLaDOS, the occasionally murderous computer companion who guided them through the original game."
   },
   {
     "id": 5,
     "name": "crusader-kings-3",
     "displayName": "Crusader Kings III",
     "tags": [
-      5
+      5, 6
     ],
     "key": "e3f36a6a8c9979d70c47a7d5182a1e2f",
     "price": {
       "usd": 49.99,
       "thb": 749
     },
-    "gameDetail": "",
+    "description": "Your legacy awaits. Choose your noble house and lead your dynasty to greatness in a Middle Ages epic that spans generations. War is but one of many tools to establish your reign, as real strategy requires expert diplomatic skill, mastery of your realm, and true cunning. Crusader Kings III continues the popular series made by Paradox Development Studio, featuring the widely acclaimed marriage of immersive grand strategy and deep, dramatic medieval roleplaying."
   },
   {
     "id": 6,
@@ -94,7 +94,7 @@ const games = [
       "usd": 14.99,
       "thb": 315
     },
-    "gameDetail": "",
+    "description": "Stardew Valley is an open-ended country-life RPG with support for 1–4 players. You’ve inherited your grandfather’s old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won’t be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town’s most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!"
   },
   {
     "id": 7,
@@ -108,7 +108,7 @@ const games = [
       "usd": 29.99,
       "thb": 1059
     },
-    "gameDetail": "",
+    "description":  "Minecraft is a game about placing blocks and going on adventures. Now you can explore amazing community-made maps, thrilling minigames and more! Survive online with friends on console, mobile, and Windows 10, or share the adventure at home in split-screen multiplayer. Available as a physical disc or digitally from the Xbox Store."
   },
   {
     "id": 8,
@@ -122,7 +122,7 @@ const games = [
       "usd": 16.99,
       "thb": 599
     },
-    "gameDetail": "",
+    "description": "A Game of Thrones: The Board Game is a game of conquest and betrayal set in the world of George R.R. Martin’s best-selling A Song of Ice and Fire novels. In the game, 3 to 6 players take on the roles of the noble Houses of Westeros, and vie for control of the Iron Throne. Players will choose their allegiances to one of the Great Houses of Westeros, such as Stark, Lannister, Baratheon, or Targaryen, and attempt to win the Iron Throne by advancing their agenda through the use of military strength, political influence, and economic power. The game is played on a map of Westeros, which is divided into 19 regions, each of which is controlled by a Great House. Players will move their armies and fleets around the board, attempting to gain control of the regions, and to win the support of the Great Houses of Westeros. The game is played over the course of seven rounds, and the player who has the most victory points at the end of the seventh round wins the game."
   },
   {
     "id": 9,
@@ -136,7 +136,7 @@ const games = [
       "usd": 11.50,
       "thb": 400
     },
-    "gameDetail": "",
+    "description": "Enter the chaos of war as a bold Knight, a brutal Viking, or a deadly Samurai. Play the thrilling story campaign or fight in brutal PvP modes, now on new dedicated servers. Experience the thrill of the fight in For Honor, a brand-new game developed by Ubisoft Montreal for the PC, PlayStation®4 system, and Xbox One."
   },
   {
     "id": 10,
@@ -150,7 +150,7 @@ const games = [
       "usd": 16.50,
       "thb": 579
     },
-    "gameDetail": "",
+    "description": "2022 will see the WRC transition to the hybrid era. This is a revolution for the rally world, significantly affecting performance, changing strategies and making drivers and teams adapt.\nIn terms of gameplay, new mechanics have been integrated to represent the demands of the hybrid engines. In order to win, you have to carefully manage your battery by adapting your engine mapping throughout the special stages you take part in."
   },
   {
     "id": 11,
@@ -164,7 +164,7 @@ const games = [
       "usd": 44.49,
       "thb": 1599
     },
-    "gameDetail": "",
+    "description": "Race the stunning, new cars of the Formula 1® 2022 season with the authentic lineup of all 20 drivers and 10 teams, and take control of your race experience with new immersive or broadcast race sequences. Create a team and take them to the front of the grid with new depth in the acclaimed My Team career mode, race head-to-head in split-screen or multiplayer, or change the pace by taking supercars from some of the sport’s biggest names to the track in our all-new Pirelli Hot Laps feature.",
   },
   {
     "id": 12,
@@ -178,7 +178,7 @@ const games = [
       "usd": 44.49,
       "thb": 1599
     },
-    "gameDetail": "",
+    "description": "Play your way into the history books in Madden NFL 23.\nControl your impact with every decision in all-new ways. Call the shots in Franchise with free agency and trade logic updates, play your way into the history books in Face of the Franchise: The League, and assemble the most powerful roster in all of Madden Ultimate Team™.",
   },
   {
     "id": 13,
@@ -193,7 +193,7 @@ const games = [
       "usd": 6.69,
       "thb": 239
     },
-    "gameDetail": "",
+    "description": "'Counter-Strike took the gaming industry by surprise when the unlikely MOD became the most played online PC action game in the world almost immediately after its release in August 1999,' said Doug Lombardi at Valve. 'For the past 12 years, it has continued to be one of the most-played games in the world, headline competitive gaming tournaments and selling over 25 million units worldwide across the franchise. We're excited to continue the legacy.'",
   },
   {
     "id": 14,
@@ -207,7 +207,7 @@ const games = [
       "usd": 6.69,
       "thb": 239
     },
-    "gameDetail": "",
+    "description": "Phasmophobia is a multiplayer (4-10 players) co-op horror game, where players are ghost hunters equipped with the latest ghost hunting technology. Players must work together to gather as much evidence as possible and escape the haunted location before their sanity gives out.",
   },
   {
     "id": 15,
@@ -220,7 +220,7 @@ const games = [
       "usd": 2.99,
       "thb": 100
     },
-    "gameDetail": ""
+    "description": "Slender Fortress is composed of several maps, all different with a variety of bosses hunting the RED team down as they search for pages. However, the goal can differ, such as instead waiting for Escapes to arrive. All RED members, regardless of class, are heavily modified to fit Slender Fortress's gameplay. They all walk slowly, but can sprint under the limit of a stamina meter, are reduced only to their melee weapons, and wield a flashlight."
   },
   {
     "id": 16,
@@ -233,7 +233,7 @@ const games = [
       "usd": 4.59,
       "thb": 147
     },
-    "gameDetail": ""
+    "description": "No, it's not the programming language, Rust is a survival game developed by Facepunch Studios. Rust is a multiplayer-only survival video game developed and published by Facepunch Studios. The game was released for Microsoft Windows on February 8, 2018, with support for macOS and Linux planned in the future. A standalone version of the game, titled Rust: Console Edition, was released for PlayStation 4 and Xbox One on May 21, 2019.",
   },
   {
     "id": 17,
@@ -247,7 +247,7 @@ const games = [
       "usd": 41.50,
       "thb": 1490
     },
-    "gameDetail": "",
+    "description": "NBA 2K23 is the latest installment in the world-renowned, best-selling NBA 2K series, delivering an industry-leading sports video game experience. With extensive improvements upon its best-in-class graphics and gameplay, competitive and community online features, and deep, varied game modes, NBA 2K23 offers one-of-a-kind immersion into all facets of NBA basketball and culture - where Everything is Game.",
   },
   {
     "id": 18,
@@ -261,7 +261,7 @@ const games = [
       "usd": 40.69,
       "thb": 1459
     },
-    "gameDetail": "",
+    "description": "Football Manager 2023 is the latest release in the award-winning and record-breaking series. Putting you in the hot seat of any soccer club in more than 50 countries across the world, Football Manager 2023 is the closest thing to doing the job for real.",
   },
   {
     "id": 19,
@@ -275,7 +275,7 @@ const games = [
       "usd": 41.99,
       "thb": 1499
     },
-    "gameDetail": "",
+    "description": "PGA TOUR 2K23 is the latest installment in the world-renowned, best-selling PGA TOUR series, delivering an industry-leading sports video game experience. With extensive improvements upon its best-in-class graphics and gameplay, competitive and community online features, and deep, varied game modes, PGA TOUR 2K23 offers one-of-a-kind immersion into all facets of golf and culture - where Everything is Game.",
   },
   {
     "id": 20,
@@ -289,7 +289,7 @@ const games = [
       "usd": 41.50,
       "thb": 1490
     },
-    "gameDetail": "",
+    "description": "WWE 2K22 is the latest installment in the world-renowned, best-selling WWE video game franchise and features cover Superstar Roman Reigns. WWE 2K22 will deliver fun, authentic and hard-hitting action, including the largest roster of playable characters in franchise history, a new grapple carry system, new weight detection, and significant gameplay improvements, in addition to returning fan-favorite features and game modes. WWE 2K22 will also feature key partnerships with the WWE and its global partners, including the return of the 2K Showcase mode, which will feature a story highlighting the career of Roman Reigns.",
   },
   {
     "id": 21,
@@ -303,7 +303,7 @@ const games = [
       "usd": 6.69,
       "thb": 239
     },
-    "gameDetail": "",
+    "description": "Escape Simulator is a first-person puzzler you can play solo or in an online co-op. Explore a growing set of highly interactive escape rooms. Move furniture, pick up and examine everything, smash pots and break locks! Supports community-made rooms through the level editor."
   },
   {
     "id": 22,
@@ -317,7 +317,7 @@ const games = [
       "usd": 44.59,
       "thb": 1600
     },
-    "gameDetail": "",
+    "description": "Civilization VI offers new ways to engage with your world: cities now physically expand across the map, active research in technology and culture unlocks new potential, and competing leaders will pursue their own agendas based on their historical traits as you race for one of five ways to achieve victory in the game."
   },
   {
     "id": 23,
@@ -331,7 +331,7 @@ const games = [
       "usd": 6.69,
       "thb": 239
     },
-    "gameDetail": "",
+    "description": "Ghost Watchers is a multiplayer horror game where you and your friends play as ghost hunters. You must work together to find and capture ghosts, and escape the haunted location before your sanity gives out.",
   },
   {
     "id": 24,
@@ -345,11 +345,11 @@ const games = [
       "usd": 10.99,
       "thb": 369
     },
-    "gameDetail": "",
+    "description": "Dead by Daylight is an asymmetrical multiplayer horror game in which one crazed killer hunts down four survivors through a terrifying nightmarish world. Survivors play in third-person and have the advantage of better situational awareness. The Killer plays in first-person and is more focused on their prey. The survivors' goal in each encounter is to escape the Killing Ground without getting caught and sacrificed to the Entity. The Killer's goal is to sacrifice all of the Survivors to the Entity.",
   },
   {
     "id": 25,
-    "name": "ark:-survival-evolved",
+    "name": "ark-survival-evolved",
     "displayName": "ARK: Survival Evolved",
     "tags": [
       7
@@ -359,7 +359,7 @@ const games = [
       "usd": 8.99,
       "thb": 289
     },
-    "gameDetail": "",
+    "description": "ARK: Survival Evolved is an action-adventure survival video game developed and published by Studio Wildcard. The game is available for Microsoft Windows, macOS, Linux, PlayStation 4, Xbox One, Nintendo Switch, and Android, with a mobile version for iOS. It is set in the fictional Ark universe, where a planet-wide flood has wiped out most life on Earth, and the remaining survivors are struggling to survive on the ark"
   },
   {
     "id": 26,
@@ -373,7 +373,7 @@ const games = [
       "usd": 6.69,
       "thb": 239
     },
-    "gameDetail": "",
+    "description": "Don't Starve Together is the standalone multiplayer expansion of the uncompromising survival game Don't Starve. Now including Reign of Giants, Don't Starve Together is the uncompromising wilderness survival game full of science and magic. Enter a strange and unexplored world full of strange creatures, dangers, and surprises. Gather resources to craft items and structures that match your survival style. Play your way as you unravel the mysteries of this strange land.",
   },
   {
     "id": 27,
@@ -387,7 +387,7 @@ const games = [
       "usd": 15.05,
       "thb": 540
     },
-    "gameDetail": "",
+    "description": "Unravel is a physics-based puzzle platformer starring Yarny, a character made from a single thread of yarn. Players guide Yarny through a series of levels, unraveling the world around him to solve puzzles and overcome obstacles. The game features a unique physics-based gameplay mechanic, where players can unravel Yarny to create bridges, ramps, and other objects to progress through the game.",
   },
   {
     "id": 28,
@@ -401,7 +401,7 @@ const games = [
       "usd": 3.76,
       "thb": 135
     },
-    "gameDetail": "",
+    "description": "The Past Within is a first-person psychological horror game that takes place in a mysterious mansion. The player must explore the mansion and solve puzzles to find out what happened to the previous owner of the mansion.",
   },
   {
     "id": 29,
@@ -415,7 +415,7 @@ const games = [
       "usd": 2.63,
       "thb": 94.5
     },
-    "gameDetail": "",
+    "description": "Explore a world where puzzles are gigantic, and the challenges even bigger! Human has shrunk!",
   },
   {
     "id": 30,
@@ -429,7 +429,7 @@ const games = [
       "usd": 44.38,
       "thb": 1590
     },
-    "gameDetail": "",
+    "description": "Hogwarts Legacy is an open-world action RPG set in the world first introduced in the Harry Potter books. Embark on a journey through familiar and new locations as you explore and discover magical beasts, customize your character and craft potions, master spell casting, upgrade talents and become the wizard you want to be.",
   },
   {
     "id": 31,
@@ -443,7 +443,7 @@ const games = [
       "usd": 12.53,
       "thb": 449
     },
-    "gameDetail": "",
+    "description": "It’s time to leave big-city life in Pokyo behind and start a new chapter of your life on Coral Island!\nBe who you want and create the idyllic farm of your dreams, where you’ll tend crops, nurture animals, and build a bond with the natural world around you. Help revitalize the nearby town and its surrounding coral reefs, and forge relationships with a vibrant community of more than 70 fellow people who call Coral Island home. ",
   },
   {
     "id": 32,
@@ -457,7 +457,7 @@ const games = [
       "usd": 8.06,
       "thb": 289
     },
-    "gameDetail": "",
+    "description": "Project Zomboid is a zombie-infested, sandbox-style, massively multiplayer, survival horror game. It is a game of survival, exploration, and character development, set in a realistic and dangerous post-apocalyptic world. The game is currently in development by The Indie Stone, a small independent game development studio based in the UK.",
   },
   {
     "id": 33,
@@ -471,7 +471,7 @@ const games = [
       "usd": 8.06,
       "thb": 289
     },
-    "gameDetail": "",
+    "description": "Assetto Corsa is a racing simulator developed by Kunos Simulazioni. It features a wide variety of cars and tracks, and is considered to be one of the most realistic racing simulators available.",
   },
   {
     "id": 34,
@@ -485,7 +485,7 @@ const games = [
       "usd": 5.58,
       "thb": 200
     },
-    "gameDetail": "",
+    "description": "Grand"
   },
   {
     "id": 35,
@@ -499,7 +499,7 @@ const games = [
       "usd": 19.50,
       "thb": 699
     },
-    "gameDetail": "",
+    "description": "Cities: Skylines is a city-building game developed by Colossal Order and published by Paradox Interactive. The game was released on March 10, 2015 for Microsoft Windows, OS X, and Linux. The game is a modern take on the classic city simulation. The game allows the player to create and control a city featuring many aspects of real-life cities, including zoning, public transport, taxation, and education.",
   },
   {
     "id": 36,
@@ -513,7 +513,7 @@ const games = [
       "usd": 8.89,
       "thb": 319
     },
-    "gameDetail": "",
+    "description": "Going Medieval is a medieval city builder game. The player must build a thriving city and defend it from the hordes of monsters that attack it. The game features a unique combat system where the player must use the environment to their advantage to defeat the monsters.",
   },
   {
     "id": 37,
@@ -527,7 +527,7 @@ const games = [
       "usd": 22.31,
       "thb": 800
     },
-    "gameDetail": "",
+    "description": "South Park: The Stick of Truth is a role-playing video game based on the American animated television series South Park. The game was developed by Obsidian Entertainment and published by Ubisoft. It was released for Microsoft Windows, PlayStation 3, and Xbox 360 on March 4, 2014.",
   },
   {
     "id": 38,
@@ -541,7 +541,7 @@ const games = [
       "usd": 8.06,
       "thb": 289
     },
-    "gameDetail": "",
+    "description": "Leap into a grand adventure in purrsuit of the evil Drakoth and your catnapped sister! Explore Felingard's huge overworld map, risk life and limb delving into dungeons for epic loot, and lend a paw to a furry cast of characters in a flurry of side quests."
   },
   {
     "id": 39,
@@ -555,7 +555,7 @@ const games = [
       "usd": 35.15,
       "thb": 1259.99
     },
-    "gameDetail": "",
+    "description": "1-on-1 battle card game developed by Bushiroad and launched in February 2011.Localized in English, Chinese, Italian, Thai, Korean, etc., it's sold in 61 countries and regions worldwide, continuing to grow in popularity.\nIt also includes media such as animations and comics, and in 2021, on the project's 10th anniversary, the new series 'CARDFIGHT!! VANGUARD overDress' began." 
   },
   {
     "id": 40,
@@ -569,8 +569,60 @@ const games = [
       "usd": 6.94,
       "thb": 249
     },
-    "gameDetail": "",
-  }
+    "description": "First released on 'Freem!' October 11, 2013, the exploration horror game The Forest of Drizzling Rain is now coming to Steam with a full remake!\nPlaying as Shiori Kanzaki, you will get to enjoy her visit to Azakawa Village, right up until you are plunged into a world of fear.",
+  },
+  {
+    "id": 41,
+    "name": "the-sims-4",
+    "displayName": "The Sims 4",
+    "tags": [
+      6
+    ],
+    "price": {
+      "usd": 7.99,
+      "thb": 279
+    },
+    "description": "Create unique Sims, build dream homes, and let them live your way! Explore beautiful worlds with unique environments and travel to neighborhoods where you can visit venues and meet other interesting Sims. Be powerful and free, have fun, and play with life!"
+  },
+  {
+    "id": 42,
+    "name": "resident-evil-4",
+    "displayName": "Resident Evil 4",
+    "tags": [
+      8
+    ],
+    "price": {
+      "usd": 7.99,
+      "thb": 279
+    },
+    "description": "Resident Evil 4 is a third-person shooter survival horror game developed and published by Capcom. It was originally released for the GameCube in 2005, and has since been ported to multiple platforms, including PlayStation 4, Xbox One, Microsoft Windows, and Nintendo Switch. The game is the sixth installment in the Resident Evil series, and the first numbered entry since Resident Evil 2 in 1998. It follows the story of U.S. government agent Leon S. Kennedy, who is sent on a mission to rescue the President's daughter who has been kidnapped. While investigating the incident, he encounters a mysterious cult that worships a powerful entity known as Las Plagas."
+  },
+  {
+    "id": 42,
+    "name": "cod-black-ops-4",
+    "displayName": "Call of Duty®: Black Ops 4",
+    "tags": [
+      0
+    ],
+    "price": {
+      "usd": 19.99,
+      "thb": 699
+    },
+    "description": "Call of Duty®: Black Ops 4 is the most robust, refined, and customizable PC shooter experience we've ever created. With a new level of online action across a variety of new weaponry, maps, and modes"
+  },
+  {
+    "id": 43,
+    "name": "dark-souls-3",
+    "displayName": "Dark Souls™ III",
+    "tags": [
+      1
+    ],
+    "price": {
+      "usd": 19.99,
+      "thb": 699
+    },
+    "description": "Dark Souls III continues to push the boundaries with the latest, ambitious chapter in the critically-acclaimed and genre-defining series. Fans and newcomers alike will get lost in the games hallmark rewarding gameplay and immersive graphics. Now only embers remain..."
+  },
 ]
 
 export default games

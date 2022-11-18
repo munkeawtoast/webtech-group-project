@@ -25,6 +25,8 @@ export default function ResultList({ sortFunc, userPriceRange, category, games }
             showName: true,
             showButton: true,
             isLink: true,
+            forLibrary: false,
+            showPrice: true
           }}
         />
       ))

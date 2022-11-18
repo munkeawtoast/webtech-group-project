@@ -3,6 +3,7 @@ import colors from 'constants/colors'
 
 const inputStyle = css`
   all: unset;
+  color: ${colors.black};
   width: 50%;
   background-color: ${colors.white};
   border-radius: 4px;

@@ -8,7 +8,7 @@ const categories = [
       "en": "Shooting",
       "th": "ยิงปืน"
     },
-    "image": "shooter.jpg"
+    "image": "shooter.jpg",
   },
   {
     "id": 1,

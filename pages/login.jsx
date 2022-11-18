@@ -9,6 +9,7 @@ import fonts from 'constants/fonts'
 import users from 'constants/users'
 import { useRouter } from 'next/router'
 import { useAuth } from 'context/AuthContext'
+import Head from 'next/head'
 
 function Login() {
   const [auth, setAuth] = useAuth() // ดึง context authentication มาใช้
@@ -42,85 +43,90 @@ function Login() {
 
   }
   return (
-    <div css={css`
-      display: flex;
-      width: 100vw;
-      padding: 0;
-      margin: 0;
-      align-items: center;
-      justify-content: center;
-      font-family: ${fonts.normalFontFamily};
-      ${mq[1]} {
-        flex-direction: column;
+    <>
+      <Head>
+        <title>Login</title>
+      </Head>
+      <div css={css`
+        display: flex;
         width: 100vw;
-        height: 100vh;
-      }
-      h1 {
-        margin: 0.3em 0 0.4em 0;
-      }
-    `}>
-      <div css={css`
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        background-color: ${colors.white};
-        height: 100vh;
+        padding: 0;
+        margin: 0;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        ${mq[1]}{
-          background-color: ${colors.white};
+        font-family: ${fonts.normalFontFamily};
+        ${mq[1]} {
+          flex-direction: column;
           width: 100vw;
-          height: 70vh;
-          padding-bottom: 100px;
+          height: 100vh;
+        }
+        h1 {
+          margin: 0.3em 0 0.4em 0;
         }
       `}>
-          <h1>Sign In</h1>
-          Email
-          <FormInput type={'email'} value={email} onInputChange={setEmail} />
-          Password
-          <FormInput type={'password'} value={password} onInputChange={setPassword} />
-          { // formError หมายถึง ถ้ามีการกรอกข้อมูลผิด จะแสดงข้อความแจ้งเตือน
-            formError
-            ? (
-              <div
-                css={css`
-                  background-color: #ff4141;
-                  color: ${colors.white};
-                  padding: 10px;
-                  border-radius: 5px;
-                `}
-              >
-                Invalid email or password!
-              </div>
-            )
-            : null
+        <div css={css`
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          background-color: ${colors.white};
+          height: 100vh;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          ${mq[1]}{
+            background-color: ${colors.white};
+            width: 100vw;
+            height: 70vh;
+            padding-bottom: 100px;
           }
-          <ButtonInput placeholderText={'Sign In'} handleOnClick={handleForm}/>
-      </div>
-      <div css={css`
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        background-color: ${colors.greenPrimary};
-        height: 100vh;
-        color: ${colors.white};
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        ${mq[1]}{
-          width: 100%;
-          padding: 10px;
-          height: 30vh;
-        }
-      `}>
-        <h1>Hello, Friend</h1>
-        <h1>We are... Hi Five!</h1>
-        <p>Enter your personal details and start journey with us</p>
-        <ButtonInput placeholderText={'Sign Up'}/>
-      </div>
+        `}>
+            <h1>Sign In</h1>
+            Email
+            <FormInput type={'email'} value={email} onInputChange={setEmail} />
+            Password
+            <FormInput type={'password'} value={password} onInputChange={setPassword} />
+            { // formError หมายถึง ถ้ามีการกรอกข้อมูลผิด จะแสดงข้อความแจ้งเตือน
+              formError
+              ? (
+                <div
+                  css={css`
+                    background-color: #ff4141;
+                    color: ${colors.white};
+                    padding: 10px;
+                    border-radius: 5px;
+                  `}
+                >
+                  Invalid email or password!
+                </div>
+              )
+              : null
+            }
+            <ButtonInput placeholderText={'Sign In'} handleOnClick={handleForm}/>
+        </div>
+        <div css={css`
+          display: flex;
+          flex-direction: column;
+          width: 400px;
+          background-color: ${colors.greenPrimary};
+          height: 100vh;
+          color: ${colors.white};
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          ${mq[1]}{
+            width: 100%;
+            padding: 10px;
+            height: 30vh;
+          }
+        `}>
+          <h1>Hello, Friend</h1>
+          <h1>We are... Hi Five!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <ButtonInput placeholderText={'Sign Up'}/>
+        </div>
 
-    </div>
+      </div>
+    </>
   )
 }
 
