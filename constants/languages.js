@@ -1,7 +1,7 @@
 const languages = {
   "en": {
     "account": "Account",
-    "to-cart": "Put in Cart",
+    "to-cart": "Add to Cart",
     "cart": "Cart",
     "login": "Login",
     "logout": "Logout",
@@ -19,7 +19,7 @@ const languages = {
     "account": "บัญชี",
     "to-cart": "หยิบใส่ตะกร้า",
     "cart": "ตะกร้าสินค้า",
-    "login": "เข้าสู้ระบบ",
+    "login": "เข้าสู่ระบบ",
     "logout": "ออกจากระบบ",
     "register": "สมัครสมาชิก",
     "your-games": "เกมของคุณ",

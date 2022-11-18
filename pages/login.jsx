@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "context/AuthContext";
 import Head from "next/head";
 import { isValidAccount } from "util/isValidAccount";
+import users from "constants/users";
 
 function Login() {
   const [auth, setAuth] = useAuth(); // ดึง context authentication มาใช้
@@ -17,6 +18,12 @@ function Login() {
   const [password, setPassword] = useState(""); // สร้าง state สำหรับเก็บค่า password
   const [formError, setFormError] = useState(false); // สร้าง state สำหรับเก็บค่า error
   const router = useRouter(); // สร้างตัวแปร router เพื่อใช้ในการ redirect เมื่อ login สำเร็จ
+
+  function getUserOfEmailAndPassword({ email, password }) {
+    return users.find(
+      (user) => user.email === email && user.password === password
+    );
+  }
 
   function triggerFormError() {
     setFormError(true);
@@ -26,7 +33,8 @@ function Login() {
   }
 
   function handleForm() {
-    if (isValidAccount(auth)) {
+    const user = getUserOfEmailAndPassword({ email, password });
+    if (user !== undefined) {
       setAuth({
         username: user.username,
         displayname: user.displayname,

@@ -1,4 +1,4 @@
-module.exports = {
+const currencies = {
   "usd": {
     "currencyTag": "$"
   },
@@ -6,3 +6,5 @@ module.exports = {
     "currencyTag": "฿"
   }
 }
+
+export default  currencies

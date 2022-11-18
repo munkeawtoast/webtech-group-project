@@ -5,8 +5,26 @@ import fonts from "constants/fonts.js";
 
 import { mediaQueries } from "constants/mediaqueries";
 import colors from "constants/colors";
+import { useAuth } from "context/AuthContext";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { isValidAccount } from "util/isValidAccount";
+import { useSiteConfig } from "context/SiteConfigContext";
+import languages from "constants/languages";
+import currencies from "constants/currencies";
 
 const GameInfo = ({ gameID, gameTag, gamePrice }) => {
+  const [auth, setAuth] = useAuth();
+  const [siteConfig] = useSiteConfig();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    setIsAuthenticated(isValidAccount(auth));
+  }, [auth]);
+  const { language, currency } = siteConfig;
+  const router = useRouter();
+  function isAlreadyInCart(ID) {
+    return auth.cart.includes(ID);
+  }
   return (
     <div
       css={css`
@@ -41,7 +59,9 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
           }
           ${mediaQueries[1]} {
             width: 350px;
-            margin: 0;
+          }
+          ${mediaQueries[2]} {
+            width: 128px;
           }
         `}
       >
@@ -76,7 +96,7 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
               }
             `}
           >
-            ${gamePrice.usd}
+            {currencies[currency]["currencyTag"]} {gamePrice[currency]}
           </p>
         </div>
         <div>
@@ -87,7 +107,7 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
               }
             `}
           >
-            Tags: {gameTag.map((tag) => tag.displayTag.en + " ")}
+            {languages[language]["tags"]}: {gameTag.map((tag) => tag.displayTag[language] + " ")}
           </p>
         </div>
         <button
@@ -102,9 +122,25 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
 
             cursor: pointer;
             :hover {
-              color: blue;
+              color: ${colors.greenPrimary};
             }
           `}
+          onClick={function () {
+            if (isAuthenticated) {
+              setAuth({
+                ...auth,
+                cart: !isAlreadyInCart(gameID)
+                  ? [...auth.cart, gameID]
+                  : (function () {
+                      window.alert("Kuy");
+                      return auth.cart;
+                    })(),
+              });
+            } else {
+              window.alert("YAy");
+              router.push("/login");
+            }
+          }}
         >
           Add to cart
         </button>

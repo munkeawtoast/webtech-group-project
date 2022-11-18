@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import ImgChild from "./GameImagesComponents/ImagesChild";
 import { mediaQueries } from "constants/mediaqueries";
+import colors from "constants/colors";
 const GameImages = ({ imageID, gameID, setimgId }) => {
   function incrementImgId() {
     setimgId((imgId) => (imgId + 1) % 4);
@@ -35,7 +36,7 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
 
           cursor: pointer;
           :hover {
-            color: blue;
+            color: ${colors.greenPrimary};
           }
           ${mediaQueries[0]} {
             left: -96px;
@@ -64,7 +65,7 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
 
           cursor: pointer;
           :hover {
-            color: blue;
+            color: ${colors.greenPrimary};
           }
           ${mediaQueries[0]} {
             right: -96px;

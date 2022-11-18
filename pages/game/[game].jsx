@@ -14,7 +14,6 @@ import Head from "next/head";
 
 const Game = ({ game, categoryArray }) => {
   const [imgID, setimgID] = useState(0);
-
   return (
     <>
       <Head>
@@ -79,6 +78,7 @@ const Game = ({ game, categoryArray }) => {
           </div>
           <div
             css={css`
+            padding-bottom: 60px;
               ${mediaQueries[1]} {
                 display: none;
               }
@@ -87,7 +87,7 @@ const Game = ({ game, categoryArray }) => {
             <GameImages imageID={imgID} gameID={game.id} setimgId={setimgID} />
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

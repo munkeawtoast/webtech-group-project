@@ -48,8 +48,8 @@ function NavBar({ hasLogo, logoIsCenter }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          height: 50px;
-          padding: 0 25px;
+          height: 60px;
+          padding: 0 25px 0 25px;
           background-color: ${colors.greenPrimary};
           color: ${colors.white};
         `}
