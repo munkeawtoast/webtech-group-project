@@ -623,6 +623,58 @@ const games = [
     },
     "description": "Dark Souls III continues to push the boundaries with the latest, ambitious chapter in the critically-acclaimed and genre-defining series. Fans and newcomers alike will get lost in the games hallmark rewarding gameplay and immersive graphics. Now only embers remain..."
   },
+  {
+    "id": 44,
+    "name": "100-hidden-frogs",
+    "displayName": "100 Hidden Frogs",
+    tags: [
+      4
+    ],
+    "price": {
+      "usd": 1.99,
+      "thb": 69
+    },
+    "description": "100 hidden frogs is a hidden object game in the magic forest setting. Black and white hand-drawn graphics in a cartoon style. It's a fun but challenging adventure."
+  },
+  {
+    "id": 45,
+    "name": "battlefield-1",
+    "displayName": "Battlefield™ 1",
+    "tags": [
+      0
+    ],
+    "price": {
+      "usd": 29.99,
+      "thb": 1099
+    },
+    "description": "Battlefield 1 is a first-person shooter video game developed by EA DICE and published by Electronic Arts. It is the fifteenth installment in the Battlefield series, and the first main entry in the series since Battlefield 4. The game was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on October 21, 2016.",
+  },
+  {
+    "id": 46,
+    "name": "rb6-siege",
+    "displayName": "Tom Clancy's Rainbow Six® Siege",
+    "tags": [
+      0
+    ],
+    "price": {
+      "usd": 15.99,
+      "thb": 540
+    },
+    "description": "Tom Clancy's Rainbow Six Siege is the latest installment of the acclaimed first-person shooter franchise developed by the renowned Ubisoft Montreal studio. The game puts heavy emphasis on environmental destruction and cooperation between players. The gameplay is divided into two phases: attacking and defending. During the attacking phase, players must breach the enemy's defenses using a variety of tactics and gadgets. During the defending phase, players must use their environment to their advantage in order to prevent the attackers from completing their objective. The game features a huge variety of maps, each with its own unique layout and design. The game also features a wide variety of characters, each with their own unique set of skills and abilities."
+  },
+  {
+    "id": 47,
+    "name": "the-forest",
+    "displayName": "The Forest",
+    "tags": [
+      8
+    ],
+    "price": {
+      "usd": 8.99,
+      "thb": 289
+    },
+    "description": "The Forest is a first-person survival horror game developed by Endnight Games. The game is set in a forest environment and follows a plane crash survivor who must survive against cannibalistic mutants. The game features a crafting system, which allows the player to create weapons and tools to defend themselves against the mutants. The game also features a multiplayer mode, which allows up to eight players to play together in a co-operative mode. The game was released on Steam Early Access on March 2, 2014, and was released in full on August 30, 2018."
+  }
 ]
 
 export default games
