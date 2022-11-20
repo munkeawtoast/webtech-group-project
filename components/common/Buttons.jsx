@@ -44,4 +44,24 @@ function RoundButton({ children, href }) {
   )
 }
 
-export { TextButton, RoundButton }
+function LogoutButton({ onClick, cssStyles, children }) {
+  return (
+    <div
+    css={css`padding: 4px 1em;
+      height: 34px;
+      border-radius: 100000px;
+      background-color: ${colors.white};
+      color: ${colors.black};
+      font-size: ${fonts.uiFontSize};
+      font-family: ${fonts.normalFontFamily};
+      font-weight: bold;
+      ${cssStyles}
+      `}
+      onClick={onClick}
+      >
+        { children }
+    </div>
+  )
+}
+
+export { TextButton, RoundButton, LogoutButton }

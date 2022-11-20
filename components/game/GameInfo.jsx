@@ -132,12 +132,12 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
                 cart: !isAlreadyInCart(gameID)
                   ? [...auth.cart, gameID]
                   : (function () {
-                      window.alert("Kuy");
+                      window.alert(languages[language]["alreadyhasgameincart"]);
                       return auth.cart;
                     })(),
               });
             } else {
-              window.alert("YAy");
+              window.alert(languages[language]["notlogin"]);
               router.push("/login");
             }
           }}

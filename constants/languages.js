@@ -13,6 +13,8 @@ const languages = {
     "price-range": "Price range",
     "project-member": "Project members",
     "recommended": "Recommended",
+    "notlogin": "Please log in before adding to cart",
+    "alreadyhasgameincart": "Selected game already in cart"
 
   },
   "th": {
@@ -29,6 +31,9 @@ const languages = {
     "price-range": "ราคา",
     "project-member": "รายชื่อผู้จัดทำ",
     "recommended": "เกมแนะนำ",
+    "notlogin": "กรุณาลงชื่อเข้าสู่ระบบ",
+    "alreadyhasgameincart": "เกมที่ท่านเลือกมีอยู่ในตระกร้าอยู่แล้ว"
+    
   }
 }
 

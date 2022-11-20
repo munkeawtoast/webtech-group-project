@@ -7,6 +7,7 @@ import currencies from 'constants/currencies.js'
 import colors from 'constants/colors.js'
 import fonts from 'constants/fonts.js'
 import { useSiteConfig } from 'context/SiteConfigContext'
+import { mediaQueriesSizes as mqs} from 'constants/mediaqueries'
 
 GameCard.defaultProps = {
   showArgs: {
@@ -83,8 +84,8 @@ function GameCard({ showArgs, game, onClick }) {
           <Image
             alt='game image'
             src={`/game/${game.id}/thumbnail.jpg`}
-            layout='fill'
-            
+            width={150}
+            height={200}
           />
         </div>
         <span css={css`

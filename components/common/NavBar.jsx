@@ -1,7 +1,7 @@
 import colors from "constants/colors.js";
 
 import { css } from "@emotion/react";
-import { TextButton, RoundButton } from "components/common/Buttons";
+import { TextButton, RoundButton, LogoutButton } from "components/common/Buttons";
 import Logo from "components/common/Logo";
 import { mediaQueries as mq } from "constants/mediaqueries";
 import MobileNavButton from "components/common/NavBar/MobileNavButton";
@@ -14,13 +14,14 @@ import { useEffect, useState } from "react";
 import { isValidAccount } from "util/isValidAccount";
 import languages from "constants/languages";
 import { useAuth } from "context/AuthContext";
+import { auth as defaultAuth } from 'constants/config'
 
 NavBar.defaultProps = {
   hasLogo: true,
 };
 
 function NavBar({ hasLogo, logoIsCenter }) {
-  const [auth] = useAuth();
+  const [auth, setAuth] = useAuth();
 
   // from here
   const [accountIsValid, setAccountIsValid] = useState(false);
@@ -100,6 +101,17 @@ function NavBar({ hasLogo, logoIsCenter }) {
               style={{ color: colors.black }}
             ></i>
           </RoundButton>
+          <LogoutButton
+            cssStyles={`
+              display: ${ accountIsValid ? 'block' : 'none'};
+            `}
+            onClick={
+              () => {
+              setAuth(defaultAuth)
+            }}
+          >
+            {languages[language].logout}
+          </LogoutButton>
           <TextButton href={accountIsValid ? "/account/library" : "/login"}>
             {accountIsValid
               ? languages[language].account
