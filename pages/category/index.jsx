@@ -8,7 +8,7 @@ import Head from 'next/head'
 import languages from 'constants/languages'
 import { useSiteConfig } from 'context/SiteConfigContext'
 
-export default function MyCategoryPage() {
+export default function MyCategoryPage({ recGames }) {
     const [siteConfig, ] = useSiteConfig()
     const { language } = siteConfig
     return (
@@ -26,9 +26,19 @@ export default function MyCategoryPage() {
                     padding: 0 0 100px 0;
                 `}
             >
-                <CategoryMain/>
+                <CategoryMain recGames={recGames} />
             </div>
             <Footer />
         </>
     )
+}
+
+export async function getServerSideProps(context) {
+    const gameRandom = Math.floor(Math.random() * 40) + 1;
+    const recRandom = [gameRandom, gameRandom + 1, gameRandom + 2]
+    return {
+        props: {
+            recGames: recRandom
+        }
+    }
 }

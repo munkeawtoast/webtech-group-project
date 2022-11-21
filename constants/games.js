@@ -598,7 +598,7 @@ const games = [
     "description": "Resident Evil 4 is a third-person shooter survival horror game developed and published by Capcom. It was originally released for the GameCube in 2005, and has since been ported to multiple platforms, including PlayStation 4, Xbox One, Microsoft Windows, and Nintendo Switch. The game is the sixth installment in the Resident Evil series, and the first numbered entry since Resident Evil 2 in 1998. It follows the story of U.S. government agent Leon S. Kennedy, who is sent on a mission to rescue the President's daughter who has been kidnapped. While investigating the incident, he encounters a mysterious cult that worships a powerful entity known as Las Plagas."
   },
   {
-    "id": 42,
+    "id": 43,
     "name": "cod-black-ops-4",
     "displayName": "Call of Duty®: Black Ops 4",
     "tags": [
@@ -611,7 +611,7 @@ const games = [
     "description": "Call of Duty®: Black Ops 4 is the most robust, refined, and customizable PC shooter experience we've ever created. With a new level of online action across a variety of new weaponry, maps, and modes"
   },
   {
-    "id": 43,
+    "id": 44,
     "name": "dark-souls-3",
     "displayName": "Dark Souls™ III",
     "tags": [
@@ -624,7 +624,7 @@ const games = [
     "description": "Dark Souls III continues to push the boundaries with the latest, ambitious chapter in the critically-acclaimed and genre-defining series. Fans and newcomers alike will get lost in the games hallmark rewarding gameplay and immersive graphics. Now only embers remain..."
   },
   {
-    "id": 44,
+    "id": 45,
     "name": "100-hidden-frogs",
     "displayName": "100 Hidden Frogs",
     tags: [
@@ -637,7 +637,7 @@ const games = [
     "description": "100 hidden frogs is a hidden object game in the magic forest setting. Black and white hand-drawn graphics in a cartoon style. It's a fun but challenging adventure."
   },
   {
-    "id": 45,
+    "id": 46,
     "name": "battlefield-1",
     "displayName": "Battlefield™ 1",
     "tags": [
@@ -650,7 +650,7 @@ const games = [
     "description": "Battlefield 1 is a first-person shooter video game developed by EA DICE and published by Electronic Arts. It is the fifteenth installment in the Battlefield series, and the first main entry in the series since Battlefield 4. The game was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on October 21, 2016.",
   },
   {
-    "id": 46,
+    "id": 47,
     "name": "rb6-siege",
     "displayName": "Tom Clancy's Rainbow Six® Siege",
     "tags": [
@@ -663,7 +663,7 @@ const games = [
     "description": "Tom Clancy's Rainbow Six Siege is the latest installment of the acclaimed first-person shooter franchise developed by the renowned Ubisoft Montreal studio. The game puts heavy emphasis on environmental destruction and cooperation between players. The gameplay is divided into two phases: attacking and defending. During the attacking phase, players must breach the enemy's defenses using a variety of tactics and gadgets. During the defending phase, players must use their environment to their advantage in order to prevent the attackers from completing their objective. The game features a huge variety of maps, each with its own unique layout and design. The game also features a wide variety of characters, each with their own unique set of skills and abilities."
   },
   {
-    "id": 47,
+    "id": 48,
     "name": "the-forest",
     "displayName": "The Forest",
     "tags": [

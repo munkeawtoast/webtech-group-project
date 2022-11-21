@@ -8,7 +8,7 @@ import games from "constants/games"
 import { useSiteConfig } from "context/SiteConfigContext"
 import languages from "constants/languages"
 
-export default function CategoryMain() {
+export default function CategoryMain({ recGames }) {
     const [siteConfig, ] = useSiteConfig()
     const { language } = siteConfig
     return (
@@ -59,7 +59,7 @@ export default function CategoryMain() {
                     gap: 15px;
                 `}
             >
-                {games.filter(game => [3,4,5].includes(game.id)).map(game => <CategoryLink key={game.id} name={game.displayName} link={'/game/'+game.name} pic={'/game/'+game.id+'/thumbnail-wide.jpg'}/>)}
+                {games.filter(game => recGames.includes(game.id)).map(game => <CategoryLink key={game.id} name={game.displayName} link={'/game/'+game.name} pic={'/game/'+game.id+'/thumbnail-wide.jpg'}/>)}
             </div>
         </div>
     )

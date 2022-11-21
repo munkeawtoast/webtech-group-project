@@ -121,6 +121,8 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
             font-size: ${fonts.uiFontSize};
 
             cursor: pointer;
+            
+            transition:0.25s;
             :hover {
               color: ${colors.greenPrimary};
             }

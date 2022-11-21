@@ -35,6 +35,8 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
           border: none;
 
           cursor: pointer;
+
+          transition:0.25s;
           :hover {
             color: ${colors.greenPrimary};
           }
@@ -64,6 +66,8 @@ const GameImages = ({ imageID, gameID, setimgId }) => {
           border: none;
 
           cursor: pointer;
+          
+          transition:0.25s;
           :hover {
             color: ${colors.greenPrimary};
           }

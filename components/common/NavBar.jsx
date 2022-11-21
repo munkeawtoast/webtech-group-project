@@ -10,6 +10,7 @@ import styled from "@emotion/styled";
 import FlagButton from "./FlagButton";
 import { useSiteConfig } from "context/SiteConfigContext";
 import Image from "next/image";
+import Router from 'next/router'
 import { useEffect, useState } from "react";
 import { isValidAccount } from "util/isValidAccount";
 import languages from "constants/languages";
@@ -25,6 +26,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
 
   // from here
   const [accountIsValid, setAccountIsValid] = useState(false);
+
 
   useEffect(() => {
     if (isValidAccount(auth)) {
@@ -108,6 +110,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             onClick={
               () => {
               setAuth(defaultAuth)
+              Router.reload(window.location.pathname);
             }}
           >
             {languages[language].logout}

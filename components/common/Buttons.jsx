@@ -18,6 +18,12 @@ function TextButton({ href, children }) {
           font-size: ${fonts.uiFontSize};
           font-family: ${fonts.normalFontFamily};
           font-weight: bold;
+
+          transition: 0.25s;
+          :hover{
+            color: ${colors.greenPrimary};
+            background-color: ${colors.black};
+          }
         `}
       >{ children }</a>
     </Link>
@@ -36,6 +42,7 @@ function RoundButton({ children, href }) {
           display: grid;
           place-items: center;
           cursor: pointer;
+
         `} 
       >
         { children }
@@ -55,6 +62,13 @@ function LogoutButton({ onClick, cssStyles, children }) {
       font-size: ${fonts.uiFontSize};
       font-family: ${fonts.normalFontFamily};
       font-weight: bold;
+      cursor: pointer;
+
+      transition: 0.25s;
+          :hover{
+            color: ${colors.greenPrimary};
+            background-color: ${colors.black};
+          }
       ${cssStyles}
       `}
       onClick={onClick}
