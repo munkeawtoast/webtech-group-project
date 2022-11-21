@@ -8,27 +8,27 @@ import games from "constants/games";
 import { useSiteConfig } from "context/SiteConfigContext";
 import languages from "constants/languages";
 import currencies from "constants/currencies.js";
-import colors from 'constants/colors'
-import { useAuth } from 'context/AuthContext'
+import colors from "constants/colors";
+import { useAuth } from "context/AuthContext";
 
 export default function CartCard({ game }) {
   const [siteConfig] = useSiteConfig();
   const { language, currency } = siteConfig;
-  
 
   return (
     <div
       css={css`
         /* padding: 25px; */
-        border: 5px solid black;
         font-family: ${fonts.normalFontFamily};
-        font-size: ${fonts.titleFontSize};
-        width: 1280px;
+        font-size: ${fonts.uiFontSize};
+        width: 1000px;
+        border-radius: 25px;
         padding: 25px 100px;
         margin: auto;
         display: flex;
         gap: 50px;
-        background-color: grey;
+
+        background-color: ${colors.gray200};
       `}
     >
       <div
@@ -50,24 +50,30 @@ export default function CartCard({ game }) {
           showArgs={{ showPrice: false, isLink: true, showName: false }}
         />
       </div>
-      <div css={css`
-                width:100%;
-          `}
+      <div
+        css={css`
+          width: 100%;
+        `}
       >
         <div>{game.displayName}</div>
         <div
           css={css`
-                text-align:right;
+            text-align: right;
           `}
         >
           {currencies[currency].currencyTag} {game?.price[currency]}
         </div>
-        <div onClick={()=>{}} 
-        css={css`
-        cursor:pointer;
-        &:hover{color:red;}
-  `}>
-            Remove
+        <div
+          onClick={() => {}}
+          css={css`
+            cursor: pointer;
+            &:hover {
+              color: red;
+            }
+            margin: bottom;
+          `}
+        >
+          Remove
         </div>
       </div>
     </div>

@@ -69,6 +69,9 @@ function Cart() {
            cartGames.map((game) => (
               <CartCard game = {game}
                 key={game.name}
+                css = {css`
+                  padding: 1000px;
+                `}
                 
               />
             ))}
