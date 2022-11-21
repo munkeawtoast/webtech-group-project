@@ -91,6 +91,7 @@ function GameCard({ showArgs, game, onClick }) {
         <span css={css`
           max-width: 150px;
           transition: all 0.1s;
+          display:${showArgs.showName? "block":"none"};
         `}>
           {game.displayName}
         </span>
@@ -99,7 +100,7 @@ function GameCard({ showArgs, game, onClick }) {
         `}>
           { currencies[currency].currencyTag }
           {' '}
-          { game.price[currency] }
+          { game?.price[currency] }
         </div>
         {
           showArgs.forLibrary
