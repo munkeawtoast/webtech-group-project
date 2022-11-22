@@ -64,7 +64,7 @@ function Cart() {
             font-size: ${fonts.titleFontSize};
             color: ${colors.white};
             background-color: ${colors.greenPrimary};
-            padding: ;
+            padding: 0px;
             width: 100%;
             display: flex;
             flex-direction: column;
