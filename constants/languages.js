@@ -15,15 +15,17 @@ const languages = {
     "recommended": "Recommended",
     "notlogin": "Please log in before adding to cart",
     "alreadyhasgameincart": "Selected game is already in cart",
-    "alreadyhasgameinlibrary": "Selected game is already in library"
+    "alreadyhasgameinlibrary": "Selected game is already in library",
+    "homePage": "Home",
+    "languageChangeMobileNavBar": "Lang",
 
   },
   "th": {
     "account": "บัญชี",
     "to-cart": "หยิบใส่ตะกร้า",
     "cart": "ตะกร้าสินค้า",
-    "login": "เข้าสู่ระบบ",
-    "logout": "ออกจากระบบ",
+    "login": "ล็อกอิน",
+    "logout": "ล็อกเอาท์",
     "register": "สมัครสมาชิก",
     "your-games": "เกมของคุณ",
     "library": "คลังเกม",
@@ -32,10 +34,11 @@ const languages = {
     "price-range": "ราคา",
     "project-member": "รายชื่อผู้จัดทำ",
     "recommended": "เกมแนะนำ",
-    "notlogin": "กรุณาลงชื่อเข้าสู่ระบบ",
+    "notlogin": "กรุณาลงชื่อล็อกอิน",
     "alreadyhasgameincart": "เกมที่ท่านเลือกมีอยู่ในตระกร้าอยู่แล้ว",
-    "alreadyhasgameinlibrary": "เกมที่ท่านเลือกมีอยู่ในคลังอยู่แล้ว"
-    
+    "alreadyhasgameinlibrary": "เกมที่ท่านเลือกมีอยู่ในคลังอยู่แล้ว",
+    "homePage": "หน้าแรก",
+    "languageChangeMobileNavBar": "ภาษา",
   }
 }
 

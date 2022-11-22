@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import styled from '@emotion/styled';
 
 import RangeInput from 'components/common/RangeInput';
 import CategoryButton from 'components/category/[cat]/CategoryButton';
@@ -10,7 +9,7 @@ import { mediaQueries as mq } from 'constants/mediaqueries';
 import { useSiteConfig } from 'context/SiteConfigContext';
 import languages from 'constants/languages';
 
-export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, minMax, category }) {
+export default function CategoryOptions({ onPriceRangeChange, minMax, category }) {
   const [siteConfig, ] = useSiteConfig()
   const { language } = siteConfig
   return (
@@ -84,7 +83,7 @@ export default function CategoryOptions({ onSortFuncChange, onPriceRangeChange, 
               }
             `}
           >
-            { languages[language].tags}
+            { languages[language].tags }
           </span>
           <div>
             <div

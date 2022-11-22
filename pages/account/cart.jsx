@@ -21,6 +21,7 @@ function Cart() {
   const [auth, setAuth] = useAuth();
   const { cart } = auth;
   const myJSON = JSON.stringify(cart);
+
   const [cartGames, setCartGames] = useState([]);
 
   useEffect(() => {
