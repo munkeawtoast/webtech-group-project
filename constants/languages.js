@@ -23,7 +23,9 @@ const languages = {
     "redirectingToLibrary": "Returning to library...",
     "gameAdded": "Selected game has been added to your cart",
     "removeFromCart": "Remove from cart",
-
+    "sumCart": "Games in cart",
+    "sumPrice": "Total price",
+    "payCart": "Buy all",
   },
   th: {
     account: "บัญชี",
@@ -48,6 +50,9 @@ const languages = {
     "redirectingToLibrary": "กำลังกลับไปยังคลังเกม...",
     gameAdded: "เกมที่ท่านเลือกได้เพิ่มลงในตะกร้าแล้ว",
     removeFromCart: "นำออกจากตะกร้า",
+    sumCart: "สรุปยอดคำสั่งซื้อ",
+    sumPrice: "ราคารวม",
+    payCart: "ชำระเงิน",
   }
 }
 

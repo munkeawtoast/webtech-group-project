@@ -2,21 +2,18 @@
 import currencies from "constants/currencies.js";
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import GameCard from "components/common/GameCard";
 import NavBar from "components/common/NavBar";
-import LibraryGameCard from "components/library/LibraryGameCard";
 import colors from "constants/colors";
 import fonts from "constants/fonts";
 import games from "constants/games";
-import languages from "constants/languages";
 import { useAuth } from "context/AuthContext";
 import { useSiteConfig } from "context/SiteConfigContext";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { isValidAccount } from "util/isValidAccount";
 import { mediaQueries as mq } from "constants/mediaqueries";
 import Footer from "components/common/Footer";
 import CartCard from "components/cart/CartCard";
+import languages from "constants/languages";
 
 function Cart() {
   const [siteConfig] = useSiteConfig();
@@ -63,7 +60,7 @@ function Cart() {
           align-items: center;
         `}
       >
-        สรุปยอดคำสั่งซื้อ
+        { languages[language].sumCart }
         <div
           className=""
           css={css`
@@ -78,7 +75,7 @@ function Cart() {
             align-items: center;
           `}
         >
-          ยอดรวมสินค้า {currencies[currency].currencyTag} {allPrice}
+          { languages[language].sumPrice } {currencies[currency].currencyTag} { allPrice.toFixed(2) }
         </div>
         <button
           css={css`
@@ -102,7 +99,7 @@ function Cart() {
             router.push('/account/done')
           }}
         >
-          ชำระเงิน
+          { languages[language].payCart }
         </button>
       </div>
       <div

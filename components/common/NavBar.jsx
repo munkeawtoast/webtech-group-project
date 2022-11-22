@@ -192,7 +192,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
               `}
             >
               <Image
-                src={language === "th" ? "/flag/th.svg" : "/flag/en.svg"}
+                src={language === "th" ? "/flag/th.jpg" : "/flag/en.jpg"}
                 alt="lang"
                 width={20}
                 height={16}
