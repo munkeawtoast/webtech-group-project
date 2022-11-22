@@ -31,7 +31,7 @@ function Library() {
       router.push('/login')
     }
     setLibraryGames(games.filter((game) => library.includes(game.id)))
-  }, [auth, auth.library])
+  }, [auth.library])
 
   const [siteConfig, ] = useSiteConfig()
   const { language } = siteConfig

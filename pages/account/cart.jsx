@@ -22,11 +22,11 @@ function Cart() {
   const { cart } = auth
   const myJSON = JSON.stringify(cart);
   const [cartGames, setCartGames] = useState([])
+  
 
   useEffect(() => {
-
     setCartGames(games.filter((game) => cart.includes(game.id)))
-  }, [auth, auth.cart])
+  }, [auth.cart])
 
   return (
     <>
@@ -66,13 +66,13 @@ function Cart() {
           `}
         >
           {
-           cartGames.map((game) => (
-              <CartCard game = {game}
+            cartGames.map((game) => (
+              <CartCard
+                game={game}
                 key={game.name}
-                css = {css`
+                css={css`
                   padding: 1000px;
                 `}
-                
               />
             ))}
           </div>

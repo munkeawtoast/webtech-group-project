@@ -51,6 +51,7 @@ function RangeInput(props) {
         <span
           css={css`
             margin: 0 10px;
+            color: ${colors.black};
           `}
         >
           -

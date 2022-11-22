@@ -105,13 +105,13 @@ function NavBar({ hasLogo, logoIsCenter }) {
           </RoundButton>
           <LogoutButton
             cssStyles={`
-              display: ${ accountIsValid ? 'block' : 'none'};
+              display: ${accountIsValid ? 'block' : 'none'};
             `}
             onClick={
               () => {
-              setAuth(defaultAuth)
-              Router.reload(window.location.pathname);
-            }}
+                setAuth(defaultAuth)
+                Router.reload(window.location.pathname);
+              }}
           >
             {languages[language].logout}
           </LogoutButton>
@@ -129,7 +129,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
             width: 100%;
             background-color: ${colors.white};
             position: fixed;
-            z-index: 100;
+            z-index: 1000;
             bottom: 0;
             display: flex;
             padding-top: 3px;
@@ -141,39 +141,68 @@ function NavBar({ hasLogo, logoIsCenter }) {
         <MobileLinkNavButton
           icon={<i className="fa-solid fa-house" />}
           href="/category"
-          text="Home"
+          text={languages[language].homePage}
         />
-        <Divider />
+        <Divider hidden={!accountIsValid} />
         <MobileLinkNavButton
           icon={<i className="fa-solid fa-gamepad" />}
-          href="/library"
-          text="Library"
+          href="/account/library"
+          text={languages[language].library}
+          hidden={!accountIsValid}
         />
-        <Divider />
+        <Divider hidden={!accountIsValid} />
         <MobileLinkNavButton
           icon={<i className="fa-solid fa-cart-shopping" />}
-          href="/cart"
-          text="Cart"
+          href="/account/cart"
+          text={languages[language].cart}
+          hidden={!accountIsValid}
         />
         <Divider />
         <MobileNavButton
           icon={
-            <Image
-              src={language === "th" ? "/flag/th.svg" : "/flag/en.svg"}
-              alt="lang"
-              width={20}
-              height={16}
-            />
+            <div
+              css={css`
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                filter: contrast(50%) grayscale(100%);
+                transition: filter 0.2s ease-in-out;
+                
+              `}
+            >
+              <Image
+                src={language === "th" ? "/flag/th.svg" : "/flag/en.svg"}
+                alt="lang"
+                width={20}
+                height={16}
+              />
+            </div>
           }
           onClick={changeLanguage}
-          text="Lang"
+          text={languages[language].languageChangeMobileNavBar}
         />
         <Divider />
-        <MobileLinkNavButton
-          icon={<i className="fa-solid fa-gear" />}
-          href="/login"
-          text="Login"
-        />
+        {
+          !accountIsValid ? (
+            <MobileLinkNavButton
+              icon={<i className="fa-solid fa-gear" />}
+              href="/login"
+              text={languages[language].login}
+            />
+          ) : (
+            <MobileNavButton
+              icon={<i className="fa-solid fa-right-from-bracket" />}
+              onClick={
+                () => {
+                  setAuth(defaultAuth)
+                  Router.reload(window.location.pathname);
+                }}
+              text={languages[language].logout}
+            />
+          )
+        }
       </nav>
     </>
   );
