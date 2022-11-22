@@ -11,6 +11,7 @@ import { useAuth } from "context/AuthContext";
 import Head from "next/head";
 import { isValidAccount } from "util/isValidAccount";
 import users from "constants/users";
+import Link from "next/link";
 
 function Login() {
   const [auth, setAuth] = useAuth(); // ดึง context authentication มาใช้
@@ -89,6 +90,25 @@ function Login() {
             }
           `}
         >
+          <Link href={"/category"} passHref={true} legacyBehavior={true}>
+            <a
+        css={css`
+          top: 25px;
+          left: 25px;
+          /* margin: 0 1250px 850px 0; */
+          position: absolute;
+          color: ${colors.black};
+          font-size: ${fonts.uiFontSize};
+          font-family: ${fonts.normalFontFamily};
+          font-weight: bold;
+
+          transition: 0.25s;
+          :hover{
+            color: ${colors.greenPrimary};
+          }
+        `}
+            >{"< Back to category"}</a>
+        </Link>
           <h1>Sign In</h1>
           Email
           <FormInput type={"email"} value={email} onInputChange={setEmail} />

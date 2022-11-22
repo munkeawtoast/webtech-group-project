@@ -3,8 +3,8 @@ import { css } from "@emotion/react";
 import fonts from "constants/fonts";
 import colors from "constants/colors";
 
-function ButtonInput( {placeholderText, handleOnClick} ){
-  return(
+function ButtonInput({ placeholderText, handleOnClick }) {
+  return (
     <a
       css={css`
         border-radius: 20px;
@@ -17,15 +17,20 @@ function ButtonInput( {placeholderText, handleOnClick} ){
         letter-spacing: 0.15em;
         text-transform: uppercase;
         transition: transform 80ms ease-in;
+        cursor: pointer;
         font-family: ${fonts.normalFontFamily};
-        &:Active, &:focus, &:hover {
+        &:active,
+        &:focus,
+        &:hover {
           background-color: ${colors.black};
           border: 0.1em solid ${colors.black};
         }
       `}
       onClick={handleOnClick}
-    >{ placeholderText }</a>
-  )
+    >
+      {placeholderText}
+    </a>
+  );
 }
 
-export default ButtonInput
+export default ButtonInput;

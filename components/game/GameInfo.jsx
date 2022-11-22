@@ -25,6 +25,9 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
   function isAlreadyInCart(ID) {
     return auth.cart.includes(ID);
   }
+  function isAlreadyInLibrary(ID) {
+    return auth.library.includes(ID);
+  }
   return (
     <div
       css={css`
@@ -107,7 +110,8 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
               }
             `}
           >
-            {languages[language]["tags"]}: {gameTag.map((tag) => tag.displayTag[language] + " ")}
+            {languages[language]["tags"]}:{" "}
+            {gameTag.map((tag) => tag.displayTag[language] + " ")}
           </p>
         </div>
         <button
@@ -121,8 +125,8 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
             font-size: ${fonts.uiFontSize};
 
             cursor: pointer;
-            
-            transition:0.25s;
+
+            transition: 0.25s;
             :hover {
               color: ${colors.greenPrimary};
             }
@@ -131,12 +135,19 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
             if (isAuthenticated) {
               setAuth({
                 ...auth,
-                cart: !isAlreadyInCart(gameID)
-                  ? [...auth.cart, gameID]
-                  : (function () {
-                      window.alert(languages[language]["alreadyhasgameincart"]);
-                      return auth.cart;
-                    })(),
+                cart: (function () {
+                  if (isAlreadyInCart(gameID)) {
+                    window.alert(languages[language]["alreadyhasgameincart"]);
+                    return auth.cart;
+                  } else if (isAlreadyInLibrary(gameID)) {
+                    window.alert(
+                      languages[language]["alreadyhasgameinlibrary"]
+                    );
+                    return auth.cart;
+                  } else {
+                    return [...auth.cart, gameID];
+                  }
+                })(),
               });
             } else {
               window.alert(languages[language]["notlogin"]);
@@ -144,7 +155,7 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
             }
           }}
         >
-          Add to cart
+          {languages[language]["to-cart"]}
         </button>
       </div>
     </div>
