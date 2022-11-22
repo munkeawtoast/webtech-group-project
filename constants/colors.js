@@ -13,6 +13,7 @@ const gray700 = "#3F3F46"
 const gray800 = "#27272A"
 const gray900 = "#18181B"
 const greenPrimary = "#2f7952"
+const red = "rgb(255, 66, 66)"
 const greenPrimary2 = "#01847A"
 const yellowPrimary2 =  "#C5E370"
 
@@ -29,7 +30,8 @@ const colors = {
   gray700,
   gray800,
   gray900,
-  greenPrimary
+  greenPrimary,
+  red
 }
 
 export default colors

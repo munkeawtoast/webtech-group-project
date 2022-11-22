@@ -16,6 +16,7 @@ import { isValidAccount } from "util/isValidAccount";
 import languages from "constants/languages";
 import { useAuth } from "context/AuthContext";
 import { auth as defaultAuth } from 'constants/config'
+import ItemCount from "./NavBar/ItemCount";
 
 NavBar.defaultProps = {
   hasLogo: true,
@@ -98,10 +99,17 @@ function NavBar({ hasLogo, logoIsCenter }) {
         >
           <FlagButton />
           <RoundButton href="/account/cart">
-            <i
-              className="fa-solid fa-cart-shopping"
-              style={{ color: colors.black }}
-            ></i>
+            <div
+              css={css`
+                position: relative;
+              `}
+            >
+              <i
+                className="fa-solid fa-cart-shopping"
+                style={{ color: colors.black }}
+              />
+              <ItemCount />
+            </div>
           </RoundButton>
           <LogoutButton
             cssStyles={`
@@ -152,7 +160,18 @@ function NavBar({ hasLogo, logoIsCenter }) {
         />
         <Divider hidden={!accountIsValid} />
         <MobileLinkNavButton
-          icon={<i className="fa-solid fa-cart-shopping" />}
+          icon={
+            <>
+              <div
+                css={css`
+                  position: relative;
+                `}
+              >
+                <i className="fa-solid fa-cart-shopping" />
+                <ItemCount />
+              </div>
+            </>
+          }
           href="/account/cart"
           text={languages[language].cart}
           hidden={!accountIsValid}
@@ -167,7 +186,7 @@ function NavBar({ hasLogo, logoIsCenter }) {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                filter: contrast(50%) grayscale(100%);
+                filter:  grayscale(100%);
                 transition: filter 0.2s ease-in-out;
                 
               `}

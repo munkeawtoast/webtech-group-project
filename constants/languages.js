@@ -18,12 +18,14 @@ const languages = {
     "alreadyhasgameinlibrary": "Selected game is already in library",
     "homePage": "Home",
     "languageChangeMobileNavBar": "Lang",
+    "boughtGameAddedToLibrary": "Games added to library!",
+    "redirectingToLibrary": "Returning to library...",
 
   },
   "th": {
     "account": "บัญชี",
     "to-cart": "หยิบใส่ตะกร้า",
-    "cart": "ตะกร้าสินค้า",
+    "cart": "ตะกร้า",
     "login": "ล็อกอิน",
     "logout": "ล็อกเอาท์",
     "register": "สมัครสมาชิก",
@@ -39,6 +41,8 @@ const languages = {
     "alreadyhasgameinlibrary": "เกมที่ท่านเลือกมีอยู่ในคลังอยู่แล้ว",
     "homePage": "หน้าแรก",
     "languageChangeMobileNavBar": "ภาษา",
+    "boughtGameAddedToLibrary": "เพิ่มเข้าไปในคลังเกมแล้ว!",
+    "redirectingToLibrary": "กำลังกลับไปยังคลังเกม...",
   }
 }
 

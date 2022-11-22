@@ -25,12 +25,13 @@ function Cart() {
   const { cart } = auth;
   const myJSON = JSON.stringify(cart);
   const [cartGames, setCartGames] = useState([]);
+  const router = useRouter();
   const [allPrice, setAllPrice] = useState(0);
 
   useEffect(() => {
     setCartGames(games.filter((game) => cart.includes(game.id)));
   }, [auth, auth.cart]);
-  
+
   useEffect(() => {
     let tempPrice = 0;
     for (let i = 0; i < cartGames.length; i++) {
@@ -73,7 +74,30 @@ function Cart() {
         >
           ยอดรวมสินค้า {currencies[currency].currencyTag} {allPrice}
         </div>
-        <button>ชำระเงิน</button>
+        <button
+          css={css`
+            all: unset;
+            font-size: ${fonts.titleFontSize};
+            background-color: ${colors.white};
+            color: ${colors.greenPrimary};
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+            border: 3px solid transparent;
+            &:hover {
+              border: 3px solid white;
+              cursor: pointer;
+              background-color: ${colors.greenPrimary};
+              color: ${colors.white};
+            }
+          `}
+          onClick={() => {
+            setAuth({ ...auth, cart: [], library: [...auth.library, ...cart] });
+            router.push('/account/done')
+          }}
+        >
+          ชำระเงิน
+        </button>
       </div>
       <div
         className="cart-list"
@@ -91,9 +115,11 @@ function Cart() {
           }
         `}
       >
-        {cartGames.map((game) => (
-          <CartCard game={game} key={game.name} />
-        ))}
+        {
+          cartGames.map((game) => (
+            <CartCard game={game} key={game.name} />
+          ))
+        }
       </div>
 
       <Footer />

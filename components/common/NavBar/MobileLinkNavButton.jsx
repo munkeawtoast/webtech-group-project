@@ -29,6 +29,7 @@ function MobileLinkNavButton(props) {
             font-family: ${fonts.normalFontFamily};
             border-radius: 4px;
             display: ${hidden ? 'none' : 'flex'};
+            position: relative;
           `
         }>
         <MobileNavButton {...props} />
