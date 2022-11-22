@@ -21,34 +21,26 @@ const TopImage = ({ imageID, gameID }) => {
         }
       `}
     >
-      <div
-        css={css`
-          transition: all 0.5s ease;
-          transform: translateX(${imageID * -25}%);
-          display: flex;
-          height: 400px;
-          aspect-ratio: 16/9;
-        `}
-      >
-        {
-          [0, 1, 2, 3].map(id => (
-            <div
-              key={id}
-              css={css`
-                position: relative;
-                height: 100%;
-                aspect-ratio: 16/9;
-              `}
-            >
-              <Image
-                alt="game"
-                src={`/game/${gameID}/images/${id}.jpg`}
-                layout="fill"
-              />
-            </div>
-          ))
-        }
-      </div>
+      {
+        [0, 1, 2, 3].map(id => (
+          <div
+            key={id}
+            css={css`
+              position: absolute;
+              height: 100%;
+              transition: all 0.5s ease-in;
+              opacity: ${id === imageID ? 1 : 0};
+              aspect-ratio: 16/9;
+            `}
+          >
+            <Image
+              alt="game"
+              src={`/game/${gameID}/images/${id}.jpg`}
+              layout="fill"
+            />
+          </div>
+        ))
+      }
     </div>
   );
 };
