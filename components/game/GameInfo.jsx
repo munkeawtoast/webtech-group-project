@@ -145,6 +145,7 @@ const GameInfo = ({ gameID, gameTag, gamePrice }) => {
                     );
                     return auth.cart;
                   } else {
+                    window.alert(languages[language]["gameAdded"]);
                     return [...auth.cart, gameID];
                   }
                 })(),
