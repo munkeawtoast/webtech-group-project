@@ -9,13 +9,13 @@ import { useSiteConfig } from "context/SiteConfigContext"
 
 export default function ResultList({ sortFunc, userPriceRange, category, games }) {
   const [siteConfig, ] = useSiteConfig()
-  const { language } = siteConfig
+  const { language, currency } = siteConfig
   const [gameComps, setGameComps] = useState([])
 
   useEffect(() => {
     setGameComps(games
-      .filter(game => game.price['thb'] <= userPriceRange[1] && game.price['thb'] >= userPriceRange[0])
-      .sort(sortFunc.func('thb'))
+      .filter(game => game.price[currency] <= userPriceRange[1] && game.price[currency] >= userPriceRange[0])
+      .sort(sortFunc.func(currency))
       .map(game => (
         <GameCard
           key={game.name}
@@ -31,7 +31,7 @@ export default function ResultList({ sortFunc, userPriceRange, category, games }
         />
       ))
     )
-  }, [games, sortFunc, userPriceRange])
+  }, [games, sortFunc, userPriceRange, currency])
 
   return (
     <main
