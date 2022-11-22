@@ -41,6 +41,7 @@ export default function ResultList({ sortFunc, userPriceRange, category, games }
         padding: 10px 40px;
         ${mq[1]} {
           padding: 0;
+          padding-bottom: 15px;
         }
       `}
     >

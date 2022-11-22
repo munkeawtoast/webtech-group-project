@@ -16,6 +16,7 @@ const AuthorName = styled.span`
 function Footer() {
   return (
     <footer css={css`
+      border-top: 1px solid ${colors.gray300};
       z-index: 10;
       min-height: 250px;
       display: flex;
