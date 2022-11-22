@@ -111,10 +111,10 @@ function Cart() {
           gap: 20px;
           padding: 50px;
           ${mq[1]} {
-            margin: 0 15px;
+            padding: 15px 15px;
           }
           ${mq[2]} {
-            justify-content: center;
+            margin: 0;
           }
         `}
       >

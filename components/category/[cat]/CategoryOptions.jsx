@@ -35,7 +35,7 @@ export default function CategoryOptions({ onPriceRangeChange, minMax, category }
         ${mq[1]} {
           display: block;
           font-size: ${fonts.largeFontSize};
-          
+          color: ${colors.black};
           font-weight: 800;
           padding: 10px 0;
           text-align: center;

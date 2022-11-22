@@ -27,6 +27,9 @@ const Outer = ({ children, game, showArgs }) =>
       <a
         css={css`
           height: min-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         `}
       >
         {children}
@@ -57,6 +60,7 @@ function GameCard({ showArgs, game, onClick }) {
     <Outer showArgs={showArgs} game={game}>
       <div
         css={css`
+          
           width: 200px;
           box-sizing: content-box;
           margin: 0px;
@@ -80,6 +84,9 @@ function GameCard({ showArgs, game, onClick }) {
       >
         <div
           css={css`
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
             aspect-ratio: 3/4;
           `}

@@ -30,27 +30,22 @@ export default function CartCard({ game }) {
         gap: 50px;
 
         background-color: ${colors.gray200};
+
+        ${mq[1]} {
+          gap: 10px;
+          padding: 25px;
+          width: 100%;
+        }
+        ${mq[2]} {
+          flex-direction: column;
+        }
       `}
     >
-      <div
-        className="cart-list"
-        css={css`
-          display: flex;
-          flex-wrap: wrap;
-          ${mq[1]} {
-            margin: 0 15px;
-          }
-          ${mq[2]} {
-            justify-content: center;
-          }
-        `}
-      >
-        <GameCard
-          key={game.name}
-          game={game}
-          showArgs={{ showPrice: false, isLink: true, showName: false }}
-        />
-      </div>
+      <GameCard
+        key={game.name}
+        game={game}
+        showArgs={{ showPrice: false, isLink: true, showName: false }}
+      />
       <div
         css={css`
           width: 100%;
@@ -82,7 +77,7 @@ export default function CartCard({ game }) {
             margin: bottom;
           `}
         >
-          { languages[language].removeFromCart }
+          {languages[language].removeFromCart}
         </div>
       </div>
     </div>
