@@ -26,6 +26,8 @@ const languages = {
     "sumCart": "Games in cart",
     "sumPrice": "Total price",
     "payCart": "Buy all",
+    "clickToCopyKey": "Click to copy key",
+    "keyCopied": "Copied!",
   },
   th: {
     account: "บัญชี",
@@ -53,6 +55,8 @@ const languages = {
     sumCart: "สรุปยอดคำสั่งซื้อ",
     sumPrice: "ราคารวม",
     payCart: "ชำระเงิน",
+    "clickToCopyKey": "คลิกเพื่อคัดลอกคีย์",
+    "keyCopied": "คัดลอกแล้ว!",
   }
 }
 

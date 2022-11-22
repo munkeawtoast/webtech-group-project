@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { css } from "@emotion/react";
 
 import currencies from "constants/currencies.js";
@@ -8,6 +8,7 @@ import colors from "constants/colors.js";
 import fonts from "constants/fonts.js";
 import { useSiteConfig } from "context/SiteConfigContext";
 import { mediaQueriesSizes as mqs } from "constants/mediaqueries";
+import languages from "constants/languages";
 
 GameCard.defaultProps = {
   showArgs: {
@@ -36,17 +37,21 @@ const Outer = ({ children, game, showArgs }) =>
   );
 
 function GameCard({ showArgs, game, onClick }) {
-  const defaultKeyHoverText = "Click to copy key!";
+  const defaultKeyHoverText = "";
   const [keyHoverText, setKeyHoverText] = React.useState(defaultKeyHoverText);
   function changeText(text) {
-    const original = defaultKeyHoverText;
+    const original = languages[language].clickToCopyKey;
     setKeyHoverText(text);
     setTimeout(() => {
       setKeyHoverText(original);
     }, 1000);
   }
   const [siteConfig] = useSiteConfig();
-  const { currency } = siteConfig;
+  const { language, currency } = siteConfig;
+
+  useEffect(() => {
+    setKeyHoverText(languages[language].clickToCopyKey)
+  }, [language])
 
   return (
     <Outer showArgs={showArgs} game={game}>
@@ -64,11 +69,11 @@ function GameCard({ showArgs, game, onClick }) {
           position: relative;
           &:hover > span {
             ${showArgs.showPrice
-              ? `
+            ? `
                   color: ${colors.greenPrimary};
                   font-weight: bold;
                 `
-              : ""}
+            : ""}
           }
         `}
         onClick={onClick}
@@ -125,7 +130,7 @@ function GameCard({ showArgs, game, onClick }) {
             `}
             onClick={() => {
               navigator.clipboard.writeText(game.key);
-              changeText("Copied!");
+              changeText(languages[language].keyCopied);
             }}
           >
             {keyHoverText}
