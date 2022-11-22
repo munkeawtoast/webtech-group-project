@@ -10,11 +10,12 @@ import languages from "constants/languages";
 import currencies from "constants/currencies.js";
 import colors from "constants/colors";
 import { useAuth } from "context/AuthContext";
+import Link from "next/link";
 
 export default function CartCard({ game }) {
   const [siteConfig] = useSiteConfig();
   const { language, currency } = siteConfig;
-
+  const [, setAuth] = useAuth();
   return (
     <div
       css={css`
@@ -55,7 +56,7 @@ export default function CartCard({ game }) {
           width: 100%;
         `}
       >
-        <div>{game.displayName}</div>
+        <Link href={`/game/${game.name}`}>{game.displayName}</Link>
         <div
           css={css`
             text-align: right;
@@ -64,7 +65,15 @@ export default function CartCard({ game }) {
           {currencies[currency].currencyTag} {game?.price[currency]}
         </div>
         <div
-          onClick={() => {}}
+          onClick={() => {
+            setAuth(prev => {
+              return {
+                ...prev,
+                cart: prev.cart.filter(id => id !== game.id)
+              }
+            })
+
+          }}
           css={css`
             cursor: pointer;
             &:hover {
@@ -73,7 +82,7 @@ export default function CartCard({ game }) {
             margin: bottom;
           `}
         >
-          Remove
+          { languages[language].removeFromCart }
         </div>
       </div>
     </div>

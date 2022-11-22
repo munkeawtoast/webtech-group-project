@@ -29,6 +29,12 @@ function Cart() {
   const [allPrice, setAllPrice] = useState(0);
 
   useEffect(() => {
+    if (!isValidAccount(auth)) {
+      router.push('/login')
+    }
+  }, [auth])
+
+  useEffect(() => {
     setCartGames(games.filter((game) => cart.includes(game.id)));
   }, [auth, auth.cart]);
 
