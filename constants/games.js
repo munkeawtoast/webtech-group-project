@@ -616,13 +616,101 @@ const games = [
     id: 48,
     name: "resident-evil-4",
     displayName: "Resident Evil 4",
-    tags: [8],
+    tags: [0, 8],
     price: {
       usd: 7.99,
       thb: 279,
     },
     description:
       "Resident Evil 4 is a third-person shooter survival horror game developed and published by Capcom. It was originally released for the GameCube in 2005, and has since been ported to multiple platforms, including PlayStation 4, Xbox One, Microsoft Windows, and Nintendo Switch. The game is the sixth installment in the Resident Evil series, and the first numbered entry since Resident Evil 2 in 1998. It follows the story of U.S. government agent Leon S. Kennedy, who is sent on a mission to rescue the President's daughter who has been kidnapped. While investigating the incident, he encounters a mysterious cult that worships a powerful entity known as Las Plagas.",
+  },
+  {
+    id: 49,
+    name: "call-of-duty-modern-warfare-2",
+    displayName: "Call of Duty®: Modern Warfare® II",
+    tags: [0],
+    price: {
+      usd: 69.99,
+      thb: 2322,
+    },
+    description: "",
+  },
+  {
+    id: 50,
+    name: "apex-legend",
+    displayName: "Apex Legends™",
+    tags: [0, 5],
+    price: {
+      usd: 19.99,
+      thb: 399,
+    },
+    description: "",
+  },
+  {
+    id: 51,
+    name: "battlefield-2042",
+    displayName: "Battlefield™ 2042",
+    tags: [0],
+    price: {
+      usd: 45.99,
+      thb: 1599,
+    },
+    description: "",
+  },
+  {
+    id: 52,
+    name: "left-4-dead-2",
+    displayName: "Left 4 Dead 2",
+    tags: [0, 8],
+    price: {
+      usd: 6.99,
+      thb: 220,
+    },
+    description: "",
+  },
+  {
+    id: 53,
+    name: "fallout-4",
+    displayName: "Fallout 4",
+    tags: [0, 5, 6, 7],
+    price: {
+      usd: 24.59,
+      thb: 660,
+    },
+    description: "",
+  },
+  {
+    id: 54,
+    name: "one-piece-pirate-warriors-4",
+    displayName: "ONE PIECE: PIRATE WARRIORS 4",
+    tags: [1, 6],
+    price: {
+      usd: 70,
+      thb: 1990,
+    },
+    description: "",
+  },
+  {
+    id: 55,
+    name: "tekken-7",
+    displayName: "TEKKEN 7",
+    tags: [1],
+    price: {
+      usd: 99.99,
+      thb: 2690,
+    },
+    description: "",
+  },
+  {
+    id: 56,
+    name: "dragon-ball-fighter-z",
+    displayName: "DRAGON BALL FighterZ",
+    tags: [1],
+    price: {
+      usd: 79.99,
+      thb: 1700,
+    },
+    description: "",
   },
 ];
 

@@ -15,7 +15,7 @@ MobileLinkNavButton.propTypes = {
 }
 
 function MobileLinkNavButton(props) {
-  const { href, text, icon } = props
+  const { href, text, icon, hidden } = props
   const router = useRouter()
 
   return (
@@ -28,9 +28,10 @@ function MobileLinkNavButton(props) {
             color: ${router.asPath === href ? colors.greenPrimary : colors.gray500} !important;
             font-family: ${fonts.normalFontFamily};
             border-radius: 4px;
+            display: ${hidden ? 'none' : 'flex'};
           `
         }>
-        <MobileNavButton text={text} icon={icon} />
+        <MobileNavButton {...props} />
       </a>
 
     </Link>
