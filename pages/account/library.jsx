@@ -112,7 +112,6 @@ function Library() {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            cursor: pointer;
             ${mq[1]} {
               margin: 0 15px;
             }
