@@ -8,6 +8,9 @@ import { mediaQueries as mq } from "constants/mediaqueries"
 const AuthorName = styled.span`
   display: block;
   font-size: ${fonts.normalFontSize};
+  ${mq[2]} {
+    text-align: center;
+  }
 `
 
 function Footer() {
@@ -69,6 +72,7 @@ function Footer() {
             display: flex;
             flex-direction: column;
             align-items: center;
+            
           }
         `}
       >

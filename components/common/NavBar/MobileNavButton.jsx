@@ -26,7 +26,7 @@ function MobileNavButton(props) {
         display: flex;
         flex-direction: column;
         color: ${colors.gray500} !important;
-        
+        font-family: ${fonts.normalFontFamily};
         align-items: center;
         font-size: ${language == 'th' ? '14px' : 'initial'};
         gap: ${language == 'th' ? '3px' : '0px'};
