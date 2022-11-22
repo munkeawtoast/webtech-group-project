@@ -1,47 +1,44 @@
-import { css } from '@emotion/react'
-import GameCard from 'components/common/GameCard'
-import NavBar from 'components/common/NavBar'
-import LibraryGameCard from 'components/library/LibraryGameCard'
-import colors from 'constants/colors'
-import fonts from 'constants/fonts'
-import games from 'constants/games'
-import languages from 'constants/languages'
-import { useAuth } from 'context/AuthContext'
-import { useSiteConfig } from 'context/SiteConfigContext'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
-import { isValidAccount } from 'util/isValidAccount'
-import { mediaQueries as mq} from 'constants/mediaqueries'
-import Footer from 'components/common/Footer'
-
-
+import { css } from "@emotion/react";
+import GameCard from "components/common/GameCard";
+import NavBar from "components/common/NavBar";
+import LibraryGameCard from "components/library/LibraryGameCard";
+import colors from "constants/colors";
+import fonts from "constants/fonts";
+import games from "constants/games";
+import languages from "constants/languages";
+import { useAuth } from "context/AuthContext";
+import { useSiteConfig } from "context/SiteConfigContext";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { isValidAccount } from "util/isValidAccount";
+import { mediaQueries as mq } from "constants/mediaqueries";
+import Footer from "components/common/Footer";
 
 function Library() {
-  const [auth, ] = useAuth()
-  const router = useRouter()
-  const { library, displayname } = auth
-  const [count, setCount] = useState(0) // แก้ปัญหาแบบเบร่อมากๆ
+  const [auth] = useAuth();
+  const router = useRouter();
+  const { library, displayname } = auth;
+  const [count, setCount] = useState(0); // แก้ปัญหาแบบเบร่อมากๆ
 
   useEffect(() => {
     if (count === 0) {
-      setCount(count + 1)
+      setCount(count + 1);
+    } else if (!isValidAccount(auth)) {
+      router.push("/login");
     }
-    else if (!isValidAccount(auth)) {
-      router.push('/login')
-    }
-    setLibraryGames(games.filter((game) => library.includes(game.id)))
-  }, [auth.library])
+    setLibraryGames(games.filter((game) => library.includes(game.id)));
+  }, [auth.library]);
 
-  const [siteConfig, ] = useSiteConfig()
-  const { language } = siteConfig
-  const [libraryGames, setLibraryGames] = useState([])
+  const [siteConfig] = useSiteConfig();
+  const { language } = siteConfig;
+  const [libraryGames, setLibraryGames] = useState([]);
 
   return (
     <>
       <NavBar />
       <div
-        className='library-top'
+        className="library-top"
         css={css`
           font-family: ${fonts.normalFontFamily};
           color: ${colors.white};
@@ -51,22 +48,19 @@ function Library() {
           display: flex;
           flex-direction: column;
           align-items: center;
-
         `}
       >
-        <div css={css`
-          position: relative;
-          width: 120px;
-          aspect-ratio: 1;
-          border-radius: 10000px;
-          overflow: clip;
-          margin-bottom: 20px;
-        `}>
-          <Image
-            src='/user/default-profile.jpg'
-            alt='profile'
-            layout='fill'
-          />
+        <div
+          css={css`
+            position: relative;
+            width: 120px;
+            aspect-ratio: 1;
+            border-radius: 10000px;
+            overflow: clip;
+            margin-bottom: 20px;
+          `}
+        >
+          <Image src="/user/default-profile.jpg" alt="profile" layout="fill" />
         </div>
         <h1
           css={css`
@@ -74,7 +68,7 @@ function Library() {
             margin-bottom: 20px;
           `}
         >
-          { auth.displayname }
+          {auth.displayname}
         </h1>
         <h3
           css={css`
@@ -82,11 +76,11 @@ function Library() {
             font-weight: normal;
           `}
         >
-          { auth.email }
+          {auth.email}
         </h3>
       </div>
       <div
-        className='library-list-container'
+        className="library-list-container"
         css={css`
           background-color: ${colors.white};
           min-height: 400px;
@@ -109,13 +103,16 @@ function Library() {
             margin-bottom: 10px;
             display: block;
           `}
-        >{ languages[language].library }</span>
+        >
+          {languages[language].library}
+        </span>
         <div
-          className='library-list'
+          className="library-list"
           css={css`
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            cursor: pointer;
             ${mq[1]} {
               margin: 0 15px;
             }
@@ -124,20 +121,14 @@ function Library() {
             }
           `}
         >
-          {
-            libraryGames.map((game) => (
-              <LibraryGameCard
-                key={game.name}
-                game={game}
-              />
-            ))
-          }
+          {libraryGames.map((game) => (
+            <LibraryGameCard key={game.name} game={game} />
+          ))}
         </div>
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
-
-export default Library
+export default Library;

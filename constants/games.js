@@ -533,6 +533,7 @@ const games = [
     name: "the-sims-4",
     displayName: "The Sims 4",
     tags: [6],
+    key: "3ce0cc53acc2d48ad12df7c3e9f4e973",
     price: {
       usd: 7.99,
       thb: 279,
@@ -545,6 +546,7 @@ const games = [
     name: "cod-black-ops-4",
     displayName: "Call of Duty®: Black Ops 4",
     tags: [0],
+    key: "417a7c287e010a6282c1941695ba0173",
     price: {
       usd: 19.99,
       thb: 699,
@@ -557,6 +559,7 @@ const games = [
     name: "dark-souls-3",
     displayName: "Dark Souls™ III",
     tags: [1],
+    key: "86c0365998eb933cbd46eb29618befd6",
     price: {
       usd: 19.99,
       thb: 699,
@@ -569,6 +572,7 @@ const games = [
     name: "100-hidden-frogs",
     displayName: "100 Hidden Frogs",
     tags: [4],
+    key: "94aeaf4dd9017ca607cf618ce54fa754",
     price: {
       usd: 1.99,
       thb: 69,
@@ -581,6 +585,7 @@ const games = [
     name: "battlefield-1",
     displayName: "Battlefield™ 1",
     tags: [0],
+    key: "4af611459e304587fad046e4d760048f",
     price: {
       usd: 29.99,
       thb: 1099,
@@ -593,6 +598,7 @@ const games = [
     name: "rb6-siege",
     displayName: "Tom Clancy's Rainbow Six® Siege",
     tags: [0],
+    key: "651313edaf974e07d2946e75dd181e4f",
     price: {
       usd: 15.99,
       thb: 540,
@@ -605,6 +611,7 @@ const games = [
     name: "the-forest",
     displayName: "The Forest",
     tags: [8],
+    key: "bea6ad1c3d800dfaa156cac68a2d4803",
     price: {
       usd: 8.99,
       thb: 289,
@@ -617,6 +624,7 @@ const games = [
     name: "resident-evil-4",
     displayName: "Resident Evil 4",
     tags: [0, 8],
+    key: "6e62ef56e66a7b6b334dcbcd268efd6c",
     price: {
       usd: 7.99,
       thb: 279,
@@ -629,6 +637,7 @@ const games = [
     name: "call-of-duty-modern-warfare-2",
     displayName: "Call of Duty®: Modern Warfare® II",
     tags: [0],
+    key: "6e62ef56e66a7b6b334dcbcd268efd6c",
     price: {
       usd: 69.99,
       thb: 2322,
@@ -640,6 +649,7 @@ const games = [
     name: "apex-legend",
     displayName: "Apex Legends™",
     tags: [0, 5],
+    key: "91171bb9b9434d8f00c8401abd4732b6",
     price: {
       usd: 19.99,
       thb: 399,
@@ -650,6 +660,7 @@ const games = [
     id: 51,
     name: "battlefield-2042",
     displayName: "Battlefield™ 2042",
+    key: "9fdd51d02f8df924e213a9dfbfa59259",
     tags: [0],
     price: {
       usd: 45.99,
@@ -662,6 +673,7 @@ const games = [
     name: "left-4-dead-2",
     displayName: "Left 4 Dead 2",
     tags: [0, 8],
+    key: "89390dc77d1428a4e14b4bb95823f969",
     price: {
       usd: 6.99,
       thb: 220,
@@ -673,6 +685,7 @@ const games = [
     name: "fallout-4",
     displayName: "Fallout 4",
     tags: [0, 5, 6, 7],
+    key: "eec18f794e3e1cdbb596129a3d192115",
     price: {
       usd: 24.59,
       thb: 660,
@@ -684,6 +697,7 @@ const games = [
     name: "one-piece-pirate-warriors-4",
     displayName: "ONE PIECE: PIRATE WARRIORS 4",
     tags: [1, 6],
+    key: "4b19100066dd837585e44aea6345bead",
     price: {
       usd: 70,
       thb: 1990,
@@ -695,6 +709,7 @@ const games = [
     name: "tekken-7",
     displayName: "TEKKEN 7",
     tags: [1],
+    key: "ghjmkhgfdvgbhjkhhj416546",
     price: {
       usd: 99.99,
       thb: 2690,
@@ -706,6 +721,7 @@ const games = [
     name: "dragon-ball-fighter-z",
     displayName: "DRAGON BALL FighterZ",
     tags: [1],
+    key: "cvxgf4h58j5h2g1f45gch8bj521fg4c",
     price: {
       usd: 79.99,
       thb: 1700,

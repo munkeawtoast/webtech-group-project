@@ -1,4 +1,5 @@
-import GameCard from "components/common/GameCard"
+import GameCard from "components/common/GameCard";
+import { css } from "@emotion/react";
 
 export default function LibraryGameCard({ game }) {
   return (
@@ -12,5 +13,5 @@ export default function LibraryGameCard({ game }) {
         forLibrary: true,
       }}
     />
-  )
+  );
 }
