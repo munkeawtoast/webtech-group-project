@@ -4,6 +4,7 @@ const siteConfig = {
 }
 
 const auth = {
+  id: -1,
   username: '',
   displayname: '',
   email: '',
